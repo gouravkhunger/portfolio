@@ -8,6 +8,9 @@
 .buildlog/
 .history
 .svn/
+firebase.json
+.firebaserc
+.firebase
 
 # IntelliJ related
 *.iml
