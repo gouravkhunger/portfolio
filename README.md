@@ -46,4 +46,4 @@ To edit it's values, here's the reference:
 
 * The `\lib\ux\ux_models.dart` contains the data for which social buttons like GitHub profile, Email button, Youtube, Twitch, etc. to be shown, edit it as per your needs. Have a look at `\lib\ux\app_icons.dart` file to get the details of available inbuilt icons that you can use.
 
-These were the most basic things you would need to edit.
+These were the most basic things you would need to edit. Anyways, you are free to play around with the project, and come up with your own unique ideas. Happy Coding :)
