@@ -1,6 +1,5 @@
 # [Gourav's Portfolio](https://gourav-khunger.web.app)
-This project has been inspired from flutter channel beta
-Please check that out too.
+This project has been inspired from [this repository](https://github.com/jfk-dev/portfolio).
 
 I have published my version of the flutter web app to: https://gourav-khunger.web.app. Check it out if you wish too :)
 
