@@ -31,3 +31,19 @@ then run:
     flutter build web
 
 This will make the `build/web` folder, you can then run the `index.html` file :)
+
+By this, you will have understood how to build this project.
+
+To edit it's values, here's the reference:
+
+* To change your profile photo, add yours to `\assets\images\` folder. Then edit the `\lib\ux\app_images.dart` file to link the image into the code.
+
+* Favicons of the webpage can be edited by placing your desired favicon into `\web\` folder with the name `favicon.png`.
+
+* You will find the main texts like `Name`, titles, etc, in the `\lib\app_localisation.dart` file. You can edit it's values as per your need. I have removed the multilanguage functionality from the original repository, since I did not need it. If you wish to add it again, please update this same file, getting reference from the original repository.
+
+* To edit the highlights section, that is the most important part of the project, you can look into the `\lib\ux\sections\welcome\highlights_list.dart` file. It contains the boxed layouts that you can add your data into.
+
+* The `\lib\ux\ux_models.dart` contains the data for which social buttons like GitHub profile, Email button, Youtube, Twitch, etc. to be shown, edit it as per your needs. Have a look at `\lib\ux\app_icons.dart` file to get the details of available inbuilt icons that you can use.
+
+These were the most basic things you would need to edit.
