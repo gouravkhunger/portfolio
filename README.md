@@ -1,7 +1,11 @@
 # [Gourav's Portfolio](https://gourav-khunger.web.app)
 This project has been inspired from [this repository](https://github.com/jfk-dev/portfolio).
 
-I have published my version of the flutter web app to: https://gourav-khunger.web.app. Check it out if you wish too :)
+I **had** published this version of the flutter web app to: https://gourav-khunger.web.app. But now, the flutter version is being replaced by newer version using tailwindcss, which will be published soon!
+
+Here's the demo of how the flutter version looks like:
+
+![flutter portfolio demo]()
 
 ## Getting Started with Flutter
 A few resources to get you started if this is your first Flutter project:
