@@ -5,7 +5,7 @@ I **had** published this version of the flutter web app to: https://gourav-khung
 
 Here's the demo of how the flutter version looks like:
 
-![flutter portfolio demo]()
+![flutter portfolio demo](https://raw.githubusercontent.com/GouravKhunger/portfolio/flutter/img/demo.png)
 
 ## Getting Started with Flutter
 A few resources to get you started if this is your first Flutter project:
