@@ -1,9 +1,7 @@
-# [Gourav's Portfolio](https://gourav-khunger.web.app)
-This project has been inspired from [this repository](https://github.com/jfk-dev/portfolio).
+# [My Portfolio](https://gouravkhunger.xyz)
+This project has been inspired from [jfk.dev](https://jfk.dev).
 
-I **had** published this version of the flutter web app to: https://gourav-khunger.web.app. But now, the flutter version is being replaced by newer version using tailwindcss, which will be published soon!
-
-Here's the demo of how the flutter version looks like:
+Here's a picture of how this flutter version of the portfolio looks like:
 
 ![flutter portfolio demo](https://raw.githubusercontent.com/GouravKhunger/portfolio/flutter/img/demo.png)
 

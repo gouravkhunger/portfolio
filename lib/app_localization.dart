@@ -16,9 +16,7 @@ class AppLocalization {
 
   static const fallback = en;
 
-  static const values = <Localization>[
-    en
-  ];
+  static const values = <Localization>[en];
 
   static Localization get instance => GetIt.instance<Config>().localization;
 }
@@ -43,26 +41,23 @@ abstract class Localization {
   String get introductionPrefix => "I'm ";
   String get introductionSuffix => '.';
 
-  String get highlightSoftwareDeveloperTitle => 'Coding Enthusiast';
+  String get highlightSoftwareDeveloperTitle => 'Programming Enthusiast';
   String get highlightSoftwareDeveloperDescription =>
       'Android, Web, Competitive and more.';
 
   String get highlightBlogger => 'Blogger';
-  String get highlightBlogDescription =>
-      'Frequent Content-Writer';
+  String get highlightBlogDescription => 'Frequent content-writer.';
 
   String get highlightOpenSourceContributorTitle => 'Open Source Contributor';
-  String get highlightOpenSourceContributorDescription =>
-      'Loves GitHub.';
+  String get highlightOpenSourceContributorDescription => 'I love GitHub.';
 
   String get highlightStudentTitle => 'Student';
-  String get highlightStudentDescription => 'Currently in grade 10.';
+  String get highlightStudentDescription => 'Currently in grade 11th.';
 
   String get highlightGameTitle => 'BasketBall Player';
-  String get highlightGameDescription => 'Love to play Basketball.';
+  String get highlightGameDescription => 'I love to play Basketball.';
 
-  String get siteInfo =>
-      'gourav-khunger.web.dev ・ Fazilka, Punjab, India';
+  String get siteInfo => 'gouravkhunger.xyz ・ Punjab, India';
 
   @override
   int get hashCode => id.hashCode;

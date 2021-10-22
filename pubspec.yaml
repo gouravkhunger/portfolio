@@ -11,6 +11,8 @@ dependencies:
     sdk: flutter
   get_it: 4.0.4
   yaml: 2.2.1
+  
+  font_awesome_flutter: ^8.10.0
 
   cupertino_icons: ^0.1.2
 
