@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="robots" content="noindex">
+<link
+  href="https://fonts.googleapis.com/css2?family=Sen&display=swap"
+  rel="stylesheet">
+<style>
+body {
+    font-family: "Sen", sans-serif;
+}
+.bg {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+.content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.title {
+  position: absolute;
+  width: 50%;
+  top: 35%;
+  left: 9%;
+  font-size: 44px;
+  font-weight: bold;
+  overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 3; /* number of lines to show */
+           line-clamp: 3; 
+   -webkit-box-orient: vertical;
+}
+.avatar {
+  position: absolute;
+  right: 7.5%;
+  top: 30%;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  vertical-align: middle;
+}
+</style>
+</head>
+<body>
+
+  <img src="bg.png" class="bg" />
+
+  <div class="content">
+    <span class="title"></span>
+
+    <img class="avatar" src="bg.png" />
+  </div>
+
+</body>
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  
+  var avatar = urlParams.get('avatar');
+  var title = urlParams.get('title');
+
+  var htmlTitle = document.getElementsByClassName("title")[0];
+  var htmlAvatar = document.getElementsByClassName("avatar")[0];
+
+  htmlTitle.innerHTML = title ? title : "";
+  htmlAvatar.src = avatar ? avatar : "bg.png";
+</script>
+</html> 
