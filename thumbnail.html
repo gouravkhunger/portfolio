@@ -8,8 +8,7 @@
 <style>
 body {
     font-family: "Sen", sans-serif;
-    aspect-ratio: 16 / 9;
-    width:100%;
+    width: 100%;
 }
 .bg {
   position: relative;
@@ -24,9 +23,9 @@ body {
 .title {
   position: absolute;
   width: 50%;
-  top: 35%;
+  top: 40%;
   left: 9%;
-  font-size: 44px;
+  font-size: 48px;
   font-weight: bold;
   overflow: hidden;
    text-overflow: ellipsis;
@@ -38,11 +37,10 @@ body {
 .avatar {
   position: absolute;
   right: 7.5%;
-  top: 30%;
+  top: 40%;
   border-radius: 50%;
   width: 200px;
   height: 200px;
-  vertical-align: middle;
 }
 </style>
 </head>
@@ -57,7 +55,7 @@ body {
   </div>
 
 </body>
-<script src="domtoimage.min.js"></script>
+<script src="html2canvas.min.js"></script>
 <script>
   const urlParams = new URLSearchParams(window.location.search);
   
@@ -67,17 +65,21 @@ body {
   var htmlTitle = document.getElementsByClassName("title")[0];
   var htmlAvatar = document.getElementsByClassName("avatar")[0];
 
-  if(title && avatar){
+  if(title){
     htmlTitle.innerHTML = title;
-    htmlAvatar.src = avatar;
+    htmlAvatar.src = avatar ? avatar : "https://avatars.githubusercontent.com/u/46792249?v=4";
     // Generate the image after 1 second
     setTimeout(function() {
       console.log("hi")
-      var node = document.getElementsByTagName("body")[0];
-      domtoimage.toBlob(node)
-        .then(function (blob) {
-            window.saveAs(blob, 'my-node.png');
-        });
+      html2canvas(document.body, { useCORS: true, scale: 2 }).then(canvas => {
+        var dataURL = canvas.toDataURL("image/jpeg", 1.0);
+        // download as image
+        var link = document.createElement("a");
+        link.download = "thumbnail.jpg";
+        link.href = dataURL;
+        link.click();
+        link.remove();
+      });
     }, 1000);
   }
 </script>
