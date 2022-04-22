@@ -8,22 +8,24 @@
 <style>
 body {
     font-family: "Sen", sans-serif;
-    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  overflow: hidden;
 }
 .bg {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
 }
-.content {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
 .title {
   position: absolute;
   width: 50%;
-  top: 40%;
+  top: 35%;
   left: 9%;
   font-size: 48px;
   font-weight: bold;
@@ -37,7 +39,7 @@ body {
 .avatar {
   position: absolute;
   right: 7.5%;
-  top: 40%;
+  top: 32.5%;
   border-radius: 50%;
   width: 200px;
   height: 200px;
@@ -46,14 +48,13 @@ body {
 </head>
 <body>
 
+  <div class="container">
   <img src="bg.png" class="bg" />
 
-  <div class="content">
-    <span class="title"></span>
+  <span class="title"></span>
 
-    <img class="avatar" src="bg.png" />
-  </div>
-
+  <img class="avatar" src="bg.png" />
+</div>
 </body>
 <script src="html2canvas.min.js"></script>
 <script>
@@ -71,7 +72,7 @@ body {
     // Generate the image after 1 second
     setTimeout(function() {
       console.log("hi")
-      html2canvas(document.body, { useCORS: true, scale: 2 }).then(canvas => {
+      html2canvas(document.getElementsByClassName('container')[0], { useCORS: true }).then(canvas => {
         var dataURL = canvas.toDataURL("image/jpeg", 1.0);
         // download as image
         var link = document.createElement("a");
