@@ -8,6 +8,8 @@
 <style>
 body {
     font-family: "Sen", sans-serif;
+    aspect-ratio: 16 / 9;
+    width:100%;
 }
 .bg {
   position: relative;
@@ -55,6 +57,7 @@ body {
   </div>
 
 </body>
+<script src="domtoimage.min.js"></script>
 <script>
   const urlParams = new URLSearchParams(window.location.search);
   
@@ -64,7 +67,18 @@ body {
   var htmlTitle = document.getElementsByClassName("title")[0];
   var htmlAvatar = document.getElementsByClassName("avatar")[0];
 
-  htmlTitle.innerHTML = title ? title : "";
-  htmlAvatar.src = avatar ? avatar : "bg.png";
+  if(title && avatar){
+    htmlTitle.innerHTML = title;
+    htmlAvatar.src = avatar;
+    // Generate the image after 1 second
+    setTimeout(function() {
+      console.log("hi")
+      var node = document.getElementsByTagName("body")[0];
+      domtoimage.toBlob(node)
+        .then(function (blob) {
+            window.saveAs(blob, 'my-node.png');
+        });
+    }, 1000);
+  }
 </script>
 </html> 
