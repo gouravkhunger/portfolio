@@ -68,10 +68,10 @@ body {
 
   if(title){
     htmlTitle.innerHTML = title;
-    htmlAvatar.src = avatar ? avatar : "https://avatars.githubusercontent.com/u/46792249?v=4";
+    htmlAvatar.src = avatar ? decodeURIComponent(avatar) : "https://avatars.githubusercontent.com/u/46792249?v=4";
+
     // Generate the image after 1 second
     setTimeout(function() {
-      console.log("hi")
       html2canvas(document.getElementsByClassName('container')[0], { useCORS: true }).then(canvas => {
         var dataURL = canvas.toDataURL("image/jpeg", 1.0);
         // download as image
@@ -84,4 +84,4 @@ body {
     }, 1000);
   }
 </script>
-</html> 
+</html>
