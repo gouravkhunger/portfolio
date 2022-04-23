@@ -78,7 +78,7 @@ body {
     // Generate the image after 1 second
     setTimeout(function() {
       html2canvas(document.getElementsByClassName('container')[0], { useCORS: true }).then(canvas => {
-        var dataURL = canvas.toDataURL("image/jpeg", 1.0);
+        var dataURL = canvas.toDataURL("image/jpeg", 0.8);
         // download as image
         var link = document.createElement("a");
         link.download = "thumbnail.jpg";
