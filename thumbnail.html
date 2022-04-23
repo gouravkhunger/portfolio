@@ -17,29 +17,32 @@ body {
   position: relative;
   overflow: hidden;
 }
+.meta {
+  position: absolute; 
+  width: 85%;
+  top: 32.5%;
+  left: 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .bg {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
 }
 .title {
-  position: absolute;
-  width: 50%;
-  top: 35%;
-  left: 9%;
+  width: 65%;
   font-size: 48px;
   font-weight: bold;
   overflow: hidden;
-   text-overflow: ellipsis;
-   display: -webkit-box;
-   -webkit-line-clamp: 3; /* number of lines to show */
-           line-clamp: 3; 
-   -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+          line-clamp: 3; 
+  -webkit-box-orient: vertical;
 }
 .avatar {
-  position: absolute;
-  right: 7.5%;
-  top: 32.5%;
   border-radius: 50%;
   width: 200px;
   height: 200px;
@@ -51,10 +54,11 @@ body {
   <div class="container">
   <img src="bg.png" class="bg" />
 
-  <span class="title"></span>
-
-  <img class="avatar" src="bg.png" />
-</div>
+    <div class="meta">
+      <span class="title"></span>
+      <img class="avatar" src="bg.png" />
+    </div>
+  </div>
 </body>
 <script src="html2canvas.min.js"></script>
 <script>
@@ -66,12 +70,14 @@ body {
   var htmlTitle = document.getElementsByClassName("title")[0];
   var htmlAvatar = document.getElementsByClassName("avatar")[0];
 
+  htmlAvatar.src = avatar ? decodeURIComponent(avatar) : "https://avatars.githubusercontent.com/u/46792249?v=4";
+
   if(title){
     htmlTitle.innerHTML = title;
-    htmlAvatar.src = avatar ? decodeURIComponent(avatar) : "https://avatars.githubusercontent.com/u/46792249?v=4";
 
     // Generate the image after 1 second
     setTimeout(function() {
+      return
       html2canvas(document.getElementsByClassName('container')[0], { useCORS: true }).then(canvas => {
         var dataURL = canvas.toDataURL("image/jpeg", 1.0);
         // download as image
@@ -84,4 +90,4 @@ body {
     }, 1000);
   }
 </script>
-</html>
+</html> 
