@@ -4,6 +4,7 @@ description: >-
   Gourav Khunger is a 16 year old software developer and a self-taught programmer. He specialises in native Android app development and is passionate about Open Source. Checkout his projects on Github!
 baseurl: ""
 url: "https://gouravkhunger.xyz"
+google_analytics: "G-GSRER1MM23"
 
 collections:
   projects:

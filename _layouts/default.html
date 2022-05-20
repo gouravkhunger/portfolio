@@ -20,6 +20,18 @@
       href="https://fonts.googleapis.com/css2?{% if page.layout == 'post' %}family=Fira+Code&{%endif%}family=Sen&display=swap"
       rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/theme.css">
+
+  {% if jekyll.environment == "production" %}
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSRER1MM23"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '{{ site.google_analytics }}');
+  </script>
+  {% endif %}
 </head>
 <body>
 
