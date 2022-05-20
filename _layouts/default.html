@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
+
+  {% if page.description %}
+  <meta name="description" content="{{ page.description }}">
+  {% endif %}
+
+  <!-- website faivcon -->
+  <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="/assets/css/theme.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+      href="https://fonts.googleapis.com/css2?{% if page.layout == 'post' %}family=Fira+Code&{%endif%}family=Sen&display=swap"
+      rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/theme.css">
+</head>
+<body>
+
+  {% include header.html %}
+
+  <main>
+    {{ content | extlinks }}
+  </main>
+  
+  {% include footer.html %}
+
+  <script src="/assets/js/theme.js"></script>
+</body>
+</html>

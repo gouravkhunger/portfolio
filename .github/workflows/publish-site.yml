@@ -1,0 +1,39 @@
+name: Publish site
+
+on:
+  push:
+    branches:
+      - jekyll
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup ruby & install dependencies
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.7.5
+        bundler-cache: true
+
+    - name: Setup nodejs
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+
+    - name: Install npm dependencies
+      run: npm install
+
+    - name: Build production jekyll site
+      run: JEKYLL_ENV=production NODE_ENV=production bundle exec jekyll build
+
+    - name: Deploy to gh-pages
+      uses: s0/git-publish-subdir-action@develop
+      env:
+        REPO: self
+        FOLDER: _site
+        BRANCH: gh-pages
+        SQUASH_HISTORY: true
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

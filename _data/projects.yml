@@ -1,0 +1,63 @@
+genics-blog:
+  name: Genics Blog
+  excerpt: "An open source blogging platform for software developers to share their technical knowledge and gain reach. Read by 700+ people per month."
+
+jekyllex:
+  name: JekyllEx
+  excerpt: "A minimal android app to control a jekyll powered blogs from an Android device. Uses GitHub API, WIP for native Jekyll binaries."
+
+code-19:
+  name: Code-19
+  excerpt: "A non-profit fund raising coding contest initiated to foster interest regarding competetive programming among young students while contributing our part in India's fight against COVID-19."
+
+recycleaid:
+  name: RecycleAid
+  excerpt: "Our submission to the Hacktable 2021 Hackathon. RecycleAid web app instructs how to recycle objects in an image and what things could be built with them."
+
+ruby-android:
+  name: Ruby for Android
+  excerpt: "[WIP] I'm trying to compile the Ruby language for Android so that software like Jekyll can be ported to Android."
+
+fontize:
+  name: Fontize
+  excerpt: "An Android library written in kotlin that enables android apps to have multiple fonts for views and switch between them in a jiffy!"
+
+jekyll-auto-authors:
+  name: Jekyll Auto Authors
+  excerpt: "The only ruby gem for jekyll that truly adds paginated multi-authors support to a Jekyll powered site. Solves a 12 year old problem."
+
+quotes-app:
+  name: Quotes App
+  excerpt: "A minimal Quotes App with a cool swiping UI. Allows bookmarks and sharing beautiful images of quotes."
+
+text-recognizer:
+  name: Text Recognizer
+  excerpt: "An android app that uses Google's ML Kit to recognize texts from images."
+
+accolib:
+  name: Accolib
+  excerpt: "An easy to use android library that helps you create accordions in an Android app with ease."
+
+next-gen-hello-world-program:
+  name: NextGenHelloWorld
+  excerpt: "A java program that implements multi-threading to showcase how to make a cool hello world program."
+
+jekyll-hostname:
+  name: Jekyll Hostname
+  excerpt: "A Jekyll plugin that allows you to extract the hostname from a URL string by providing a handy liquid filters."
+
+room-paging3-demo:
+  name: Room Paging3 Demo
+  excerpt: "A demo implementation of the Paging3 library with a local Room data source without a network layer."
+
+auth0-demo-android:
+  name: Auth0 Demo Android
+  excerpt: "A demo implementation of the Auth0 SDKs to add authentication functionalities in an Android app."
+
+hbdwish:
+  name: HBD Wish
+  excerpt: "A minimal Next.js web app to generate birthday wishe card links that can be sent to your friends."
+
+strikeit:
+  name: StrikeIt
+  excerpt: "A minmal Next.js web app to add strike through to texts."

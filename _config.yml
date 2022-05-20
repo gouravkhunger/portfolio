@@ -1,0 +1,50 @@
+title: Gourav Khunger
+email: gouravkhunger18@gmail.com
+description: >-
+  Gourav Khunger is a 16 year old software developer and a self-taught programmer. He specialises in native Android app development and is passionate about Open Source. Checkout his projects on Github!
+baseurl: ""
+url: "https://gouravkhunger.xyz"
+
+collections:
+  projects:
+    permalink: /project/:name
+    output: true
+
+defaults:
+  - scope:
+      path: "_projects/*.md"
+    values:
+      layout: project
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-postcss
+  - jekyll-minifier
+  - jekyll-hostname
+
+jekyll-minifier:
+  exclude:
+    - "sitemap.xml"
+    - "assets/css/theme.css"
+  uglifier_args:
+    harmony: true
+
+extlinks:
+  attributes: { rel: nofollow noopener noreferrer, target: _blank }
+  rel_exclude: ["genicsblog.com", "jekyllex.xyz", "code-19.ml", "hbdwish.ml", "strikeit.ml", "github.com"]
+
+include:
+  - _pages
+
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - tailwind.config.js

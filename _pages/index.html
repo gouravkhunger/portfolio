@@ -1,0 +1,168 @@
+---
+layout: default
+title: Gourav Khunger | Software Developer
+description: Personal portfolio website of Gourav Khunger - 16 year old Software Developer from India.
+permalink: /
+---
+
+<div class="sm:flex sm:flex-row-reverse justify-between items-center">
+  <img class="h-24 w-24 sm:h-36 sm:w-36 mb-6 sm:mb-0" src="/assets/images/gourav.png" alt="Gourav Khunger" />
+  <div class="sm:mr-16">
+    <h2 class="font-black">
+      Gourav Khunger
+    </h2>
+    <span class="text-slate-500 dark:text-slate-300">Software Developer, Technical Writer and YouTuber</span>
+    <p class="mt-6 dark:text-gray-400">Hi, I am a 16 year old 12th grade student and a self taught software developer from India. My primary expertise is native Android development but I have experience with a lot of other tech stacks.</p>
+    <a
+      href="https://genicsblog.com/author/gouravkhunger/"
+      target="_blank"
+      class="mt-8 px-3 py-2 underline-none text-zinc-900 text-sm dark:text-white rounded-lg border-2 border-zinc-900 dark:border-gray-300 transition-all duration-100 hover:ml-2">
+      Read my articles &gt;
+    </a>
+  </div>
+</div>
+
+<div class="mt-16">
+  <h2 class="font-black">
+    Quick Insights
+  </h2>
+  <p class="mt-2 text-slate-500 dark:text-slate-300">Bits about my internet presence.</p>
+  <div class="mt-6">
+    <div class="insight">
+      {% include right_arrow.html %}
+      <p><span>20+</span> <a href="https://youtube.com/channel/UCkv-J_D8jK2N02nBcyM92mQ" target="_blank">YouTube</a> videos. <span>12.5K+</span> views.</p>
+    </div>
+    <div class="insight">
+      {% include right_arrow.html %}
+      <p><span>100+</span> <a href="https://stackoverflow.com/users/9819031/gourav?tab=answers" target="_blank">StackOverflow</a> answers reaching <span>500K+</span> people.</p>
+    </div>
+    <div class="insight">
+      {% include right_arrow.html %}
+      <p><span>140+</span> <a href="https://twitter.com/gourav_khunger" target="_blank">Twitter</a>, <span>75+</span> <a href="https://github.com/gouravkhunger" target="_blank">GitHub</a>, <span>400+</span> <a href="https://www.linkedin.com/in/gourav-khunger-584351216/" target="_blank">LinkedIn</a> followers.</p>
+    </div>
+    <div class="insight">
+      {% include right_arrow.html %}
+      <p><span>50+</span> articles on Kotlin, Android, Web, Software development and more.</p>
+    </div>
+    <div class="insight">
+      {% include right_arrow.html %}
+      <p><span>Author</span> at famous publications: <a href="https://genicsblog.com" target="_blank">Genics Blog</a>, <a href="https://dev.to/gouravkhunger" target="_blank">dev.to</a>, <a href="https://www.freecodecamp.org/news/author/gouravkhunger/" target="_blank">FreeCodeCamp</a>, etc.</p>
+    </div>
+    <div class="insight">
+      {% include right_arrow.html %}
+      <p><span>1 Million+</span> total content views on the internet.</p>
+    </div>
+  </div>
+</div>
+
+<div class="mt-16">
+  <h2 class="font-black">
+    Featured projects
+  </h2>
+  <p class="mt-2 text-slate-500 dark:text-slate-300">Projects that I'm proud of.</p>
+
+  <div class="mt-10 gap-4 grid grid-flow-row grid-cols-1 sm:grid-cols-3">
+    {% assign projects = 'genics-blog,jekyllex,jekyll-auto-authors' | split: ',' %}
+
+    {% for project in site.data.projects %}
+      {% if projects contains project[0] %}
+        {% include project.html %}
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="flex justify-center">
+    <a
+      href="/projects"
+      class="mt-10 px-3 py-2 underline-none text-zinc-900 text-sm dark:text-white rounded-lg border-2 border-zinc-900 dark:border-gray-300 transition-all duration-100 hover:scale-110">
+      View all projects &gt;
+    </a>
+  </div>
+</div>
+
+<div class="mt-16">
+  <h2 class="font-black">
+    Featured articles
+  </h2>
+  <p class="mt-2 text-slate-500 dark:text-slate-300">Articles written by me that I'm proud of.</p>
+
+  <div class="mt-10 gap-4 grid grid-flow-row">
+    {% assign articles = 'swipe-animations,3-years,android-application-fundamentals' | split: ',' %}
+
+    {% for str in articles %}
+      {% for article in site.data.articles %}
+        {% if article[0] contains str %}
+          {% include article.html %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </div>
+
+  <div class="flex justify-center">
+    <a
+      href="/articles"
+      class="mt-10 px-3 py-2 underline-none text-zinc-900 text-sm dark:text-white rounded-lg border-2 border-zinc-900 dark:border-gray-300 transition-all duration-100 hover:scale-110">
+      View all articles &gt;
+    </a>
+  </div>
+</div>
+
+<div class="mt-16">
+  <h2 class="font-black">
+    Testimonials
+  </h2>
+  <p class="mt-2 text-slate-500 dark:text-slate-300">What people say about me.</p>
+  <div class="mt-10 gap-4 grid grid-flow-row grid-cols-1 md:grid-cols-3">
+    {% for testimonial in site.data.testimonials limit: 3 %}
+    {% include testimonial.html %}
+    {% endfor %}
+  </div>
+
+  <div class="flex justify-center">
+    <a
+      href="/testimonials"
+      class="mt-10 px-3 py-2 underline-none text-zinc-900 text-sm dark:text-white rounded-lg border-2 border-zinc-900 dark:border-gray-300 transition-all duration-100 hover:scale-110">
+      Read all testimonials &gt;
+    </a>
+  </div>
+</div>
+
+<h2 class="mt-16 font-black">
+  Contact
+</h2>
+<p class="mt-2 text-slate-500 dark:text-slate-300">Ways you could reach out to me.</p>
+
+<div class="mt-6 text-lg">
+  <p>If you have business related queries, please contact me through my <a href="mailto:gouravkhunger18@gmail.com">email address</a>.</p>
+  <p class="mt-2">
+    To get in touch regarding Genics, please send out an e-mail to <a href="mailto:contact@genicsblog.com">contact@genicsblog.com</a>
+  </p>
+</div>
+
+<div class="mt-6 grid grid-flow-col grid-rows-2 gap-y-2 gap-x-4 sm:grid-rows-1 justify-center">
+  <a href="https://discord.com/users/510819809198473216" class="underline-none round-button" target="_blank">
+    {% include discord_svg.html %}
+  </a>
+  <a href="https://github.com/gouravkhunger" class="underline-none round-button" target="_blank">
+    {% include github_svg.html %}
+  </a>
+  <a href="https://twitter.com/gourav_khunger" class="underline-none round-button" target="_blank">
+    {% include twitter_svg.html %}
+  </a>
+  <a href="https://www.linkedin.com/in/gourav-khunger-584351216/" class="underline-none round-button" target="_blank">
+    {% include linkedin_svg.html %}
+  </a>
+  <a href="https://stackoverflow.com/users/9819031/gourav" class="underline-none round-button" target="_blank">
+    {% include stackoverflow_svg.html %}
+  </a>
+  <a href="https://youtube.com/channel/UCkv-J_D8jK2N02nBcyM92mQ" class="underline-none round-button" target="_blank">
+    {% include youtube_svg.html %}
+  </a>
+  <a href="https://dev.to/gouravkhunger" class="underline-none round-button" target="_blank">
+    {% include dev_svg.html %}
+  </a>
+  <a href="https://ko-fi.com/gouravkhunger" class="underline-none round-button" target="_blank">
+    {% include kofi_svg.html %}
+  </a>
+</div>

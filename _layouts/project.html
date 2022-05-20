@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+{% if page.preview %}
+<img src="{{ page.preview }}" class="mx-auto sm:aspect-video rounded-xl" />
+{% elsif page.youtube %}
+<iframe
+  src="https://www.youtube.com/embed/{{ page.youtube }}"
+  class="w-full aspect-video rounded-xl"
+  allowfullscreen loading="lazy">
+</iframe>
+{% endif %}
+
+{% assign project = site.data.projects[page.slug] %}
+<h2 class="mt-10 font-black">
+  {{ project.name }}
+</h2>
+<p class="mt-2 text-slate-500 dark:text-slate-300">{{ project.excerpt }}</p>
+
+{% if page.visit %}
+<div class="mt-10 flex flex-col sm:flex-row items-center justify-center">
+{% for item in page.visit %}
+  <a
+    href="{{ item.link }}"
+    class="{% if forloop.first != true %}mt-4 sm:mt-0 {% endif %}mx-2 px-3 py-2 underline-none text-zinc-900 text-sm dark:text-white rounded-lg border-2 border-zinc-900 dark:border-gray-300 transition-all duration-100 hover:scale-110">
+    {{ item.anchorText }} &gt;
+  </a>
+{% endfor %}
+</div>
+{% endif %}
+
+{% assign content = page.content | strip_newlines %}
+{% if content != "" %}
+<div class="mt-10 content">
+  {{ page.content }}
+</div>
+{% endif %}
