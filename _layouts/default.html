@@ -8,7 +8,23 @@
 
   {% if page.description %}
   <meta name="description" content="{{ page.description }}">
+  <meta name="og:description" content="{{ page.description }}">
+  {% else %}
+  <meta name="description" content="{{ site.description }}">
+  <meta name="og:description" content="{{ site.description }}">
   {% endif %}
+
+  <meta property="og:title" content="{{ page.title }}" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:image" content="{{ site.url }}/assets/images/social_cover.png" />
+  <meta property="og:url" content="https://gouravkhunger.xyz" />
+  <meta property="og:site_name" content="Gourav Khunger" />
+  <meta property="profile:first_name" content="Gourav">
+  <meta property="profile:last_name" content="Khunger">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@gourav_khunger">
+  <meta name="twitter:image" content="{{ site.url }}/assets/images/social_cover.png">
 
   <!-- website faivcon -->
   <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
