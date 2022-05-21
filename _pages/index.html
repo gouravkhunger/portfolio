@@ -12,7 +12,7 @@ permalink: /
       Gourav Khunger
     </h2>
     <span class="text-slate-500 dark:text-slate-300">Software Developer, Technical Writer and YouTuber</span>
-    <p class="mt-6 dark:text-gray-400">Hi, I am a 16 year old 12th grade student and a self taught software developer from India. My primary expertise is native Android development but I have experience with a lot of other tech stacks.</p>
+    <p class="mt-6 dark:text-gray-400">Hi, I am a 16 year old 12th grade student and a self taught software developer from India. My primary expertise is native Android development, but I have experience with a lot of other tech stacks.</p>
     <a
       href="https://genicsblog.com/author/gouravkhunger/"
       target="_blank"
@@ -106,6 +106,19 @@ permalink: /
       View all articles &gt;
     </a>
   </div>
+</div>
+
+<div class="mt-16">
+  <h2 class="font-black">
+    Work Experience
+    <p class="mt-2 text-slate-500 dark:text-slate-300">Professional experience.</p>
+    <div class="mt-10">
+    {% assign workexp = site.data.workexp | reverse %}
+    {% for job in workexp %}
+      {% include job.html %}
+    {% endfor %}
+    </div>
+  </h2>
 </div>
 
 <div class="mt-16">
