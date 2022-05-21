@@ -1,4 +1,9 @@
-# [My Portfolio](https://gouravkhunger.xyz)
+# [My *old* Portfolio](https://old.gouravkhunger.xyz)
+
+> **Note**: There is a newer version of this portfolio website built from scratch with jekyll, please head over to [https://gouravkhunger.xyz](https://gouravkhunger.xyz) to view it.
+>
+> The code for it is present in the [jekyll](https://github.com/gouravkhunger/portfolio/tree/jekyll) branch
+
 This project has been inspired from [jfk.dev](https://jfk.dev).
 
 Here's a picture of how this flutter version of the portfolio looks like:
