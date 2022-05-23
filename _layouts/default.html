@@ -15,18 +15,20 @@
   {% endif %}
 
   <meta property="og:title" content="{{ page.title }}" />
-  <meta property="og:type" content="profile" />
   <meta property="og:image" content="{{ site.url }}/assets/images/social_cover.png" />
   <meta property="og:url" content="https://gouravkhunger.xyz" />
   <meta property="og:site_name" content="Gourav Khunger" />
+
+  {% if page.url == '/' %}
+  <meta property="og:type" content="profile" />
   <meta property="profile:first_name" content="Gourav">
   <meta property="profile:last_name" content="Khunger">
+  {% endif %}
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@gourav_khunger">
   <meta name="twitter:image" content="{{ site.url }}/assets/images/social_cover.png">
 
-  <!-- website faivcon -->
   <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
 
   <link rel="stylesheet" href="/assets/css/theme.css">
