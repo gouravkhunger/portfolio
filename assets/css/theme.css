@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply px-6 my-6 max-w-4xl mx-auto bg-slate-50 dark:bg-zinc-900 dark:text-white;
+    @apply px-6 my-6 max-w-5xl mx-auto bg-slate-50 dark:bg-zinc-900 dark:text-white;
     font-family: "Sen", sans-serif;
   }
 
@@ -23,7 +23,7 @@
   }
   
   main {
-    @apply sm:mx-6;
+    @apply sm:mx-10;
   }
 
   footer a, main a:not(.underline-none) {
@@ -79,6 +79,10 @@
   ul li:not(:last-child) {
       @apply mb-2;
   }
+}
+
+#instantclick-bar {
+  @apply bg-black dark:bg-white;
 }
 
 .underline-none {

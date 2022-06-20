@@ -29,15 +29,15 @@
   <meta name="twitter:site" content="@gourav_khunger">
   <meta name="twitter:image" content="{{ site.url }}/assets/images/social_cover.png">
 
-  <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="{{ site.baseurl }}/assets/images/favicon.ico" type="image/x-icon">
 
-  <link rel="stylesheet" href="/assets/css/theme.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/theme.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
       href="https://fonts.googleapis.com/css2?{% if page.layout == 'post' %}family=Fira+Code&{%endif%}family=Sen&display=swap"
       rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/theme.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/theme.css">
 
   {% if jekyll.environment == "production" %}
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -61,6 +61,30 @@
   
   {% include footer.html %}
 
-  <script src="/assets/js/theme.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/theme.js" data-no-instant></script>
+  <script src="{{ site.baseurl }}/assets/js/instantclick.min.js" data-no-instant></script>
+  <script data-no-instant>
+    InstantClick.on('change', () => {
+      // set listener on theme toggle button
+      const toggleButton = document.getElementsByClassName('theme-toggle')[0];
+      toggleButton.addEventListener('click', () => {
+        saveTheme(isDark() ? LIGHT : DARK);
+      });
+
+      // set theme on page change
+      setTheme();
+
+      // handle nav
+      const burgers = document.getElementsByClassName('burgers')[0];
+      const nav = document.getElementsByClassName('mobile-nav')[0];
+      burgers.addEventListener('click', () => {
+        burgers.classList.toggle("closed");
+        nav.classList.toggle("hidden");
+        nav.classList.toggle("flex");
+      });
+    })
+
+    InstantClick.init('mousedown');
+  </script>
 </body>
 </html>

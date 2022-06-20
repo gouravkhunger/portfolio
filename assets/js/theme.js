@@ -1,39 +1,37 @@
+const THEME = 'theme';
+const DARK = 'dark';
+const LIGHT = 'light';
+
 // dark mode functions
+const isSomethingSaved = () => {
+  return localStorage.getItem(THEME) !== null && localStorage.getItem(THEME) !== undefined;
+}
+
 const isDark = () => {
-    const theme = localStorage.getItem('theme');
-    return theme === 'dark';
+    const theme = localStorage.getItem(THEME);
+    return theme === DARK;
 };
 
 const saveTheme = (theme) => {
-  localStorage.setItem('theme', theme);
+  localStorage.setItem(THEME, theme);
   setTheme();
 };
 
 const setTheme = () => {
   if (isDark()) {
-    document.documentElement.classList.add('dark');
+    document.documentElement.classList.add(DARK);
     document.getElementById('sun').style.display = 'block';
     document.getElementById('moon').style.display = 'none';
   } else {
-    document.documentElement.classList.remove('dark');
+    document.documentElement.classList.remove(DARK);
     document.getElementById('sun').style.display = 'none';
     document.getElementById('moon').style.display = 'block';
   }
 };
 
-// set theme on load
-setTheme();
-
-const toggleButton = document.getElementsByClassName('theme-toggle')[0];
-toggleButton.addEventListener('click', () => {
-  saveTheme(isDark() ? 'light' : 'dark');
-});
-
-// handle nav
-const burgers = document.getElementsByClassName('burgers')[0];
-const nav = document.getElementsByClassName('mobile-nav')[0];
-burgers.addEventListener('click', () => {
-  burgers.classList.toggle("closed");
-  nav.classList.toggle("hidden");
-  nav.classList.toggle("flex");
-});
+// set default value based on OS level theme
+if (!isSomethingSaved()) {
+  saveTheme(
+    (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? DARK : LIGHT
+  );
+}
