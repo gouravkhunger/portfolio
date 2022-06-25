@@ -1,13 +1,13 @@
 <div class="relative flex flex-row items-center{% if forloop.first %} pb-4 {% elsif forloop.last %} pt-4 {%else%} py-8 {% endif %}">
   <div class="w-1/6 flex flex-col sm:mr-0 items-center">
     {% if forloop.last or forloop.first != true %}
-    <div class="absolute top-0 w-0 h-2/6 mx-auto border-l-2 border-slate-500 dark:border-slate-300"></div>
+    <div class="absolute top-0 w-0 h-2/6 mx-auto border-l-2 border-black dark:border-white"></div>
     {% endif %}
-    <div class="inline-block p-4 rounded-full border-2 border-slate-500 dark:border-slate-300">
+    <div class="inline-block p-4 rounded-full border-2 border-black dark:border-white">
       <img src="{{ job.company.logo }}" class="w-6 h-6" />
     </div>
     {% if forloop.first or forloop.last != true %}
-    <div class="absolute bottom-0 w-0 h-2/6 mx-auto border-l-2 border-slate-500 dark:border-slate-300"></div>
+    <div class="absolute bottom-0 w-0 h-2/6 mx-auto border-l-2 border-black dark:border-white"></div>
     {% endif %}
   </div>
   <div class="mt-4 pl-6 sm:pl-0 sm:mt-0 w-5/6">

@@ -35,3 +35,9 @@ if (!isSomethingSaved()) {
     (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? DARK : LIGHT
   );
 }
+
+document.addEventListener("keydown", function (e) {
+  if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.keyCode === 76) {
+    saveTheme(isDark() ? LIGHT : DARK);
+  }
+});
