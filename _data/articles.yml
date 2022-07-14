@@ -176,10 +176,10 @@ remove-date-and-extension-from-blogger-posts:
   date: 2021-02-06
   name: "Remove date and extension from Blogger posts"
   excerpt: "The date and extension limitations on blogger are frustrating. This article explains how to get rid of them."
-  baseurl: "https://blog.gouravkhunger.xyz"
+  baseurl: "https://blog.gouravkhunger.me"
 
 introductory-first-post:
   date: 2021-02-06
   name: "git commit -m \"Migration to hashnode\""
   excerpt: "My first post on the hashnode platform. I explain why I left all other platforms to test hashnode as a blogging platform."
-  baseurl: "https://blog.gouravkhunger.xyz"
+  baseurl: "https://blog.gouravkhunger.me"

@@ -1,4 +1,4 @@
-# [My portfolio website](https://gouravkhunger.xyz)
+# [My portfolio website](https://gouravkhunger.me)
 
 This is a minimal portfolio website built using Jekyll with HTML, TailwindCSS, JavaScript and Ruby (for a few custom plugins).
 

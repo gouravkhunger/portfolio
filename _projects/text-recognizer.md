@@ -7,7 +7,7 @@ visit:
     link: "https://github.com/gouravkhunger/TextRecognizer"
 
   - anchorText: "Download latest APK"
-    link: "http://textrecognizer.gouravkhunger.xyz"
+    link: "http://textrecognizer.gouravkhunger.me"
 ---
 
 This app allows you to capture an image from camera or select an image from your device and process it to return the text present in the image.

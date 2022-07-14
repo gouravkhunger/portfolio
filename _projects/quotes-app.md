@@ -6,7 +6,7 @@ visit:
     link: "https://github.com/gouravkhunger/QuotesApp"
 
   - anchorText: "Download latest APK"
-    link: "http://quotes.gouravkhunger.xyz"
+    link: "http://quotes.gouravkhunger.me"
 ---
 
 ## Details
