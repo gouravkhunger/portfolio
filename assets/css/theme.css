@@ -10,20 +10,20 @@
   }
 
   body {
-    @apply px-6 my-6 max-w-5xl mx-auto bg-slate-50 dark:bg-zinc-900 dark:text-white;
+    @apply bg-slate-50 dark:bg-zinc-900 dark:text-white;
     font-family: "Sen", sans-serif;
   }
 
   header {
-    @apply mb-16 flex justify-between items-center text-lg;
+    @apply max-w-5xl mx-auto px-6 my-4 flex justify-between items-center text-lg;
   }
 
   footer {
-    @apply mt-16 flex flex-col-reverse sm:flex-row justify-between items-center;
+    @apply max-w-5xl mx-auto px-6 mt-16 mb-6 flex flex-col-reverse sm:flex-row justify-between items-center;
   }
   
   main {
-    @apply sm:mx-10;
+    @apply mx-6 mt-32 max-w-4xl sm:mx-auto;
   }
 
   footer a, main a:not(.underline-none) {
@@ -85,12 +85,17 @@
   @apply bg-black dark:bg-white;
 }
 
+.frozen {
+  @apply w-full fixed top-0 left-0 bg-opacity-25 backdrop-blur-md;
+  z-index: 100;
+}
+
 .underline-none {
   @apply inline-block;
 }
 
 .underline-none:hover {
-    background-size: 0% 0rem;
+  background-size: 0% 0rem;
 }
 
 .round-button {

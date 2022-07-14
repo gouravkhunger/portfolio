@@ -84,7 +84,7 @@
     ></script>
     <script data-no-instant>
       InstantClick.on("change", () => {
-        // set color scheme on load
+        // set theme on page change
         setTheme();
 
         // set listener on theme toggle button
@@ -93,8 +93,9 @@
           saveTheme(isDark() ? LIGHT : DARK);
         });
 
-        // set theme on page change
-        setTheme();
+        window.onscroll = () => {
+          setStickyness();
+        };
 
         // handle nav
         const burgers = document.getElementsByClassName("burgers")[0];
