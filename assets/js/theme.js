@@ -1,15 +1,20 @@
-const THEME = 'theme';
-const DARK = 'dark';
-const LIGHT = 'light';
+const THEME = "theme";
+const DARK = "dark";
+const LIGHT = "light";
 
 // dark mode functions
-const isSomethingSaved = () => {
-  return localStorage.getItem(THEME) !== null && localStorage.getItem(THEME) !== undefined;
-}
+const isSomeThemeSaved = () => {
+  const theme = localStorage.getItem(THEME);
+  return theme !== null && theme !== undefined;
+};
 
 const isDark = () => {
-    const theme = localStorage.getItem(THEME);
-    return theme === DARK;
+  return (
+    localStorage.getItem(THEME) === DARK ||
+    (!isSomeThemeSaved() &&
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches)
+  );
 };
 
 const saveTheme = (theme) => {
@@ -20,21 +25,14 @@ const saveTheme = (theme) => {
 const setTheme = () => {
   if (isDark()) {
     document.documentElement.classList.add(DARK);
-    document.getElementById('sun').style.display = 'block';
-    document.getElementById('moon').style.display = 'none';
+    document.getElementById("sun").style.display = "block";
+    document.getElementById("moon").style.display = "none";
   } else {
     document.documentElement.classList.remove(DARK);
-    document.getElementById('sun').style.display = 'none';
-    document.getElementById('moon').style.display = 'block';
+    document.getElementById("sun").style.display = "none";
+    document.getElementById("moon").style.display = "block";
   }
 };
-
-// set default value based on OS level theme
-if (!isSomethingSaved()) {
-  saveTheme(
-    (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? DARK : LIGHT
-  );
-}
 
 document.addEventListener("keydown", function (e) {
   if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.keyCode === 76) {

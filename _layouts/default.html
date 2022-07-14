@@ -1,90 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }}</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ page.title }}</title>
 
-  {% if page.description %}
-  <meta name="description" content="{{ page.description }}">
-  <meta name="og:description" content="{{ page.description }}">
-  {% else %}
-  <meta name="description" content="{{ site.description }}">
-  <meta name="og:description" content="{{ site.description }}">
-  {% endif %}
+    {% if page.description %}
+    <meta name="description" content="{{ page.description }}" />
+    <meta name="og:description" content="{{ page.description }}" />
+    {% else %}
+    <meta name="description" content="{{ site.description }}" />
+    <meta name="og:description" content="{{ site.description }}" />
+    {% endif %}
 
-  <meta property="og:title" content="{{ page.title }}" />
-  <meta property="og:image" content="{{ site.url }}/assets/images/social_cover.png" />
-  <meta property="og:url" content="https://gouravkhunger.me" />
-  <meta property="og:site_name" content="Gourav Khunger" />
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta
+      property="og:image"
+      content="{{ site.url }}/assets/images/social_cover.png"
+    />
+    <meta property="og:url" content="https://gouravkhunger.me" />
+    <meta property="og:site_name" content="Gourav Khunger" />
 
-  {% if page.url == '/' %}
-  <meta property="og:type" content="profile" />
-  <meta property="profile:first_name" content="Gourav">
-  <meta property="profile:last_name" content="Khunger">
-  {% endif %}
+    {% if page.url == '/' %}
+    <meta property="og:type" content="profile" />
+    <meta property="profile:first_name" content="Gourav" />
+    <meta property="profile:last_name" content="Khunger" />
+    {% endif %}
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@gourav_khunger">
-  <meta name="twitter:image" content="{{ site.url }}/assets/images/social_cover.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@gourav_khunger" />
+    <meta
+      name="twitter:image"
+      content="{{ site.url }}/assets/images/social_cover.png"
+    />
 
-  <link rel="icon" href="{{ site.baseurl }}/assets/images/favicon.ico" type="image/x-icon">
+    <link
+      rel="icon"
+      href="{{ site.baseurl }}/assets/images/favicon.ico"
+      type="image/x-icon"
+    />
 
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/theme.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/theme.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
       href="https://fonts.googleapis.com/css2?{% if page.layout == 'post' %}family=Fira+Code&{%endif%}family=Sen&display=swap"
-      rel="stylesheet">
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/theme.css">
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/theme.css" />
 
-  {% if jekyll.environment == "production" %}
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    {% if jekyll.environment == "production" %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    gtag('config', '{{ site.google_analytics }}');
-  </script>
-  {% endif %}
-</head>
-<body>
+      gtag("config", "{{ site.google_analytics }}");
+    </script>
+    {% endif %}
+  </head>
+  <body>
+    {% include header.html %}
 
-  {% include header.html %}
+    <main>{{ content | extlinks }}</main>
 
-  <main>
-    {{ content | extlinks }}
-  </main>
-  
-  {% include footer.html %}
+    {% include footer.html %}
 
-  <script src="{{ site.baseurl }}/assets/js/theme.js" data-no-instant></script>
-  <script src="{{ site.baseurl }}/assets/js/instantclick.min.js" data-no-instant></script>
-  <script data-no-instant>
-    InstantClick.on('change', () => {
-      // set listener on theme toggle button
-      const toggleButton = document.getElementsByClassName('theme-toggle')[0];
-      toggleButton.addEventListener('click', () => {
-        saveTheme(isDark() ? LIGHT : DARK);
+    <script
+      src="{{ site.baseurl }}/assets/js/theme.js"
+      data-no-instant
+    ></script>
+    <script
+      src="{{ site.baseurl }}/assets/js/instantclick.min.js"
+      data-no-instant
+    ></script>
+    <script data-no-instant>
+      InstantClick.on("change", () => {
+        // set color scheme on load
+        setTheme();
+
+        // set listener on theme toggle button
+        const toggleButton = document.getElementsByClassName("theme-toggle")[0];
+        toggleButton.addEventListener("click", () => {
+          saveTheme(isDark() ? LIGHT : DARK);
+        });
+
+        // set theme on page change
+        setTheme();
+
+        // handle nav
+        const burgers = document.getElementsByClassName("burgers")[0];
+        const nav = document.getElementsByClassName("mobile-nav")[0];
+        burgers.addEventListener("click", () => {
+          burgers.classList.toggle("closed");
+          nav.classList.toggle("hidden");
+          nav.classList.toggle("flex");
+        });
       });
 
-      // set theme on page change
-      setTheme();
-
-      // handle nav
-      const burgers = document.getElementsByClassName('burgers')[0];
-      const nav = document.getElementsByClassName('mobile-nav')[0];
-      burgers.addEventListener('click', () => {
-        burgers.classList.toggle("closed");
-        nav.classList.toggle("hidden");
-        nav.classList.toggle("flex");
-      });
-    })
-
-    InstantClick.init('mousedown');
-  </script>
-</body>
+      InstantClick.init("mousedown");
+    </script>
+  </body>
 </html>
