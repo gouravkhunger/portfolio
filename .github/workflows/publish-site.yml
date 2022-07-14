@@ -30,10 +30,9 @@ jobs:
       run: JEKYLL_ENV=production NODE_ENV=production bundle exec jekyll build
 
     - name: Deploy to gh-pages
-      uses: s0/git-publish-subdir-action@develop
-      env:
-        REPO: self
-        FOLDER: _site
-        BRANCH: gh-pages
-        SQUASH_HISTORY: true
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: _site
+        user_name: 'github-actions[bot]'
+        user_email: 'github-actions[bot]@users.noreply.github.com'
