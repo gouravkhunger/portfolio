@@ -4,6 +4,18 @@ add-swipe-animations-to-a-card-view-in-android-app:
   excerpt: "In this tutorial I explain how to use maths to build a swipe to refresh logic for cards in Android."
   baseurl: "https://www.freecodecamp.org/news"
 
+genics-log-1:
+  date: 2022-02-10
+  name: "Genics Log #1: Sponsorship from BeyondWords, Open Source, Organic Stats and more"
+  excerpt: "This is the issue #1 in the Genics log series containing all the latest news and updates on genics blog's in the month of January 2022!"
+  baseurl: "https://genicsblog.com"
+
+genics-log-2:
+  date: 2022-06-17
+  name: "Genics Log #2: Sponsorship from Vercel, Theme updates, Organic Growth and more"
+  excerpt: "This is the issue #2 in the Genics log series containing all the latest news and updates on genics blog's changes from the recent months!"
+  baseurl: "https://genicsblog.com"
+
 how-to-create-city-boundaries-in-google-maps:
   date: 2021-02-11
   name: "Android: How to create city boundaries in Google Maps"

@@ -8,11 +8,7 @@ jekyllex:
 
 code-19:
   name: Code-19
-  excerpt: "A non-profit fund raising coding contest initiated to foster interest regarding competetive programming among young students while contributing our part in India's fight against COVID-19."
-
-recycleaid:
-  name: RecycleAid
-  excerpt: "Our submission to the Hacktable 2021 Hackathon. RecycleAid web app instructs how to recycle objects in an image and what things could be built with them."
+  excerpt: "A non-profit fund raising coding contest initiated to foster interest regarding competitive programming among young students while contributing to India's fight against COVID-19."
 
 ruby-android:
   name: Ruby for Android
@@ -22,9 +18,17 @@ fontize:
   name: Fontize
   excerpt: "An Android library written in kotlin that enables android apps to have multiple fonts for views and switch between them in a jiffy!"
 
+accolib:
+  name: Accolib
+  excerpt: "An easy to use android library that helps you create accordions in an Android app with ease."
+
 jekyll-auto-authors:
   name: Jekyll Auto Authors
   excerpt: "The only ruby gem for jekyll that truly adds paginated multi-authors support to a Jekyll powered site. Solves a 12 year old problem."
+
+jekyll-url-metadata:
+  name: Jekyll URL Metadata
+  excerpt: "A jekyll plugin to expose meta data of a webpage to liquid variables by extractging them just from its url string."
 
 quotes-app:
   name: Quotes App
@@ -34,17 +38,13 @@ text-recognizer:
   name: Text Recognizer
   excerpt: "An android app that uses Google's ML Kit to recognize texts from images."
 
-accolib:
-  name: Accolib
-  excerpt: "An easy to use android library that helps you create accordions in an Android app with ease."
+jekyll-hostname:
+  name: Jekyll Hostname
+  excerpt: "A Jekyll plugin that allows you to extract the hostname from a URL string by providing a handy liquid filters."
 
 next-gen-hello-world-program:
   name: NextGenHelloWorld
   excerpt: "A java program that implements multi-threading to showcase how to make a cool hello world program."
-
-jekyll-hostname:
-  name: Jekyll Hostname
-  excerpt: "A Jekyll plugin that allows you to extract the hostname from a URL string by providing a handy liquid filters."
 
 room-paging3-demo:
   name: Room Paging3 Demo
@@ -61,3 +61,7 @@ hbdwish:
 strikeit:
   name: StrikeIt
   excerpt: "A minmal Next.js web app to add strike through to texts."
+
+recycleaid:
+  name: RecycleAid
+  excerpt: "Our submission to the Hacktable 2021 Hackathon. RecycleAid web app instructs how to recycle objects in an image and what things could be built with them."
