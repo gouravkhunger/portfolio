@@ -1,10 +1,10 @@
 genics-blog:
   name: Genics Blog
-  excerpt: "An open source blogging platform for software developers to share their technical knowledge and gain reach. Read by 700+ people per month."
+  excerpt: "An open source blogging platform for software developers to share their technical knowledge and gain reach. Read by 1k+ people per month."
 
 jekyllex:
   name: JekyllEx
-  excerpt: "A minimal android app to control a jekyll powered blogs from an Android device. Uses GitHub API, WIP for native Jekyll binaries."
+  excerpt: "A android app to control a jekyll powered blogs from an Android device. Uses GitHub API, WIP for native Jekyll binaries."
 
 code-19:
   name: Code-19
@@ -14,14 +14,6 @@ ruby-android:
   name: Ruby for Android
   excerpt: "[WIP] I'm trying to compile the Ruby language for Android so that software like Jekyll can be ported to Android."
 
-fontize:
-  name: Fontize
-  excerpt: "An Android library written in kotlin that enables android apps to have multiple fonts for views and switch between them in a jiffy!"
-
-accolib:
-  name: Accolib
-  excerpt: "An easy to use android library that helps you create accordions in an Android app with ease."
-
 jekyll-auto-authors:
   name: Jekyll Auto Authors
   excerpt: "The only ruby gem for jekyll that truly adds paginated multi-authors support to a Jekyll powered site. Solves a 12 year old problem."
@@ -30,9 +22,17 @@ jekyll-url-metadata:
   name: Jekyll URL Metadata
   excerpt: "A jekyll plugin to expose meta data of a webpage to liquid variables by extractging them just from its url string."
 
+fontize:
+  name: Fontize
+  excerpt: "An Android library written in kotlin that enables android apps to have multiple fonts for views and switch between them in a jiffy!"
+
+accolib:
+  name: Accolib
+  excerpt: "An easy to use android library that helps you create accordions in an Android app with ease."
+
 quotes-app:
   name: Quotes App
-  excerpt: "A minimal Quotes App with a cool swiping UI. Allows bookmarks and sharing beautiful images of quotes."
+  excerpt: "A Quotes App with a cool swiping UI. Allows bookmarks and sharing beautiful images of quotes."
 
 text-recognizer:
   name: Text Recognizer
@@ -46,6 +46,34 @@ next-gen-hello-world-program:
   name: NextGenHelloWorld
   excerpt: "A java program that implements multi-threading to showcase how to make a cool hello world program."
 
+deref:
+  name: Deref
+  excerpt: "A Web, API and CLI interface to find a URL's redirection path without manually opening it."
+
+directrix:
+  name: Directrix
+  excerpt: "An API to setup a custom domain branded link shortener / redirector easily."
+
+hbdwish:
+  name: HBD Wish
+  excerpt: "A Next.js web app to generate birthday wishe card links that can be sent to your friends."
+
+strikeit:
+  name: StrikeIt
+  excerpt: "A Next.js web app to add strike through to texts."
+
+genics-bot:
+  name: Genics Bot
+  excerpt: "Community bot for genicsblog.com's discord server."
+
+jekyllex-api:
+  name: Jekyllex API
+  excerpt: "A proxy API to fetch user profile and indentities securely from the Auth0 User Management API."
+
+recycleaid:
+  name: RecycleAid
+  excerpt: "A web app that instructs how to recycle objects in an image and what things could be built with them."
+
 room-paging3-demo:
   name: Room Paging3 Demo
   excerpt: "A demo implementation of the Paging3 library with a local Room data source without a network layer."
@@ -54,14 +82,6 @@ auth0-demo-android:
   name: Auth0 Demo Android
   excerpt: "A demo implementation of the Auth0 SDKs to add authentication functionalities in an Android app."
 
-hbdwish:
-  name: HBD Wish
-  excerpt: "A minimal Next.js web app to generate birthday wishe card links that can be sent to your friends."
-
-strikeit:
-  name: StrikeIt
-  excerpt: "A minmal Next.js web app to add strike through to texts."
-
-recycleaid:
-  name: RecycleAid
-  excerpt: "Our submission to the Hacktable 2021 Hackathon. RecycleAid web app instructs how to recycle objects in an image and what things could be built with them."
+prs-demo:
+  name: PRs Demo
+  excerpt: "Demo repository for tutorial about GitHub Pull Requests on genicsblog.com."

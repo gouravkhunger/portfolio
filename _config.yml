@@ -29,6 +29,7 @@ plugins:
   - jekyll-postcss
   - jekyll-minifier
   - jekyll-hostname
+  - jekyll-url-metadata
 
 jekyll-minifier:
   exclude:

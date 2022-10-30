@@ -7,6 +7,7 @@ group :jekyll_plugins do
   gem "jekyll-postcss"
   gem "jekyll-minifier"
   gem "jekyll-hostname"
+  gem "jekyll-url-metadata"
 end
 
 gem "wdm", :platforms => [:mingw, :x64_mingw, :mswin]

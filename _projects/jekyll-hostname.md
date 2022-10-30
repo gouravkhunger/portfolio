@@ -1,5 +1,5 @@
 ---
-preview: "https://user-images.githubusercontent.com/46792249/169557106-8e6688da-baa8-4ffe-b69a-b1a973ecb100.png"
+github: "https://github.com/gouravkhunger/jekyll-hostname"
 
 visit:
   - anchorText: "View on GitHub"

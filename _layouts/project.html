@@ -10,6 +10,10 @@ layout: default
   class="w-full aspect-video rounded-xl"
   allowfullscreen loading="lazy">
 </iframe>
+{% elsif page.github %}
+{% assign meta = page.github | metadata %}
+{% assign image = meta['og:image'] %}
+<img src="{{ image }}" class="mx-auto sm:aspect-video rounded-xl" />
 {% endif %}
 
 {% assign project = site.data.projects[page.slug] %}
