@@ -7,4 +7,7 @@ visit:
 
   - anchorText: "Read background on GitHub"
     link: "https://github.com/gouravkhunger/jekyll-auto-authors"
+
+  - anchorText: "Download from RubyGems"
+    link: "https://rubygems.org/gems/jekyll-auto-authors"
 ---

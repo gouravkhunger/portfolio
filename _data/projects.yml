@@ -85,3 +85,7 @@ auth0-demo-android:
 prs-demo:
   name: PRs Demo
   excerpt: "Demo repository for tutorial about GitHub Pull Requests on genicsblog.com."
+
+portfolio:
+  name: Portfolio website
+  excerpt: "The code for this portfolio website. Built with Ruby, HTML, TailwindCSS and Javascript."
