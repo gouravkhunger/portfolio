@@ -93,10 +93,6 @@
           saveTheme(isDark() ? LIGHT : DARK);
         });
 
-        window.onscroll = () => {
-          setStickyness();
-        };
-
         // handle nav
         const burgers = document.getElementsByClassName("burgers")[0];
         const nav = document.getElementsByClassName("mobile-nav")[0];
