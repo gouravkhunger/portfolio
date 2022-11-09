@@ -1,5 +1,5 @@
 ---
-github: "https://github.com/gouravkhunger/deref"
+github: "gouravkhunger/deref"
 
 visit:
   - anchorText: "Visit website"

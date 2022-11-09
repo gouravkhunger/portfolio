@@ -74,6 +74,10 @@ recycleaid:
   name: RecycleAid
   excerpt: "A web app that instructs how to recycle objects in an image and what things could be built with them."
 
+jekyll-hashsert:
+  name: Jekyll Hashsert
+  excerpt: "A jekyll plugin that inserts random hashes of custom length into strings."
+
 room-paging3-demo:
   name: Room Paging3 Demo
   excerpt: "A demo implementation of the Paging3 library with a local Room data source without a network layer."
@@ -82,10 +86,10 @@ auth0-demo-android:
   name: Auth0 Demo Android
   excerpt: "A demo implementation of the Auth0 SDKs to add authentication functionalities in an Android app."
 
-prs-demo:
-  name: PRs Demo
-  excerpt: "Demo repository for tutorial about GitHub Pull Requests on genicsblog.com."
-
 portfolio:
   name: Portfolio website
   excerpt: "The code for this portfolio website. Built with Ruby, HTML, TailwindCSS and Javascript."
+
+prs-demo:
+  name: PRs Demo
+  excerpt: "Demo repository for tutorial about GitHub Pull Requests on genicsblog.com."

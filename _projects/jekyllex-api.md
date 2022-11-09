@@ -1,5 +1,5 @@
 ---
-github: "https://github.com/jekyllex/jekyllex-api"
+github: "jekyllex/jekyllex-api"
 
 visit:
   - anchorText: "View on GitHub"

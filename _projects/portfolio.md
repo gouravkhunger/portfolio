@@ -1,5 +1,5 @@
 ---
-github: "https://github.com/gouravkhunger/portfolio"
+github: "gouravkhunger/portfolio"
 
 visit:
   - anchorText: "View on GitHub"

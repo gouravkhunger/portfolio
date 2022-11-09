@@ -1,5 +1,5 @@
 ---
-github: "https://github.com/gouravkhunger/directrix"
+github: "gouravkhunger/directrix"
 
 visit:
   - anchorText: "View on GitHub"

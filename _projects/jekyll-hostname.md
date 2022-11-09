@@ -1,5 +1,5 @@
 ---
-github: "https://github.com/gouravkhunger/jekyll-hostname"
+github: "gouravkhunger/jekyll-hostname"
 
 visit:
   - anchorText: "View on GitHub"
