@@ -23,7 +23,7 @@
   }
   
   main {
-    @apply mx-6 mt-32 max-w-4xl sm:mx-auto;
+    @apply mx-6 mt-32 max-w-4xl lg:mx-auto;
   }
 
   footer a, main a:not(.underline-none) {
