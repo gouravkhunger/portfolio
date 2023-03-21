@@ -14,13 +14,13 @@ ruby-android:
   name: Ruby for Android
   excerpt: "[WIP] I'm trying to compile the Ruby language for Android so that software like Jekyll can be ported to Android."
 
-jekyll-auto-authors:
-  name: Jekyll Auto Authors
-  excerpt: "The only ruby gem for jekyll that truly adds paginated multi-authors support to a Jekyll powered site. Solves a 12 year old problem."
+impilo:
+  name: Impilo
+  excerpt: "A health and sanitation management platform that connects people and municipalities to work towards a better environment."
 
-jekyll-url-metadata:
-  name: Jekyll URL Metadata
-  excerpt: "A jekyll plugin to expose meta data of a webpage to liquid variables by extractging them just from its url string."
+ics-reader-jekyll-plugin:
+  name: ICS Reader
+  excerpt: "A custom Jekyll plugin that reads ICS files and exposes event details to liquid variable for rendering calendars."
 
 fontize:
   name: Fontize
@@ -29,6 +29,14 @@ fontize:
 accolib:
   name: Accolib
   excerpt: "An easy to use android library that helps you create accordions in an Android app with ease."
+
+jekyll-auto-authors:
+  name: Jekyll Auto Authors
+  excerpt: "The only ruby gem for jekyll that truly adds paginated multi-authors support to a Jekyll powered site. Solves a 12 year old problem."
+
+jekyll-url-metadata:
+  name: Jekyll URL Metadata
+  excerpt: "A jekyll plugin to expose meta data of a webpage to liquid variables by extractging them just from its url string."
 
 quotes-app:
   name: Quotes App
