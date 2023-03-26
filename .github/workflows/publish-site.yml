@@ -31,6 +31,8 @@ jobs:
 
     - name: Build production jekyll site
       run: JEKYLL_ENV=production NODE_ENV=production bundle exec jekyll build
+      env:
+        YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
 
     - name: Deploy to gh-pages
       uses: peaceiris/actions-gh-pages@v3

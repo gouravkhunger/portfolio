@@ -10,6 +10,6 @@ group :jekyll_plugins do
   gem "jekyll-hashsert"
 end
 
-gem "wdm", :platforms => [:mingw, :x64_mingw, :mswin]
-gem "nokogiri"
+gem "dotenv"
 gem "webrick"
+gem "nokogiri"

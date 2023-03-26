@@ -158,7 +158,7 @@
   @apply text-slate-500 dark:text-white;
 }
 
-.project, .testimonial, .article, .achievement {
+.project, .video, .testimonial, .article, .achievement {
   @apply mx-2 p-4 flex flex-col justify-center border-slate-300 rounded-lg border-2 border-transparent hover:border-zinc-900 dark:hover:border-slate-300;
 }
 
