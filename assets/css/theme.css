@@ -15,7 +15,7 @@
   }
 
   header {
-    @apply max-w-5xl mx-auto px-6 my-4 flex justify-between items-center text-lg;
+    @apply max-w-5xl mx-auto px-6 my-3 flex justify-between items-center text-lg;
   }
 
   footer {
