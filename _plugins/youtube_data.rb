@@ -132,6 +132,7 @@ module Jekyll
 
       @data = {
         'layout' => 'videos',
+        'video_embed' => true,
         'videos' => videos_list,
         'page_number' => page_num,
         'total_pages' => total_pages,
