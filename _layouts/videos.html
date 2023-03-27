@@ -15,10 +15,10 @@ layout: default
   {% endfor %}
 </div>
 
-<div class="mt-8 flex justify-center items-center">
+<div class="mt-10 flex justify-center items-center">
   {% if page.page_number > 1 %}
   <a
-    href="/videos{% if page.page_number != 2 %}page/{{ page.page_number | minus: 1 }}{% endif %}"
+    href="/videos{% if page.page_number != 2 %}/page/{{ page.page_number | minus: 1 }}{% endif %}"
     class="px-3 py-2 underline-none text-zinc-900 text-sm dark:text-white rounded-lg border-2 border-zinc-900 dark:border-gray-300 transition-all duration-100 hover:scale-110">
     &lt; Previous
   </a>
