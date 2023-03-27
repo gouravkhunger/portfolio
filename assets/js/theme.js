@@ -34,8 +34,31 @@ const setTheme = () => {
   }
 };
 
-document.addEventListener("keydown", function (e) {
+document.addEventListener("keydown", (e) => {
   if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.keyCode === 76) {
     saveTheme(isDark() ? LIGHT : DARK);
   }
 });
+
+const playVideo = (videoId) => {
+  modal = document.getElementById("modal");
+  modalIframe = document.getElementById("modal-iframe");
+
+  modalIframe.src = `https://www.youtube.com/embed/${videoId}`;
+  modal.style.display = "flex";
+
+  const clickListener = (e) => {
+    // e happens only if click is outside the iframe
+    modal.style.display = "none";
+    modalIframe.src = "";
+    removeClickListener();
+  }
+
+  const removeClickListener = () => {
+    document.removeEventListener("click", clickListener);
+  }
+
+  setTimeout(() => {
+    document.addEventListener("click", clickListener);
+  }, 100);
+}

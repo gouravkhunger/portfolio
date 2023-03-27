@@ -85,6 +85,10 @@
   @apply bg-black dark:bg-white;
 }
 
+#modal {
+  @apply hidden fixed top-0 left-0 justify-center items-center w-full h-full backdrop-blur-sm shadow-md z-20;
+}
+
 .frozen {
   @apply w-full fixed top-0 left-0 bg-opacity-25 backdrop-blur-md;
   z-index: 100;
@@ -158,7 +162,7 @@
   @apply text-slate-500 dark:text-white;
 }
 
-.project, .testimonial, .article, .achievement {
+.project, .video, .testimonial, .article, .achievement {
   @apply mx-2 p-4 flex flex-col justify-center border-slate-300 rounded-lg border-2 border-transparent hover:border-zinc-900 dark:hover:border-slate-300;
 }
 

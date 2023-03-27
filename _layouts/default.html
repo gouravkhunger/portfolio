@@ -74,6 +74,16 @@
 
     {% include footer.html %}
 
+    {% if page.video_embed == true %}
+    <div id="modal">
+      <iframe
+        id="modal-iframe"
+        class="w-5/6 lg:w-3/5 max-w-4xl aspect-video rounded-2xl"
+        allowfullscreen loading="lazy">
+      </iframe>
+    </div>
+    {% endif %}
+
     <script
       src="{{ site.baseurl }}/assets/js/theme.js"
       data-no-instant
