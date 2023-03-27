@@ -30,6 +30,8 @@ module Jekyll
     end
 
     def get_videos(input)
+      return [{"title"=>"Google Associate Android Developer Certification || My journey of becoming AAD || Exam Review", "date"=>"2022-05-12T160500Z", "description"=>"I became one of the 400 Google Associate Android Developers worldwide and here's everything about it! #google #android ...", "thumbnail"=>{"url"=>"https://i.ytimg.com/vi/tuYFw6f340Y/mqdefault.jpg", "width"=>480, "height"=>360}}, {"title"=>"Compiling and Installing ARM64 native OBS Studio on M1 MAC (Apple Silicon) | M1 Max/Pro/Air", "date"=>"2022-05-09T092111Z", "description"=>"Pre-requisites - Use the arm64 terminal. - Have brew installed in /opt/homebrew prefix. Run these commands in sequence to ...", "thumbnail"=>{"url"=>"https://i.ytimg.com/vi/MD_K4ihR3XI/mqdefault.jpg", "width"=>480, "height"=>360}}]
+
       res = Net::HTTP.get_response(videos_endpoint(channel_id = input))
       return input if !res.is_a?(Net::HTTPSuccess)
 
@@ -81,6 +83,70 @@ module Jekyll
       videos_cache.getset(input) do
         get_videos(input)
       end
+    end
+  end
+
+  class VideoPageGenerator < Generator
+    safe true
+
+    def generate(site)
+      videos = [{"title"=>"Google Associate Android Developer Certification || My journey of becoming AAD || Exam Review", "date"=>"2022-05-12T160500Z", "description"=>"I became one of the 400 Google Associate Android Developers worldwide and here's everything about it! #google #android ...", "thumbnail"=>{"url"=>"https://i.ytimg.com/vi/tuYFw6f340Y/mqdefault.jpg", "width"=>480, "height"=>360}}, {"title"=>"Compiling and Installing ARM64 native OBS Studio on M1 MAC (Apple Silicon) | M1 Max/Pro/Air", "date"=>"2022-05-09T092111Z", "description"=>"Pre-requisites - Use the arm64 terminal. - Have brew installed in /opt/homebrew prefix. Run these commands in sequence to ...", "thumbnail"=>{"url"=>"https://i.ytimg.com/vi/MD_K4ihR3XI/mqdefault.jpg", "width"=>480, "height"=>360}}, {"title"=>"Compiling and Installing ARM64 native OBS Studio on M1 MAC (Apple Silicon) | M1 Max/Pro/Air", "date"=>"2022-05-09T092111Z", "description"=>"Pre-requisites - Use the arm64 terminal. - Have brew installed in /opt/homebrew prefix. Run these commands in sequence to ...", "thumbnail"=>{"url"=>"https://i.ytimg.com/vi/MD_K4ihR3XI/mqdefault.jpg", "width"=>480, "height"=>360}}, {"title"=>"Compiling and Installing ARM64 native OBS Studio on M1 MAC (Apple Silicon) | M1 Max/Pro/Air", "date"=>"2022-05-09T092111Z", "description"=>"Pre-requisites - Use the arm64 terminal. - Have brew installed in /opt/homebrew prefix. Run these commands in sequence to ...", "thumbnail"=>{"url"=>"https://i.ytimg.com/vi/MD_K4ihR3XI/mqdefault.jpg", "width"=>480, "height"=>360}}, {"title"=>"Compiling and Installing ARM64 native OBS Studio on M1 MAC (Apple Silicon) | M1 Max/Pro/Air", "date"=>"2022-05-09T092111Z", "description"=>"Pre-requisites - Use the arm64 terminal. - Have brew installed in /opt/homebrew prefix. Run these commands in sequence to ...", "thumbnail"=>{"url"=>"https://i.ytimg.com/vi/MD_K4ihR3XI/mqdefault.jpg", "width"=>480, "height"=>360}}, {"title"=>"Compiling and Installing ARM64 native OBS Studio on M1 MAC (Apple Silicon) | M1 Max/Pro/Air", "date"=>"2022-05-09T092111Z", "description"=>"Pre-requisites - Use the arm64 terminal. - Have brew installed in /opt/homebrew prefix. Run these commands in sequence to ...", "thumbnail"=>{"url"=>"https://i.ytimg.com/vi/MD_K4ihR3XI/mqdefault.jpg", "width"=>480, "height"=>360}}, {"title"=>"Compiling and Installing ARM64 native OBS Studio on M1 MAC (Apple Silicon) | M1 Max/Pro/Air", "date"=>"2022-05-09T092111Z", "description"=>"Pre-requisites - Use the arm64 terminal. - Have brew installed in /opt/homebrew prefix. Run these commands in sequence to ...", "thumbnail"=>{"url"=>"https://i.ytimg.com/vi/MD_K4ihR3XI/mqdefault.jpg", "width"=>480, "height"=>360}}, {"title"=>"Compiling and Installing ARM64 native OBS Studio on M1 MAC (Apple Silicon) | M1 Max/Pro/Air", "date"=>"2022-05-09T092111Z", "description"=>"Pre-requisites - Use the arm64 terminal. - Have brew installed in /opt/homebrew prefix. Run these commands in sequence to ...", "thumbnail"=>{"url"=>"https://i.ytimg.com/vi/MD_K4ihR3XI/mqdefault.jpg", "width"=>480, "height"=>360}}, {"title"=>"Compiling and Installing ARM64 native OBS Studio on M1 MAC (Apple Silicon) | M1 Max/Pro/Air", "date"=>"2022-05-09T092111Z", "description"=>"Pre-requisites - Use the arm64 terminal. - Have brew installed in /opt/homebrew prefix. Run these commands in sequence to ...", "thumbnail"=>{"url"=>"https://i.ytimg.com/vi/MD_K4ihR3XI/mqdefault.jpg", "width"=>480, "height"=>360}}, {"title"=>"Compiling and Installing ARM64 native OBS Studio on M1 MAC (Apple Silicon) | M1 Max/Pro/Air", "date"=>"2022-05-09T092111Z", "description"=>"Pre-requisites - Use the arm64 terminal. - Have brew installed in /opt/homebrew prefix. Run these commands in sequence to ...", "thumbnail"=>{"url"=>"https://i.ytimg.com/vi/MD_K4ihR3XI/mqdefault.jpg", "width"=>480, "height"=>360}}, {"title"=>"Compiling and Installing ARM64 native OBS Studio on M1 MAC (Apple Silicon) | M1 Max/Pro/Air", "date"=>"2022-05-09T092111Z", "description"=>"Pre-requisites - Use the arm64 terminal. - Have brew installed in /opt/homebrew prefix. Run these commands in sequence to ...", "thumbnail"=>{"url"=>"https://i.ytimg.com/vi/MD_K4ihR3XI/mqdefault.jpg", "width"=>480, "height"=>360}}, {"title"=>"Compiling and Installing ARM64 native OBS Studio on M1 MAC (Apple Silicon) | M1 Max/Pro/Air", "date"=>"2022-05-09T092111Z", "description"=>"Pre-requisites - Use the arm64 terminal. - Have brew installed in /opt/homebrew prefix. Run these commands in sequence to ...", "thumbnail"=>{"url"=>"https://i.ytimg.com/vi/MD_K4ihR3XI/mqdefault.jpg", "width"=>480, "height"=>360}}, {"title"=>"Compiling and Installing ARM64 native OBS Studio on M1 MAC (Apple Silicon) | M1 Max/Pro/Air", "date"=>"2022-05-09T092111Z", "description"=>"Pre-requisites - Use the arm64 terminal. - Have brew installed in /opt/homebrew prefix. Run these commands in sequence to ...", "thumbnail"=>{"url"=>"https://i.ytimg.com/vi/MD_K4ihR3XI/mqdefault.jpg", "width"=>480, "height"=>360}}, {"title"=>"Compiling and Installing ARM64 native OBS Studio on M1 MAC (Apple Silicon) | M1 Max/Pro/Air", "date"=>"2022-05-09T092111Z", "description"=>"Pre-requisites - Use the arm64 terminal. - Have brew installed in /opt/homebrew prefix. Run these commands in sequence to ...", "thumbnail"=>{"url"=>"https://i.ytimg.com/vi/MD_K4ihR3XI/mqdefault.jpg", "width"=>480, "height"=>360}}, {"title"=>"Compiling and Installing ARM64 native OBS Studio on M1 MAC (Apple Silicon) | M1 Max/Pro/Air", "date"=>"2022-05-09T092111Z", "description"=>"Pre-requisites - Use the arm64 terminal. - Have brew installed in /opt/homebrew prefix. Run these commands in sequence to ...", "thumbnail"=>{"url"=>"https://i.ytimg.com/vi/MD_K4ihR3XI/mqdefault.jpg", "width"=>480, "height"=>360}}]
+
+      total_pages = (videos.size / 8) + ((videos.size % 8) != 0 ? 1 : 0)
+
+      start = 0
+      stop = 7
+
+      dir = ""
+      basename = "videos"
+
+      while videos[start..stop] != nil
+        site.pages << PaginatedVideoPage.new(
+          site,
+          dir,
+          basename,
+          total_pages,
+          videos[start..stop]
+        )
+
+        stop += 8
+        start += 8
+
+        dir = "videos/page"
+        basename = ((start / 8)+1).to_s
+      end
+    end
+  end
+
+  class PaginatedVideoPage < Page
+    def initialize(site, dir, basename, total_pages, videos_list)
+      @site = site
+      @base = site.source
+      @dir  = dir
+
+      @basename = basename
+      @ext      = '.html'
+      @name     = @basename + @ext
+
+      page_num = basename == 'videos' ? 1 : Integer(basename)
+      page_description = basename == 'videos' ? '' : ' — Page ' + basename.to_s
+
+      @data = {
+        'layout' => 'videos',
+        'videos' => videos_list,
+        'page_number' => page_num,
+        'total_pages' => total_pages,
+        'title' => "Videos by Gourav Khunger#{page_description} | Software Developer",
+        'description' => "A collection of all the youtube videos posted by Gourav Khunger#{page_description}"
+      }
+    end
+
+    def url_placeholders
+      {
+        :path       => @dir,
+        :basename   => basename,
+        :output_ext => output_ext,
+      }
     end
   end
 end
