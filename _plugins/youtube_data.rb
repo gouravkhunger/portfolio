@@ -20,7 +20,7 @@ module Jekyll
 
       uri.query = URI.encode_www_form(params({
         'order' => 'date',
-        'maxResults' => 2,
+        'maxResults' => 50,
         'part' => 'id,snippet',
         'channelId' => channel_id,
         'pageToken' => page_token
