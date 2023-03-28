@@ -123,7 +123,7 @@
 }
 
 .burgers {
-  @apply flex flex-col items-center sm:hidden cursor-pointer;
+  @apply py-2 px-1 flex flex-col items-center sm:hidden cursor-pointer;
 }
 
 .bar1 {
