@@ -35,7 +35,7 @@
   }
 
   nav a {
-    @apply bg-gradient-to-r from-slate-800 to-slate-800 dark:from-slate-300 dark:to-slate-300;
+    @apply pb-1 bg-gradient-to-r from-slate-800 to-slate-800 dark:from-slate-300 dark:to-slate-300;
     background-size: 0% 0.125rem;
     background-repeat: no-repeat;
     background-position: left bottom;
