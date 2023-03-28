@@ -26,7 +26,7 @@
     @apply mx-6 mt-32 max-w-4xl lg:mx-auto;
   }
 
-  footer a, main a:not(.underline-none) {
+  footer a, main a:not(.underline-none, .link-button) {
     @apply border-b-2 border-slate-600 dark:border-slate-200 border-dotted hover:border-b-0;
   }
 
@@ -160,6 +160,10 @@
 
 .insight span {
   @apply text-slate-500 dark:text-white;
+}
+
+.link-button {
+  @apply underline-none text-zinc-900 text-sm dark:text-white rounded-lg border-2 border-zinc-900 dark:border-gray-300 transition-all duration-100 hover:scale-110;
 }
 
 .project, .video, .testimonial, .article, .achievement {

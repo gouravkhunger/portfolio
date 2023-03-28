@@ -24,7 +24,7 @@ layout: default
 {% for item in page.visit %}
   <a
     href="{{ item.link }}"
-    class="{% if forloop.first != true %}mt-4 sm:mt-0 {% endif %}mx-2 px-3 py-2 underline-none text-zinc-900 text-sm dark:text-white rounded-lg border-2 border-zinc-900 dark:border-gray-300 transition-all duration-100 hover:scale-110">
+    class="{% if forloop.first != true %}mt-4 sm:mt-0 {% endif %}mx-2 px-3 py-2 link-button">
     {{ item.anchorText }} &gt;
   </a>
 {% endfor %}
