@@ -6,5 +6,5 @@ visit:
     link: "https://github.com/gouravkhunger/ics-reader-plugin-example"
 
   - anchorText: "Visit website"
-    link: "https://ics-reader-plugin-example.gouravkhunger.me"
+    link: "https://ics-reader.gourav.sh"
 ---

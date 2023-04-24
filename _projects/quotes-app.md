@@ -1,12 +1,12 @@
 ---
 preview: "https://user-images.githubusercontent.com/46792249/169520492-72e74ead-88c2-4e86-acfd-1082a6005b22.png"
 
-visit: 
+visit:
   - anchorText: "Explore codebase"
     link: "https://github.com/gouravkhunger/QuotesApp"
 
   - anchorText: "Download latest APK"
-    link: "http://quotes.gouravkhunger.me"
+    link: "http://quotesapp.gourav.sh"
 ---
 
 ## Details

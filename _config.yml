@@ -3,7 +3,7 @@ email: gouravkhunger18@gmail.com
 description: >-
   Gourav Khunger is a 17 year old software developer and a self-taught programmer. He specialises in native Android app development and is passionate about Open Source. Checkout his projects on Github!
 baseurl: ""
-url: "https://gouravkhunger.me"
+url: "https://gourav.sh"
 google_analytics: "G-GSRER1MM23"
 
 collections:
@@ -40,7 +40,7 @@ jekyll-minifier:
 
 extlinks:
   attributes: { rel: nofollow noopener noreferrer, target: _blank }
-  rel_exclude: ["genicsblog.com", "jekyllex.xyz", "code-19.ml", "hbdwish.ml", "strikeit.ml", "github.com"]
+  rel_exclude: [ "gourav.sh", "github.com", "genicsblog.com" ]
 
 include:
   - _pages
