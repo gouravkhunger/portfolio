@@ -1,6 +1,6 @@
-# [My *old* Portfolio](https://old.gouravkhunger.xyz)
+# [My *old* Portfolio](https://v1.gourav.sh)
 
-> **Note**: There is a newer version of this portfolio website built from scratch with jekyll, please head over to [https://gouravkhunger.xyz](https://gouravkhunger.xyz) to view it.
+> **Note**: There is a newer version of this portfolio website built from scratch with jekyll, please head over to [https://gourav.sh](https://gourav.sh) to view it.
 >
 > The code for it is present in the [jekyll](https://github.com/gouravkhunger/portfolio/tree/jekyll) branch
 
