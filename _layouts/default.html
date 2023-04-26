@@ -15,24 +15,41 @@
     {% endif %}
 
     <meta property="og:title" content="{{ page.title }}" />
+
+    {% if page.preview %}
+      {% assign image = page.preview %}
+    {% elsif page.youtube %}
+      {% assign image = "https://img.youtube.com/vi/" | append: page.youtube | append: "/maxresdefault.jpg" %}
+    {% elsif page.github %}
+      {% assign image = page.github | prepend: "https://opengraph.githubassets.com/$/" | hashsert %}
+    {% else %}
+      {% assign image = site.url | append: "/assets/images/social_cover.png" %}
+    {% endif %}
+    <meta property="og:image" content="{{ image }}" />
+
     <meta
-      property="og:image"
-      content="{{ site.url }}/assets/images/social_cover.png"
-    />
-    <meta property="og:url" content="https://gourav.sh" />
+      property="og:url"
+      content="{{ site.url }}{{ site.baseurl }}{{ page.url | replace: '/index.html', '' }}" />
     <meta property="og:site_name" content="Gourav Khunger" />
 
     {% if page.url == '/' %}
     <meta property="og:type" content="profile" />
     <meta property="profile:first_name" content="Gourav" />
     <meta property="profile:last_name" content="Khunger" />
+    {% elsif page.youtube %}
+    <meta property="og:type" content="video">
+    <meta property="og:video" content="https://www.youtube.com/v/{{ page.youtube }}" />
+    {% else %}
+    <meta property="og:type" content="website" />
     {% endif %}
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@gourav_khunger" />
-    <meta
-      name="twitter:image"
-      content="{{ site.url }}/assets/images/social_cover.png"
+    <meta name="twitter:image" content="{{ image }}" />
+
+    <link
+      rel="canonical"
+      href="{{ site.url }}{{ site.baseurl }}{{ page.url | replace: '/index.html', '' }}"
     />
 
     <link
