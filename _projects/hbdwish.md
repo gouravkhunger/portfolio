@@ -1,9 +1,9 @@
 ---
 preview: "https://user-images.githubusercontent.com/46792249/169551745-eafc5e5e-b4a5-454a-bdf7-9e25627cc262.png"
 
-visit: 
+visit:
   - anchorText: "Visit website"
-    link: "https://hbdwish.ml"
+    link: "https://hbdwish.gourav.sh"
 
   - anchorText: "View on GitHub"
     link: "https://github.com/gouravkhunger/nextjs-birthday-wish"
