@@ -1,5 +1,5 @@
 ---
-preview: "https://cdn.hashnode.com/res/hashnode/image/upload/v1632651818188/OlwaCV_aL.png"
+hasThumbnail: true
 
 visit: 
   - anchorText: "Read the article"

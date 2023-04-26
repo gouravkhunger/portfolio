@@ -7,7 +7,7 @@
       {% assign last_char = testimonial.name | slice: -1 %}
       <img
         alt="{{ testimonial.name }}'{% if last_char != 's' %}s{% endif %} profile picture"
-        src="{{ testimonial.picture }}" class="w-12 h-12 rounded-full"/>
+        src="{{ testimonial.picture }}" class="w-12 h-12 rounded-full" loading="lazy" />
       <div class="ml-4 flex flex-col truncate">
         <span class="truncate">{{ testimonial.name }}</span>
         <span class="text-slate-500 dark:text-slate-300 text-sm">{{ testimonial.role | markdownify }}</span>

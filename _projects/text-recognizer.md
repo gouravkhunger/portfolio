@@ -1,5 +1,5 @@
 ---
-preview: "https://raw.githubusercontent.com/gouravkhunger/TextRecognizer/main/app/src/main/res/drawable/logo.png"
+hasThumbnail: true
 
 visit:
   - anchorText: "Explore codebase"

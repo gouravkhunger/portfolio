@@ -1,5 +1,5 @@
 ---
-preview: "https://user-images.githubusercontent.com/46792249/164977196-3de454f4-8a7e-4feb-9d1b-cfd6ea53ba03.jpg"
+hasThumbnail: true
 
 visit: 
   - anchorText: "Read the article"

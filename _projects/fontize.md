@@ -1,5 +1,6 @@
 ---
-preview: "https://raw.githubusercontent.com/gouravkhunger/Fontize/main/media/demo.gif"
+hasThumbnail: true
+ignorePreviewAspect: true
 
 visit:
   - anchorText: "View on GitHub"

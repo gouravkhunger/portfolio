@@ -1,5 +1,5 @@
 ---
-preview: "https://raw.githubusercontent.com/gouravkhunger/AccoLib/main/art/logo.png"
+hasThumbnail: true
 
 visit:
   - anchorText: "View on GitHub"

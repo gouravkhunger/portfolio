@@ -2,8 +2,10 @@
 layout: default
 ---
 
-{% if page.preview %}
-<img src="{{ page.preview }}" class="mx-auto sm:aspect-video rounded-xl" />
+{% if page.hasThumbnail %}
+<img
+  loading="lazy" src="/assets/images/projects/{{ page.name | remove: '.md' }}.webp"
+  class="mx-auto rounded-xl{% if page.ignorePreviewAspect != true %} sm:aspect-video{% endif %}" />
 {% elsif page.youtube %}
 <iframe
   src="https://www.youtube.com/embed/{{ page.youtube }}"
@@ -12,7 +14,7 @@ layout: default
 </iframe>
 {% elsif page.github %}
 {% assign image = page.github | prepend: "https://opengraph.githubassets.com/$/" | hashsert %}
-<img src="{{ image }}" class="mx-auto sm:aspect-video rounded-xl" />
+<img loading="lazy" src="{{ image }}" class="mx-auto sm:aspect-video rounded-xl" />
 {% endif %}
 
 {% assign project = site.data.projects[page.slug] %}

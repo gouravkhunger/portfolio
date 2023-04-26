@@ -10,7 +10,7 @@
       {% assign last_char = job.company.name | slice: -1 %}
       <img
         alt="{{ job.company.name }}'{% if last_char != 's' %}s{% endif %} logo"
-        src="{{ job.company.logo }}" class="w-6 h-6" />
+        src="{{ job.company.logo }}" class="w-6 h-6" loading="lazy" />
     </div>
     {% if forloop.last != true %}
     <div 

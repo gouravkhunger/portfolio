@@ -2,8 +2,10 @@
 layout: default
 ---
 
-{% if page.preview %}
-<img src="{{ page.preview }}" class="mx-auto rounded-xl" />
+{% if page.hasThumbnail %}
+<img
+  loading="lazy" class="mx-auto rounded-xl"
+  src="/assets/images/achievements/{{ page.name | remove: '.md' }}.webp" />
 {% elsif page.youtube %}
 <iframe
   src="https://www.youtube.com/embed/{{ page.youtube }}"

@@ -1,5 +1,5 @@
 ---
-preview: "https://user-images.githubusercontent.com/46792249/169520492-72e74ead-88c2-4e86-acfd-1082a6005b22.png"
+hasThumbnail: true
 
 visit:
   - anchorText: "Explore codebase"
