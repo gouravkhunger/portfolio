@@ -21,8 +21,13 @@
   </div>
   <div class="mt-4 pl-6 sm:pl-0 sm:mt-0 w-5/6">
     <span class="text-2xl">
-      {{ job.company.name }} <a href="{{ job.company.url }}" class="underline-none">{% include link_svg.html %}</a>
+      {{ job.company.name }}
     </span>
+    <a
+      target="_blank" class="underline-none" href="{{ job.company.url }}"
+      aria-label="Visit {{ job.company.name }}'{% if last_char != 's' %}s{% endif %} website">
+      {% include link_svg.html %}
+    </a>
     {% assign positions = job.positions | reverse %}
     {% for position in positions %}
     <span class="{% if forloop.first != true %}mt-2 {% endif %}flex flex-row font-black items-center text-xs text-slate-500 dark:text-slate-300">
