@@ -167,7 +167,7 @@
 }
 
 .project, .video, .testimonial, .article, .achievement {
-  @apply mx-2 p-4 flex flex-col justify-center border-slate-300 rounded-lg border-2 border-transparent hover:border-zinc-900 dark:hover:border-slate-300;
+  @apply mx-2 p-4 flex flex-col justify-center rounded-lg border-2 border-transparent hover:border-zinc-900 dark:hover:border-slate-300;
 }
 
 .content p:not(:last-child), .content h1, .content h2, .content h3, .content h4, .content h5, .content h6, .content ul {
