@@ -7,7 +7,10 @@
     </div>
     {% endif %}
     <div class="p-4 rounded-full border-2 border-black dark:border-white">
-      <img src="{{ job.company.logo }}" class="w-6 h-6" />
+      {% assign last_char = job.company.name | slice: -1 %}
+      <img
+        alt="{{ job.company.name }}'{% if last_char != 's' %}s{% endif %} logo"
+        src="{{ job.company.logo }}" class="w-6 h-6" />
     </div>
     {% if forloop.last != true %}
     <div 
@@ -18,14 +21,17 @@
   </div>
   <div class="mt-4 pl-6 sm:pl-0 sm:mt-0 w-5/6">
     <span class="text-2xl">
-      {{ job.company.name }} <a href="{{ job.company.url }}" class="underline-none">{% include link_svg.html %}</a>
+      {{ job.company.name }}
     </span>
+    <a
+      target="_blank" class="underline-none" href="{{ job.company.url }}"
+      aria-label="Visit {{ job.company.name }}'{% if last_char != 's' %}s{% endif %} website">
+      {% include link_svg.html %}
+    </a>
     {% assign positions = job.positions | reverse %}
     {% for position in positions %}
     <span class="{% if forloop.first != true %}mt-2 {% endif %}flex flex-row font-black items-center text-xs text-slate-500 dark:text-slate-300">
-      {{ position.name }}
-      &bull;
-      {{ position.type }}
+      {{ position.name }} &bull; {{ position.type }}
     </span>
     <span class="text-xs text-slate-500 dark:text-slate-300">
       {{ position.from | date: '%b %Y'}}

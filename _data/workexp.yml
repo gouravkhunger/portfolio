@@ -1,7 +1,7 @@
 - company:
     name: "Kommunicate"
     url: "https://www.kommunicate.io"
-    logo: "https://asset.brandfetch.io/idcl_zzRqD/idvPPiN-q8.svg"
+    logo: "/assets/images/logos/kommunicate.svg"
     description: "Kommunicate is a human + bot hybrid platform for real-time, proactive, and personalized support for growing businesses."
   positions:
     - name: "Software Developer Intern"
@@ -14,7 +14,7 @@
 - company:
     name: "BeyondWords"
     url: "https://beyondwords.io"
-    logo: "https://beyondwords.io/assets/BeyondWords%20logo/Symbol.svg"
+    logo: "/assets/images/logos/beyondwords.svg"
     description: "BeyondWords is an AI voice and audio publishing platform that brings frictionless audio to writers, newsrooms, and businesses!"
   positions:
     - name: "Frontend Engineer Intern"
