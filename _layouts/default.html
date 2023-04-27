@@ -23,7 +23,7 @@
     {% elsif page.github %}
       {% assign image = page.github | prepend: "https://opengraph.githubassets.com/$/" | hashsert %}
     {% else %}
-      {% assign image = site.url | append: "/assets/images/social_cover.png" %}
+      {% assign image = site.url | append: "/assets/images/social-cover.png" %}
     {% endif %}
     <meta property="og:image" content="{{ image }}" />
 
