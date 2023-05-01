@@ -41,6 +41,9 @@ module Jekyll
         if config['attributes']
           attributes = Array(config['attributes'])
         end
+        if config['rel_include']
+          rel_include = Array(config['rel_include'])
+        end
         if config['rel_exclude']
           rel_exclude = Array(config['rel_exclude'])
         end
@@ -61,7 +64,10 @@ module Jekyll
             # If there's a rel already don't change it
             next unless !a.get_attribute('rel') || a.get_attribute('rel').empty?
             # Skip whitelisted hosts for the 'rel' attribute
-            next if rel_exclude && contains_any(a.get_attribute('href'), rel_exclude)
+            next if (rel_include || rel_exclude) && (
+              !contains_any(a.get_attribute('href'), rel_include) &&
+              contains_any(a.get_attribute('href'), rel_exclude)
+            )
           end
           a.set_attribute(attr, value)
         end
