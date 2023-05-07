@@ -166,6 +166,10 @@
   @apply underline-none text-zinc-900 text-sm dark:text-white rounded-lg border-2 border-zinc-900 dark:border-gray-300 transition-all duration-100 hover:scale-110;
 }
 
+.tag {
+  @apply py-1 px-1.5 text-xs rounded-md bg-gray-200 dark:bg-gray-700;
+}
+
 .project, .video, .testimonial, .article, .achievement {
   @apply mx-2 p-4 flex flex-col justify-center rounded-lg border-2 border-transparent hover:border-zinc-900 dark:hover:border-slate-300;
 }

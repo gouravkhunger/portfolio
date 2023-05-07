@@ -21,8 +21,14 @@ layout: default
 <h2 class="mt-10 font-black">{{ project.name }}</h2>
 <p class="mt-2 text-slate-500 dark:text-slate-300">{{ project.excerpt }}</p>
 
+<div class="mt-4">
+  {% for tech in project.stack %}
+  <span class="tag">{{ tech }}</span>
+  {% endfor %}
+</div>
+
 {% if page.visit %}
-<div class="mt-10 flex flex-col sm:flex-row items-center justify-center">
+<div class="mt-8 flex flex-col sm:flex-row items-center justify-center">
 {% for item in page.visit %}
   <a
     href="{{ item.link }}"

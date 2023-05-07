@@ -1,103 +1,129 @@
 genics-blog:
   name: Genics Blog
   excerpt: "An open source blogging platform for software developers to share their technical knowledge and gain reach. Read by 1k+ people per month."
+  stack: ["Ruby", "Python", "Shell", "JavaScript"]
 
 jekyllex:
   name: JekyllEx
   excerpt: "A android app to control a jekyll powered blogs from an Android device. Uses GitHub API, WIP for native Jekyll binaries."
+  stack: ["Kotlin", "C++", "NDK"]
 
 code-19:
   name: Code-19
   excerpt: "A non-profit fund raising coding contest initiated to foster interest regarding competitive programming among young students while contributing to India's fight against COVID-19."
+  stack: ["C++", "Python"]
 
 ruby-android:
   name: Ruby for Android
   excerpt: "[WIP] I'm trying to compile the Ruby language for Android so that software like Jekyll can be ported to Android."
+  stack: ["Shell"]
 
 impilo:
   name: Impilo
   excerpt: "A health and sanitation management platform that connects people and municipalities to work towards a better environment."
+  stack: ["Java", "PHP"]
 
 ics-reader-jekyll-plugin:
   name: ICS Reader
   excerpt: "A custom Jekyll plugin that reads ICS files and exposes event details to liquid variable for rendering calendars."
+  stack: ["Ruby"]
 
 fontize:
   name: Fontize
   excerpt: "An Android library written in kotlin that enables android apps to have multiple fonts for views and switch between them in a jiffy!"
+  stack: ["Kotlin"]
 
 accolib:
   name: Accolib
   excerpt: "An easy to use android library that helps you create accordions in an Android app with ease."
+  stack: ["Kotlin"]
 
 jekyll-auto-authors:
   name: Jekyll Auto Authors
   excerpt: "The only ruby gem for jekyll that truly adds paginated multi-authors support to a Jekyll powered site. Solves a 12 year old problem."
+  stack: ["Ruby"]
 
 jekyll-url-metadata:
   name: Jekyll URL Metadata
   excerpt: "A jekyll plugin to expose meta data of a webpage to liquid variables by extractging them just from its url string."
+  stack: ["Ruby"]
 
 quotes-app:
   name: Quotes App
   excerpt: "A Quotes App with a cool swiping UI. Allows bookmarks and sharing beautiful images of quotes."
+  stack: ["Kotlin"]
 
 text-recognizer:
   name: Text Recognizer
   excerpt: "An android app that uses Google's ML Kit to recognize texts from images."
+  stack: ["Java", "Kotlin"]
 
 jekyll-hostname:
   name: Jekyll Hostname
   excerpt: "A Jekyll plugin that allows you to extract the hostname from a URL string by providing a handy liquid filters."
+  stack: ["Ruby"]
 
 next-gen-hello-world-program:
   name: NextGenHelloWorld
   excerpt: "A java program that implements multi-threading to showcase how to make a cool hello world program."
+  stack: ["Java"]
 
 deref:
   name: Deref
   excerpt: "A Web, API and CLI interface to find a URL's redirection path without manually opening it."
+  stack: ["Javascript", "Node.js"]
 
 directrix:
   name: Directrix
   excerpt: "An API to setup a custom domain branded link shortener / redirector easily."
+  stack: ["Javascript", "Node.js"]
 
 hbdwish:
   name: HBD Wish
   excerpt: "A Next.js web app to generate birthday wishe card links that can be sent to your friends."
+  stack: ["Next.js"]
 
 strikeit:
   name: StrikeIt
   excerpt: "A Next.js web app to add strike through to texts."
+  stack: ["Next.js"]
 
 genics-bot:
   name: Genics Bot
   excerpt: "Community bot for genicsblog.com's discord server."
+  stack: ["Javascript", "discord.js"]
 
 jekyllex-api:
   name: Jekyllex API
   excerpt: "A proxy API to fetch user profile and indentities securely from the Auth0 User Management API."
+  stack: ["Javascript", "Node.js"]
 
 recycleaid:
   name: RecycleAid
   excerpt: "A web app that instructs how to recycle objects in an image and what things could be built with them."
+  stack: ["Jupyter", "Python", "Javascript"]
 
 jekyll-hashsert:
   name: Jekyll Hashsert
   excerpt: "A jekyll plugin that inserts random hashes of custom length into strings."
+  stack: ["Ruby"]
 
 room-paging3-demo:
   name: Room Paging3 Demo
   excerpt: "A demo implementation of the Paging3 library with a local Room data source without a network layer."
+  stack: ["Kotlin"]
 
 auth0-demo-android:
   name: Auth0 Demo Android
   excerpt: "A demo implementation of the Auth0 SDKs to add authentication functionalities in an Android app."
+  stack: ["Kotlin"]
 
 portfolio:
   name: Portfolio website
   excerpt: "The code for this portfolio website. Built with Ruby, HTML, TailwindCSS and Javascript."
+  stack: ["Ruby", "Javascript"]
 
 prs-demo:
   name: PRs Demo
   excerpt: "Demo repository for tutorial about GitHub Pull Requests on genicsblog.com."
+  stack: ["MD"]
