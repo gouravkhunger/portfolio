@@ -1,12 +1,16 @@
 - title: Home
   url: /
-- title: Projects
-  url: /projects
-- title: Articles
-  url: /articles
-- title: Videos
-  url: /videos
 - title: Wins
   url: /wins
+- title: Ideas
+  url: /ideas
+- title: Projects
+  url: /projects
+- title: Videos
+  url: /videos
+- title: Articles
+  url: /articles
+  inDropdown: true
 - title: Testimonials
   url: /testimonials
+  inDropdown: true

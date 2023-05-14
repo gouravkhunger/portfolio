@@ -1,7 +1,7 @@
 <div class="mx-auto mb-16 frozen">
   <header>
     <div>
-      <button aria-label="Toggle Dark Mode" type="button" class="theme-toggle round-button">
+      <button aria-label="Toggle site theme" type="button" class="theme-toggle round-button">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" id="moon">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
         </svg>
@@ -13,8 +13,22 @@
     <nav>
       <div class="desktop-nav">
         {% for item in site.data.nav %}
+        {% if item.inDropdown != true %}
         <a href="{{ item.url }}" {% if item.target %} target="{{ item.target }}" {% endif %}>{{ item.title }}</a>
+        {% endif %}
         {% endfor %}
+
+        <button aria-label="Open dropdown menu" type="button" class="dropdown-toggle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+
+        <div class="hidden dropdown">
+          {% for item in site.data.nav %}
+          {% if item.inDropdown == true %}
+          <a href="{{ item.url }}">{{ item.title }}</a>
+          {% endif %}
+          {% endfor %}
+        </div>
       </div>
       <div class="burgers">
         <div class="bar1"></div>

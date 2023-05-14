@@ -120,6 +120,23 @@
           saveTheme(isDark() ? LIGHT : DARK);
         });
 
+        // set listener on dropdown button
+        var iconRotated = false;
+        const dropdownButton = document.getElementsByClassName("dropdown-toggle")[0];
+        const dropdown = document.getElementsByClassName("dropdown")[0];
+        dropdownButton.addEventListener("click", () => {
+          // burgers.classList.toggle("closed");
+          if (iconRotated) {
+            dropdownButton.style.transform = "rotate(0deg)";
+            iconRotated = false;
+          } else {
+            dropdownButton.style.transform = "rotate(180deg)";
+            iconRotated = true;
+          }
+          dropdown.classList.toggle("hidden");
+          dropdown.classList.toggle("flex");
+        });
+
         // handle nav
         const burgers = document.getElementsByClassName("burgers")[0];
         const nav = document.getElementsByClassName("mobile-nav")[0];
