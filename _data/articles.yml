@@ -70,6 +70,12 @@ how-to-create-a-pull-request-in-github-correctly:
   name: "8 No Brainer Ways to Keep Your Heroku App Awake"
   baseurl: "https://genicsblog.com/gouravkhunger"
 
+9-hand-picked-free-heroku-alternative-hosting-platforms:
+  date: 2023-07-24
+  excerpt: "Top 9 hand picked alternatives to Heroku's free plan to deploy your APIs and Websites seamlessly, without any restrictions!"
+  name: "9 Hand Picked FREE Heroku Alternative Hosting Platforms"
+  baseurl: "https://genicsblog.com/gouravkhunger"
+
 next-generation-hello-world-program:
   date: 2022-01-31
   name: "Next Generation Hello World program"
