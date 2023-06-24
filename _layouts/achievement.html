@@ -25,6 +25,7 @@ layout: default
 {% for item in page.visit %}
   <a
     href="{{ item.link }}"
+    {% if item.download %}download{% endif %}
     class="{% if forloop.first != true %}mt-4 sm:mt-0 {% endif %}mx-2 px-3 py-2 link-button">
     {{ item.anchorText }} &gt;
   </a>
