@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+{% if page.hasThumbnail %}
+<img
+  loading="lazy" class="mx-auto rounded-xl"
+  src="/assets/images/blog/{{ page.name | remove: '.md' }}.webp" />
+{% elsif page.youtube %}
+<iframe
+  src="https://www.youtube.com/embed/{{ page.youtube }}"
+  class="w-full aspect-video rounded-xl"
+  allowfullscreen loading="lazy">
+</iframe>
+{% endif %}
+
+<h2 class="mt-10 font-black">
+  {{ page.title }}
+</h2>
+{% if page.description %}
+<p class="mt-2 text-slate-500 dark:text-slate-300">{{ page.description }}</p>
+{% endif %}
+<span class="text-slate-500 dark:text-slate-300 text-sm">{{ page.date | date: '%b %d, %Y' }}</span>
+
+<div class="mt-10 content">
+  {{ page.content }}
+</div>

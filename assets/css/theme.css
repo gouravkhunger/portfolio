@@ -58,26 +58,37 @@
   h1 {
     @apply text-4xl;
   }
+
   h2 {
       @apply text-3xl;
   }
+
   h3 {
       @apply text-2xl;
   }
+
   h4 {
       @apply text-xl;
   }
+
   h5 {
       @apply text-lg;
   }
+
   h6 {
       @apply text-base;
   }
+
   ul li {
       @apply list-disc list-outside ml-8 md:ml-12;
   }
+
   ul li:not(:last-child) {
       @apply mb-2;
+  }
+
+  hr {
+    @apply w-3/4 md:w-1/2 h-0.5 my-6 mx-auto rounded border-0 bg-zinc-300 dark:bg-zinc-600;
   }
 }
 

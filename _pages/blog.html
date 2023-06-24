@@ -1,0 +1,18 @@
+---
+layout: default
+title: Blog | Gourav Khunger | Software Developer
+description: 
+excerpt: 
+permalink: /blog
+---
+
+<h2 class="font-black">
+  Musings
+</h2>
+<p class="mt-2 text-slate-500 dark:text-slate-300">{{ page.excerpt }}</p>
+
+<div class="mt-10 gap-4 projects grid grid-flow-row grid-cols-1 sm:grid-cols-2">
+  {% for post in site.posts %}
+    {% include post.html %}
+  {% endfor %}
+</div>

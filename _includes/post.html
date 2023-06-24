@@ -1,0 +1,13 @@
+<a href="{{ post.url }}" class="underline-none w-full">
+  <div class="article">
+    <span class="text-lg">{{ post.title }} &gt;</span>
+    {% if page.description %}
+    <p class="mt-2 text-slate-500 dark:text-gray-400">
+      {{ post.description }}
+    </p>
+    {% endif %}
+    <span class="{% if page.description %}mt-2{% else %}mt-6{% endif %} text-slate-500 dark:text-slate-300 text-sm">
+      {{ post.date | date: '%b %d, %Y' }}
+    </span>
+  </div>
+</a>

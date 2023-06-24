@@ -7,14 +7,21 @@ url: "https://gourav.sh"
 google_analytics: "G-GSRER1MM23"
 
 collections:
+  posts:
+    output: true
+    permalink: /post/:title
   projects:
+    output: true
     permalink: /project/:name
-    output: true
   achievements:
-    permalink: /achievement/:name
     output: true
+    permalink: /achievement/:name
 
 defaults:
+  - scope:
+      path: "_posts/*.md"
+    values:
+      layout: post
   - scope:
       path: "_projects/*.md"
     values:
