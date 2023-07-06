@@ -1,4 +1,8 @@
-<div class="video cursor-pointer" onclick="playVideo('{{ video['id'] }}')">
+<a
+  href="https://youtu.be/{{ video['id'] }}"
+  class="video underline-none cursor-pointer"
+  onclick="return playVideo('{{ video['id'] }}')"
+>
   <img
     loading="lazy"
     class="w-full aspect-video rounded-lg"
@@ -9,4 +13,4 @@
   <p class="mt-2 text-slate-500 dark:text-gray-400">
     {{ video['description'] }}
   </p>
-</div>
+</a>

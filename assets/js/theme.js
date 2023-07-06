@@ -61,4 +61,6 @@ const playVideo = (videoId) => {
   setTimeout(() => {
     document.addEventListener("click", clickListener);
   }, 100);
+
+  return false;
 }
