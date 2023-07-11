@@ -6,11 +6,15 @@
   <img
     loading="lazy"
     class="w-full aspect-video rounded-lg"
-    src="{{ video['thumbnail']['url'] }}" />
+    alt="{{ video['title'] | default: 'Dummy title' }}"
+    src="{{ video['thumbnail']['url'] | default: 'https://i.ytimg.com/vi/unknown.jpg' }}"
+  />
 
-  <span class="mt-6 text-lg line-clamp-2">{{ video['title'] }}</span>
+  <span class="mt-6 text-lg line-clamp-2">
+    {{ video['title'] | default: 'Dummy title' }}
+  </span>
 
   <p class="mt-2 text-slate-500 dark:text-gray-400">
-    {{ video['description'] }}
+    {{ video['description'] | default: 'Dummy description' }}
   </p>
 </a>
