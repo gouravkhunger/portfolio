@@ -42,8 +42,7 @@ module Jekyll
             'id' => item['id']['videoId'],
             'title' => item['snippet']['title'],
             'date' => item['snippet']['publishedAt'],
-            'description' => item['snippet']['description'],
-            'thumbnail' => item['snippet']['thumbnails']['medium']
+            'description' => item['snippet']['description']
           })
         end
       end
@@ -67,8 +66,7 @@ module Jekyll
               'id' => item['id']['videoId'],
               'title' => item['snippet']['title'],
               'date' => item['snippet']['publishedAt'],
-              'description' => item['snippet']['description'],
-              'thumbnail' => item['snippet']['thumbnails']['medium']
+              'description' => item['snippet']['description']
             })
           end
         end

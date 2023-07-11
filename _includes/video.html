@@ -7,11 +7,15 @@
     loading="lazy"
     class="w-full aspect-video rounded-lg"
     alt="{{ video['title'] | default: 'Dummy title' }}"
-    src="{{ video['thumbnail']['url'] | default: 'https://i.ytimg.com/vi/unknown.jpg' }}"
+    src="https://i.ytimg.com/vi/{{ video['id'] }}/maxresdefault.jpg"
   />
 
   <span class="mt-6 text-lg line-clamp-2">
     {{ video['title'] | default: 'Dummy title' }}
+  </span>
+
+  <span class="text-slate-500 dark:text-gray-400">
+    {{ video['date'] | default: '1970-01-01T00:00:00.000Z' | date: '%b %d, %Y' }}
   </span>
 
   <p class="mt-2 text-slate-500 dark:text-gray-400">
