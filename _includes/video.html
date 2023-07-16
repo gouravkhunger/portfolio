@@ -7,7 +7,7 @@
     loading="lazy"
     class="w-full aspect-video rounded-lg"
     alt="{{ video['title'] | default: 'Dummy title' }}"
-    src="https://i.ytimg.com/vi/{{ video['id'] }}/maxresdefault.jpg"
+    src="{{ video['thumbnail'] | default: 'https://i.ytimg.com/vi/default.jpg' }}"
   />
 
   <span class="mt-6 text-lg line-clamp-2">

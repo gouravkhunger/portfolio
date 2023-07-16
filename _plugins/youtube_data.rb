@@ -29,6 +29,17 @@ module Jekyll
       uri
     end
 
+    def get_thumbnail(video_id)
+      mqdefault = "mqdefault.webp"
+      maxresdefault = "maxresdefault.webp"
+      baseurl = "https://i.ytimg.com/vi_webp/#{video_id}/"
+
+      uri = URI("#{baseurl}#{maxresdefault}")
+      res = Net::HTTP.start(uri.hostname).head(uri.path)
+
+      return res.is_a?(Net::HTTPOK) ? "#{baseurl}#{maxresdefault}" : "#{baseurl}#{mqdefault}"
+    end
+
     def fetch_videos(input)
       res = Net::HTTP.get_response(videos_endpoint(channel_id = input))
       return input if !res.is_a?(Net::HTTPSuccess)
@@ -42,7 +53,8 @@ module Jekyll
             'id' => item['id']['videoId'],
             'title' => item['snippet']['title'],
             'date' => item['snippet']['publishedAt'],
-            'description' => item['snippet']['description']
+            'description' => item['snippet']['description'],
+            'thumbnail' => get_thumbnail(item['id']['videoId'])
           })
         end
       end
