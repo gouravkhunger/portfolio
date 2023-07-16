@@ -10,7 +10,7 @@ layout: default
   Collection of all my <a href="https://l.gourav.sh/youtube">youtube videos</a>{% if page.page_number != 1 %} — Page {{ page.page_number }}{% endif %}.
 </p>
 
-<div class="mt-10 gap-4 projects grid grid-flow-row grid-cols-1 sm:grid-cols-2">
+<div class="mt-10 gap-8 projects grid grid-flow-row grid-cols-1 sm:grid-cols-2">
   {% for video in page.videos %}
     {% include video.html %}
   {% endfor %}

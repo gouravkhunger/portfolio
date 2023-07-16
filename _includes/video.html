@@ -14,11 +14,11 @@
     {{ video['title'] | default: 'Dummy title' }}
   </span>
 
-  <span class="text-slate-500 dark:text-gray-400">
+  <span class="text-sm text-slate-500 dark:text-gray-400">
     {{ video['date'] | default: '1970-01-01T00:00:00.000Z' | date: '%b %d, %Y' }}
   </span>
 
-  <p class="mt-2 text-slate-500 dark:text-gray-400">
+  <p class="mt-4 text-slate-500 dark:text-gray-400">
     {{ video['description'] | default: 'Dummy description' }}
   </p>
 </a>
