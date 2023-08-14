@@ -1,10 +1,8 @@
-- title: Home
-  url: /
 - title: Projects
-  url: /projects
-- title: Articles
-  url: /articles
-- title: Videos
-  url: /videos
-- title: Wins
-  url: /wins
+  url: "#section:projects"
+- title: Work
+  url: "#section:work_experience"
+- title: Education
+  url: "#section:education"
+- title: Awards
+  url: "#section:awards"
