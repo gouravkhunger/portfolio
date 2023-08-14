@@ -10,12 +10,12 @@
   }
 
   body {
-    @apply bg-slate-50 dark:bg-zinc-900 dark:text-white;
+    @apply bg-stone-50 dark:bg-zinc-900 dark:text-white;
     font-family: "Sen", sans-serif;
   }
 
   header {
-    @apply max-w-5xl mx-auto px-6 my-3 flex justify-between items-center text-lg;
+    @apply max-w-5xl mx-auto px-6 my-0 flex justify-between items-center text-lg bg-stone-50;
   }
 
   footer {
@@ -89,8 +89,12 @@
   @apply hidden fixed top-0 left-0 justify-center items-center w-full h-full backdrop-blur-sm shadow-md z-20;
 }
 
+#anchor {
+  scroll-margin-top: 100px;
+}
+
 .frozen {
-  @apply w-full fixed top-0 left-0 bg-opacity-25 backdrop-blur-md;
+  @apply w-full fixed top-0 left-0;
   z-index: 100;
 }
 
@@ -176,4 +180,9 @@
 
 .content p:not(:last-child), .content h1, .content h2, .content h3, .content h4, .content h5, .content h6, .content ul {
   @apply mb-6;
+}
+
+
+h_grey {
+  @apply text-slate-500 dark:text-slate-300
 }
