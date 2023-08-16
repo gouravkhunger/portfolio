@@ -93,6 +93,11 @@
   scroll-margin-top: 100px;
 }
 
+.active-section {
+  color: DarkOrange;
+  font-weight: 600;
+}
+
 .frozen {
   @apply w-full fixed top-0 left-0;
   z-index: 100;
