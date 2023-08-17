@@ -89,8 +89,9 @@
   @apply hidden fixed top-0 left-0 justify-center items-center w-full h-full backdrop-blur-sm shadow-md z-20;
 }
 
-#anchor {
-  scroll-margin-top: 100px;
+.section-title {
+    @apply mt-16;
+    scroll-margin-top: 3em;
 }
 
 .active-section {
