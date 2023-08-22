@@ -5,8 +5,8 @@ description: Portfolio of Roberto Martinez de la Cruz - Resume, technical and no
 permalink: /
 ---
 
-<div class="sm:flex sm:flex-row-reverse justify-between items-center">
-  <img class="h-24 w-24 sm:h-36 sm:w-36 mb-6 sm:mb-0" src="/assets/images/gourav.webp" alt="Gourav Khunger" />
+<div class="sm:flex sm:flex-row-reverse sm:justify-between items-center">
+  <img class="h-24 w-24 sm:h-auto sm:w-36 mb-6 sm:mb-0 -px-4 rounded-lg" src="/assets/images/avatars/NASAAmesResearchCenter.jpg" alt="RMC" />
   <div class="sm:mr-16">
     <h2 class="font-black">
       Roberto Martinez de la Cruz
@@ -26,12 +26,6 @@ permalink: /
         aria-label="Visit Roberto's LinkedIn profile">
         {% include linkedin_svg.html %}
       </a>
-      <a
-        href="https://l.gourav.sh/linkedin"
-        class="underline-none round-button ml-2"
-        aria-label="Download Roberto's CV">
-        {% include cv_svg.html %}
-      </a>
     </div>
   </div>
 </div>
@@ -40,33 +34,17 @@ permalink: /
   <h2 class="font-black">
     Projects
   </h2>
-  <p class="h_grey">Nerdy</p>
-  <div class="mt-6">
-    <div class="insight">
-      {% include right_arrow.html %}
-      <p>Google <a href="/achievement/google-associate-android-developer">certified</a> <span>Associate Android Developer</span>.
-    </div>
-    <div class="insight">
-      {% include right_arrow.html %}
-      <p><span>20+</span> <a href="https://l.gourav.sh/youtube" target="_blank">YouTube</a> videos. <span>20K+</span> views.</p>
-    </div>
-    <div class="insight">
-      {% include right_arrow.html %}
-      <p><span>100+</span> <a href="https://l.gourav.sh/stackoverflow" target="_blank">StackOverflow</a> answers reaching <span>500K+</span> people.</p>
-    </div>
-    <div class="insight">
-      {% include right_arrow.html %}
-      <p><span>50+</span> articles on Kotlin, Android, Web, Software development and more.</p>
-    </div>
-    <div class="insight">
-      {% include right_arrow.html %}
-      <p><span>Author</span> at famous publications: <a href="https://l.gourav.sh/genicsblog" target="_blank">Genics Blog</a>, <a href="https://l.gourav.sh/dev-to" target="_blank">dev.to</a>, <a href="https://l.gourav.sh/freecodecamp" target="_blank">FreeCodeCamp</a>, etc.</p>
-    </div>
-    <div class="insight">
-      {% include right_arrow.html %}
-      <p><span>1 Million+</span> total content views on the internet.</p>
-    </div>
-  </div>
+  <h3 class="h_grey">Nerdy</h3>
+    <article class="project-section mt-6">
+      <div href="" class="card" style="background-image: url('/assets/images/projects/Formula1MockUp.JPG');">
+        <div class="project-info">
+          <div class="project-bio">
+            <h3>Project One</h3>
+            <p>React, Redux, SASS</p>
+          </div>
+        </div>
+      </div>
+    </article>
 </div>
 
 <div class="section-title" id="section:awards">
