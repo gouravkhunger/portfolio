@@ -202,25 +202,19 @@
   grid-gap: 0.9rem;
 }
 
-.project-info {
-  display: flex;
-  justify-content: space-between;
-  opacity: 0;
-  position: relative;
-  transition: 0.5s ease-in-out;
-}
-
 .project-bio {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   position:relative;
+  height:100%;
   width:100%;
-  bottom:0;
   text-align:center;
+  transition: 0.4s ease-in-out;
 }
 
 .card {
+  @apply rounded-lg;
   padding: 1rem;
   background: #ffffff;
   background-size: cover;
@@ -229,7 +223,6 @@
   color: #ffffff;
   height: 20rem;
   width: 20rem;
-  border-radius: 5px;
   transition: 0.4s ease-in-out;
   cursor: pointer;
 }
