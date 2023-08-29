@@ -202,17 +202,6 @@
   grid-gap: 0.9rem;
 }
 
-.project-bio {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  position:relative;
-  height:100%;
-  width:100%;
-  text-align:center;
-  transition: 0.4s ease-in-out;
-}
-
 .card {
   @apply rounded-lg;
   padding: 1rem;
@@ -221,17 +210,30 @@
   background-repeat: no-repeat;
   background-position: center center;
   color: #ffffff;
-  height: 20rem;
-  width: 20rem;
+  height: 16rem;
+  width: 16rem;
   transition: 0.4s ease-in-out;
   cursor: pointer;
 }
 
 .card:hover {
-  box-shadow: inset 0 100px 1000px 10px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 1000px 100px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
-.card:hover .project-info {
+.project-bio {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position:relative;
+  height:100%;
+  width:100%;
+  text-align:left;  margin-left:0.6rem;
+  margin-bottom:0.5rem;
+  transition: 0.4s ease-in-out;
+  opacity: 0;
+}
+
+
+.card:hover .project-bio {
   opacity: 1;
 }
-

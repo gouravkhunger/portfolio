@@ -36,12 +36,13 @@ permalink: /
   <h2 class="font-black">Projects</h2>
   <h3 class="h_grey">Nerdy</h3>
     <article class="project-section mt-6">
-      <div href="" class="card" style="background-image: url('/assets/images/projects/Formula1MockUp.JPG');">
-        <div class="project-bio">
-          <h3>Project One</h3>
-          <p>React, Redux, SASS</p>
+      {% for project_image in site.assets.images.projects.nerdy %}
+        <div href="" class="card" style="background-image: url('project_image/cover/*');">
+          <div class="project-bio">
+            <h4>Project One</h4>
+          </div>
         </div>
-      </div>
+      {% endfor %}
     </article>
 </section>
 
