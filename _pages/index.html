@@ -34,16 +34,29 @@ permalink: /
 
 <section class="section-title" id="section:projects">
   <h2 class="font-black">Projects</h2>
-  <h3 class="h_grey">Nerdy</h3>
-    <article class="project-section mt-6">
-      {% for project_image in site.assets.images.projects.nerdy %}
-        <div href="" class="card" style="background-image: url('project_image/cover/*');">
-          <div class="project-bio">
-            <h4>Project One</h4>
+
+  <h3 class="h_grey mt-6">Nerdy</h3>
+    <article class="project-subsection">
+      {% for item in site.data.nerdy_projects %}
+        <div href="" class="card" style="background-image: url({{item.cover}});">
+            <div class="project-bio">
+              <h4>{{item.title}}</h4>
+            </div>
           </div>
-        </div>
       {% endfor %}
     </article>
+
+  <h3 class="h_grey mt-6">Human</h3>
+  <article class="project-subsection">
+    {% for item in site.data.human_projects %}
+    <div href="" class="card" style="background-image: url({{item.cover}});">
+      <div class="project-bio">
+        <h4>{{item.title}}</h4>
+      </div>
+    </div>
+    {% endfor %}
+  </article>
+
 </section>
 
 <div class="section-title" id="section:awards">

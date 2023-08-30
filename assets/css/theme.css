@@ -195,7 +195,9 @@
 
 /* Project Section */
 
-.project-section {
+.project-subsection {
+  margin-top: 0px;
+  margin-top: 2px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: minmax(250px, auto);
