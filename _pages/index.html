@@ -37,12 +37,14 @@ permalink: /
 
   <h3 class="h_grey mt-6">Nerdy</h3>
     <article class="project-subsection">
-      {% for item in site.data.nerdy_projects %}
-        <div href="" class="card" style="background-image: url({{item.cover}});">
-            <div class="project-bio">
-              <h4>{{item.title}}</h4>
+      {% for project in site.data.nerdy_projects %}
+        <a href="/project/{{ project[0] }}" class="underline-none">
+          <div class="card" style="background-image: url({{project[1].cover}});">
+              <div class="project-bio">
+                <h4>{{project[1].title}}</h4>
+              </div>
             </div>
-          </div>
+        </a>
       {% endfor %}
     </article>
 

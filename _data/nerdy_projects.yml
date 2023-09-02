@@ -1,7 +1,9 @@
-- title: Formula 1 EPP Model
+formula1_epp_model:
+  title: Formula 1 EPP Model
   cover: '/assets/images/projects/nerdy/formula1_epp_model/cover_formula1_epp_model.JPG'
   excerpt: "Blabla"
 
-- title: Jet Impact on the Underside of a Superhydrophobic Surface
+jet_impact_underside_superhydrophobic_surface:
+  title: Jet Impact on the Underside of a Superhydrophobic Surface
   cover: '/assets/images/projects/nerdy/jet_impact_underside_superhydrophobic_surface/cover_contact_angle_cytonix.webp'
   excerpt: "Blabla"
