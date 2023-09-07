@@ -1,0 +1,38 @@
+<div class="gallery">
+    <div class="gallery-item">
+        <img id="gallery-image" src="/assets/images/projects/formula1-epp-model/formula1-design-byhand.webp" alt="{{ site.data.gallery[0].alt }}">
+    </div>
+    <div class="gallery-nav">
+        <button id="prev-button" onclick="changeImage(-1)">Previous</button>
+        <button id="next-button" onclick="changeImage(1)">Next</button>
+    </div>
+</div>
+
+<script>
+    let currentImageIndex = 0;
+    {% for site.data.projects.project
+    const galleryImages = [
+        {
+          image: "/assets/images/projects/formula1-epp-model/formula1-design-byhand.webp",
+          alt: "blabla"
+        },
+        {
+          image: "/assets/images/projects/formula1-epp-model/formula1-design-solidworks.webp",
+          alt: "blabla"
+        },
+    ];
+
+    function changeImage(offset) {
+      currentImageIndex += offset;
+
+      if (currentImageIndex < 0) {
+        currentImageIndex = galleryImages.length - 1;
+      } else if (currentImageIndex >= galleryImages.length) {
+        currentImageIndex = 0;
+      }
+
+      const imageElement = document.getElementById("gallery-image");
+      imageElement.src = galleryImages[currentImageIndex].image;
+      imageElement.alt = galleryImages[currentImageIndex].alt;
+    }
+</script>

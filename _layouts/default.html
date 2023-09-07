@@ -30,12 +30,12 @@
     <meta
       property="og:url"
       content="{{ site.url }}{{ site.baseurl }}{{ page.url | replace: '/index.html', '' }}" />
-    <meta property="og:site_name" content="Gourav Khunger" />
+    <meta property="og:site_name" content="Roberto Martinez de la Cruz" />
 
     {% if page.url == '/' %}
     <meta property="og:type" content="profile" />
-    <meta property="profile:first_name" content="Gourav" />
-    <meta property="profile:last_name" content="Khunger" />
+    <meta property="profile:first_name" content="Roberto" />
+    <meta property="profile:last_name" content="Martinez de la Cruz" />
     {% elsif page.youtube %}
     <meta property="og:type" content="video">
     <meta property="og:video" content="https://www.youtube.com/v/{{ page.youtube }}" />
@@ -65,7 +65,14 @@
       href="https://fonts.googleapis.com/css2?{% if page.layout == 'post' %}family=Fira+Code&{%endif%}family=Sen&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/theme.css" />
+
+    <!-- Swipper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/siema@1.6.1/dist/siema.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/siema@1.6.1/dist/siema.min.js"></script>
+
+    <!-- Swipper -->
 
     {% if jekyll.environment == "production" %}
     <!-- Global site tag (gtag.js) - Google Analytics -->

@@ -239,3 +239,28 @@
 .card:hover .project-bio {
   opacity: 1;
 }
+
+
+/* Image Gallery */
+
+.gallery {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.gallery-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.gallery-nav {
+  margin-top: 10px;
+}
+
+.gallery-nav button {
+  padding: 5px 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
