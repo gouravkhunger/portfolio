@@ -10,18 +10,19 @@
 
 <script>
     let currentImageIndex = 0;
-    {% for site.data.projects.project
+    {% for project in site.data.projects %}
+    {% if project == project_of_interest %}
     const galleryImages = [
+        {% for image in project[1].images %}
         {
-          image: "/assets/images/projects/formula1-epp-model/formula1-design-byhand.webp",
-          alt: "blabla"
+          image: image.source,
+          alt: image.alt
         },
-        {
-          image: "/assets/images/projects/formula1-epp-model/formula1-design-solidworks.webp",
-          alt: "blabla"
-        },
-    ];
+        {% endfor %}
 
+    ];
+    {% endif %}
+    {% endfor %}
     function changeImage(offset) {
       currentImageIndex += offset;
 
