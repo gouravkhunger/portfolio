@@ -1,3 +1,5 @@
+{% assign projectName =  page.name | remove: '.md' %}
+
 <div class="gallery">
     <div class="gallery-item">
         <img
@@ -5,9 +7,19 @@
                 id="gallery-image"
                 src=""
                 alt="Gallery Image"
+                ontouchstart="handleTouchStart(event)"
+                ontouchmove="handleTouchMove(event)"
+                ontouchend="handleTouchEnd(event)"
         />
-        <div class="arrow left-arrow" onclick="changeImage(-1)"></div>
-        <div class="arrow right-arrow"  onclick="changeImage(1)"></div>
+        <div class="arrow left-arrow round-button" onclick="changeImage(-1)">
+            {% include left_arrow.html %}
+        </div>
+        <div class="arrow right-arrow round-button"  onclick="changeImage(1)">
+            {% include right_arrow.html %}
+        </div>
+    </div>
+    <div class="margin:auto lg:hidden bottom:0 h6 italic">
+        <span>Swipe left or right</span>
     </div>
 </div>
 
@@ -15,6 +27,8 @@
 <!--Change image function-->
 <script>
     let currentIndex = 0;
+    let touchStartX = 0;
+    let touchEndX = 0;
     const gallery = document.getElementById('gallery-image');
 
     const galleryImages = [
@@ -39,4 +53,23 @@
 
     gallery.src = galleryImages[currentIndex].image;
 
+    function handleTouchStart(event) {
+      touchStartX = event.touches[0].clientX;
+    }
+
+    function handleTouchMove(event) {
+      touchEndX = event.touches[0].clientX;
+    }
+
+    function handleTouchEnd(event) {
+      const swipeThreshold = 50; // Adjust this threshold as needed
+
+      if (touchStartX - touchEndX > swipeThreshold) {
+        // Swiped left, show next image
+        changeImage(1);
+      } else if (touchEndX - touchStartX > swipeThreshold) {
+        // Swiped right, show previous image
+        changeImage(-1);
+      }
+    }
 </script>

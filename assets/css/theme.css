@@ -91,13 +91,8 @@
 
 .section-title {
     @apply mt-16;
-    scroll-margin-top: 3em;
 }
 
-.active-section {
-  color: DarkOrange;
-  font-weight: 600;
-}
 
 .frozen {
   @apply w-full fixed top-0 left-0;
@@ -247,6 +242,7 @@
   position: relative;
   text-align: center;
   margin: 20px auto;
+  @apply w-full sm:w-3/4
 }
 
 .gallery-item {
@@ -254,31 +250,18 @@
 }
 
 .gallery-item img {
-  max-width: 50%;
+  max-width: 80%;
   height: auto;
   border-radius: 0.75rem;
-}
-
-.gallery-nav {
-  margin-top: 10px;
-}
-
-.gallery-nav button {
-  padding: 5px 10px;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  cursor: pointer;
+  margin: auto;
 }
 
 .arrow {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 50px; /* Adjust the size of the arrow as needed */
-    background-color: rgba(0, 0, 0, 0.5); /* Background color with some transparency */
-    transition: background-color 0.3s ease; /* Smooth hover effect */
+    bottom: 45%;
+    background-color: transparent;
     cursor: pointer;
+    @apply hidden lg:block;
 }
 
 .left-arrow {
@@ -289,6 +272,3 @@
     right: 0;
 }
 
-.arrow:hover {
-    background-color: rgba(0, 0, 0, 0.8); /* Darken the background on hover */
-}

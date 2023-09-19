@@ -7,6 +7,11 @@ formula1-epp-model:
   tag: 'nerdy'
   in-index: 'true'
   cover: 'formula1-epp-model-cover.webp'
+  excerpt: 'A very nice Formula 1'
+  stack:
+    - 'Design'
+    - 'Solidworks'
+    - 'Modelling'
   images:
     - source: 'formula1-epp-model-cover.webp'
       alt: 'Final EPP Model'
