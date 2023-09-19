@@ -1,39 +1,42 @@
 <div class="gallery">
     <div class="gallery-item">
-        <img id="gallery-image" src="/assets/images/projects/formula1-epp-model/formula1-design-byhand.webp" alt="{{ site.data.gallery[0].alt }}">
-    </div>
-    <div class="gallery-nav">
-        <button id="prev-button" onclick="changeImage(-1)">Previous</button>
-        <button id="next-button" onclick="changeImage(1)">Next</button>
+        <img
+                loading="lazy"
+                id="gallery-image"
+                src=""
+                alt="Gallery Image"
+        />
+        <div class="arrow left-arrow" onclick="changeImage(-1)"></div>
+        <div class="arrow right-arrow"  onclick="changeImage(1)"></div>
     </div>
 </div>
 
+
+<!--Change image function-->
 <script>
-    let currentImageIndex = 0;
-    {% for project in site.data.projects %}
-    {% if project == project_of_interest %}
+    let currentIndex = 0;
+    const gallery = document.getElementById('gallery-image');
+
     const galleryImages = [
-        {% for image in project[1].images %}
+        {% for image in site.data.projects[projectName].images %}
         {
-          image: image.source,
-          alt: image.alt
+          image: "/assets/images/projects/{{ projectName }}/{{ image.source }}"
         },
         {% endfor %}
-
     ];
-    {% endif %}
-    {% endfor %}
-    function changeImage(offset) {
-      currentImageIndex += offset;
 
-      if (currentImageIndex < 0) {
-        currentImageIndex = galleryImages.length - 1;
-      } else if (currentImageIndex >= galleryImages.length) {
-        currentImageIndex = 0;
+    function changeImage(offset) {
+      currentIndex += offset;
+
+      if (currentIndex < 0) {
+        currentIndex = galleryImages.length - 1;
+      } else if (currentIndex >= galleryImages.length) {
+        currentIndex = 0;
       }
 
-      const imageElement = document.getElementById("gallery-image");
-      imageElement.src = galleryImages[currentImageIndex].image;
-      imageElement.alt = galleryImages[currentImageIndex].alt;
+      gallery.src = galleryImages[currentIndex].image;
     }
+
+    gallery.src = galleryImages[currentIndex].image;
+
 </script>

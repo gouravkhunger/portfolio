@@ -244,13 +244,19 @@
 /* Image Gallery */
 
 .gallery {
+  position: relative;
   text-align: center;
   margin: 20px auto;
 }
 
+.gallery-item {
+    position: relative;
+}
+
 .gallery-item img {
-  max-width: 100%;
+  max-width: 50%;
   height: auto;
+  border-radius: 0.75rem;
 }
 
 .gallery-nav {
@@ -263,4 +269,26 @@
   color: #fff;
   border: none;
   cursor: pointer;
+}
+
+.arrow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50px; /* Adjust the size of the arrow as needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Background color with some transparency */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+    cursor: pointer;
+}
+
+.left-arrow {
+    left: 0;
+}
+
+.right-arrow {
+    right: 0;
+}
+
+.arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Darken the background on hover */
 }
