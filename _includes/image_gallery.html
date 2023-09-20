@@ -1,15 +1,15 @@
 {% assign projectName =  page.name | remove: '.md' %}
 
-<div class="gallery">
-    <div class="gallery-item">
+<div class="gallery-small">
+    <div class="scrolling-container">
         <img
-                loading="lazy"
-                id="gallery-image"
-                src=""
-                alt="Gallery Image"
-                ontouchstart="handleTouchStart(event)"
-                ontouchmove="handleTouchMove(event)"
-                ontouchend="handleTouchEnd(event)"
+            loading="lazy"
+            id="gallery-image"
+            src=""
+            alt="Gallery Image"
+            ontouchstart="handleTouchStart(event)"
+            ontouchmove="handleTouchMove(event)"
+            ontouchend="handleTouchEnd(event)"
         />
         <div class="arrow left-arrow round-button" onclick="changeImage(-1)">
             {% include left_arrow.html %}
@@ -17,9 +17,6 @@
         <div class="arrow right-arrow round-button"  onclick="changeImage(1)">
             {% include right_arrow.html %}
         </div>
-    </div>
-    <div class="margin:auto lg:hidden bottom:0 h6 italic">
-        <span>Swipe left or right</span>
     </div>
 </div>
 
@@ -38,6 +35,7 @@
         },
         {% endfor %}
     ];
+
 
     function changeImage(offset) {
       currentIndex += offset;
