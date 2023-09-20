@@ -1,15 +1,12 @@
 {% assign projectName =  page.name | remove: '.md' %}
 
-<div class="gallery-small">
-    <div class="scrolling-container">
+<div class="arrow-gallery">
+    <div class="gallery-item">
         <img
-            loading="lazy"
-            id="gallery-image"
-            src=""
-            alt="Gallery Image"
-            ontouchstart="handleTouchStart(event)"
-            ontouchmove="handleTouchMove(event)"
-            ontouchend="handleTouchEnd(event)"
+                loading="lazy"
+                id="gallery-image"
+                src=""
+                alt="Gallery Image"
         />
         <div class="arrow left-arrow round-button" onclick="changeImage(-1)">
             {% include left_arrow.html %}
@@ -17,6 +14,19 @@
         <div class="arrow right-arrow round-button"  onclick="changeImage(1)">
             {% include right_arrow.html %}
         </div>
+    </div>
+</div>
+
+<div class="scroll-gallery">
+    <div class="scrolling-container" id="scrollingContainer">
+        {% for image in site.data.projects[projectName].images %}
+            <img
+                loading="lazy"
+                src="/assets/images/projects/{{ projectName }}/{{ image.source }}"
+                alt="{{ image.alt }}"
+            />
+        {% endfor %}
+
     </div>
 </div>
 
@@ -50,24 +60,4 @@
     }
 
     gallery.src = galleryImages[currentIndex].image;
-
-    function handleTouchStart(event) {
-      touchStartX = event.touches[0].clientX;
-    }
-
-    function handleTouchMove(event) {
-      touchEndX = event.touches[0].clientX;
-    }
-
-    function handleTouchEnd(event) {
-      const swipeThreshold = 50; // Adjust this threshold as needed
-
-      if (touchStartX - touchEndX > swipeThreshold) {
-        // Swiped left, show next image
-        changeImage(1);
-      } else if (touchEndX - touchStartX > swipeThreshold) {
-        // Swiped right, show previous image
-        changeImage(-1);
-      }
-    }
 </script>

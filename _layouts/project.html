@@ -14,9 +14,8 @@ layout: default
 {% endif %}
 
 {% assign project = site.data.projects[page.slug] %}
-<h2 class=" text-center mt-8 font-black">{{ project.title }}</h2>
-<p class="mt-2 text-slate-500 dark:text-slate-300 text-center">{{ project.excerpt }}</p>
-
+  <h2 class="text-center mt-8 font-black">{{ project.title }}</h2>
+  <p class="mt-2 text-slate-500 dark:text-slate-300 text-center">{{ project.year }}</p>
 
 {% if page.visit %}
 <div class="mt-8 flex flex-col sm:flex-row items-center justify-center">

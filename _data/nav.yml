@@ -1,8 +1,12 @@
+- title: Home
+  url: "/"
 - title: Projects
   url: "/projects"
 - title: Work
-  url: "#section:work_experience"
-- title: Education
-  url: "#section:education"
+  url: "/work_experience"
+- title: Stack
+  url: "/stack"
 - title: Awards
-  url: "#section:awards"
+  url: "/awards"
+- title: Contact
+  url: "mailto:"

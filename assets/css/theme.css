@@ -15,11 +15,12 @@
   }
 
   header {
-    @apply max-w-5xl mx-auto px-6 my-0 flex justify-between items-center text-lg bg-stone-50;
+    @apply max-w-5xl mx-auto h-10 px-6 py-6 flex justify-between items-center text-lg bg-stone-50 dark:bg-zinc-900;
   }
 
+
   footer {
-    @apply max-w-5xl mx-auto px-6 mt-16 mb-6 flex sm:flex-row justify-between items-center;
+    @apply max-w-5xl mx-auto px-6 mt-16 mb-6 text-center;
   }
   
   main {
@@ -114,6 +115,8 @@
 .round-button > svg {
   @apply w-6 h-6 text-gray-800 dark:text-white;
 }
+
+/* Nav Menu */
 
 .desktop-nav {
   @apply hidden sm:block;
@@ -235,31 +238,19 @@
   opacity: 1;
 }
 
+/* Arrow Image Gallery */
 
-/* Image Gallery */
-
-.gallery {
+.arrow-gallery {
   position: relative;
   text-align: center;
   margin: 20px auto;
-  @apply w-full sm:w-3/4
-}
-
-.gallery-small {
-    display: flex;
-    overflow-x: scroll; /* Enable horizontal scrolling on smaller screens */
-    white-space: nowrap; /* Prevent line breaks for images */
-    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+  @apply w-3/4 hidden sm:block
 }
 
 .gallery-item {
     position: relative;
 }
 
-.scrolling-container {
-    display: flex;
-    flex-direction: row;
-}
 
 .gallery-item img {
   max-width: 80%;
@@ -268,20 +259,11 @@
   margin: auto;
 }
 
-.scrolling-container img {
-    width: 100%;
-    height: auto;
-    margin-right: 10px;
-    border-radius: 0.75rem;
-
-}
-
 .arrow {
     position: absolute;
     bottom: 45%;
     background-color: transparent;
     cursor: pointer;
-    @apply hidden lg:block;
 }
 
 .left-arrow {
@@ -290,5 +272,28 @@
 
 .right-arrow {
     right: 0;
+}
+
+/* Scroll Image Gallery */
+
+.scroll-gallery {
+    display: flex;
+    overflow-x: scroll; /* Enable horizontal scrolling on smaller screens */
+    white-space: nowrap; /* Prevent line breaks for images */
+    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+    @apply block  sm:hidden
+}
+
+.scrolling-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.scrolling-container img {
+    width: 80%;
+    height: auto;
+    margin-right: 10px;
+    border-radius: 0.75rem;
+
 }
 
