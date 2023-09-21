@@ -3,9 +3,9 @@
 #########
 
 formula1-epp-model:
-  title: Formula 1 EPP Model
-  tag: 'nerdy'
-  in-index: 'true'
+  title: 'Formula 1 EPP Model'
+  type: 'nerdy'
+  in-main: 'true'
   cover: 'formula1-epp-model-cover.webp'
   year: '2015'
   stack:
@@ -23,8 +23,8 @@ formula1-epp-model:
       alt: 'Solidworks design'
 
 jet-impact-underside-superhydrophobic-surface:
-  title: Jet Impact on the Underside of a Superhydrophobic Surface
-  tag: 'nerdy'
-  in-index: 'true'
+  title: 'Jet Impact on the Underside of a Superhydrophobic Surface'
+  type: 'nerdy'
+  in-main: 'true'
   cover: 'jet-impact-underside-superhydrophobic-surface-cover.webp'
 

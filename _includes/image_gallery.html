@@ -40,9 +40,7 @@
 
     const galleryImages = [
         {% for image in site.data.projects[projectName].images %}
-        {
-          image: "/assets/images/projects/{{ projectName }}/{{ image.source }}"
-        },
+            "/assets/images/projects/{{ projectName }}/{{ image.source }}",
         {% endfor %}
     ];
 
@@ -56,8 +54,8 @@
         currentIndex = 0;
       }
 
-      gallery.src = galleryImages[currentIndex].image;
+      gallery.src = galleryImages[currentIndex];
     }
 
-    gallery.src = galleryImages[currentIndex].image;
+    gallery.src = galleryImages[currentIndex];
 </script>

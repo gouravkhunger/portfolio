@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Projects by Gourav Khunger | Software Developer
+title: RMZC | Projects
 description: Engineering, Sporty and Human projects I am most proud of
 excerpt: Engineering, Sporty and Human projects I am most proud of
 permalink: /projects
@@ -15,7 +15,7 @@ permalink: /projects
 <article class="project-subsection">
   <div class="project-subsection">
     {% for project in site.data.projects %}
-      {% if project[1].tag == "nerdy"%}
+      {% if project[1].type == "nerdy"%}
         {% include project.html %}
       {% endif %}
     {% endfor %}

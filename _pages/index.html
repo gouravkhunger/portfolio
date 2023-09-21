@@ -33,12 +33,12 @@ permalink: /
 </div>
 
 <section class="section-title" id="section:projects">
-  <h2 class="font-black">Projects</h2>
+  <h2 class="font-black"><a href="/projects" class="underline-none">Projects</a></h2>
 
   <h3 class="h_grey mt-6">Nerdy</h3>
     <article class="project-subsection">
       {% for project in site.data.projects %}
-        {% if project[1].tag == "nerdy" and project[1].in-index == "true" %}
+        {% if project[1].type == "nerdy" and project[1].in-main == "true" %}
           {% include project.html %}
         {% endif %}
       {% endfor %}
@@ -46,14 +46,30 @@ permalink: /
 
   <h3 class="h_grey mt-6">Human</h3>
   <article class="project-subsection">
-    {% for item in site.data.human_projects %}
-    <div href="" class="card" style="background-image: url({{item.cover}});">
-      <div class="project-bio">
-        <h4>{{item.title}}</h4>
-      </div>
-    </div>
+    {% for project in site.data.projects %}
+      {% if project[1].type == "human" and project[1].in-main == "true" %}
+        {% include project.html %}
+      {% endif %}
     {% endfor %}
   </article>
+
+  <h3 class="h_grey mt-6">Sporty</h3>
+  <article class="project-subsection">
+    {% for project in site.data.projects %}
+      {% if project[1].type == "human" and project[1].in-main == "true" %}
+        {% include project.html %}
+      {% endif %}
+    {% endfor %}
+  </article>
+
+  <div class="flex justify-center">
+    <a
+            href="/projects"
+            class="mt-8 px-3 py-2 link-button">
+      View all projects &gt;
+    </a>
+  </div>
+
 
 </section>
 
@@ -114,13 +130,6 @@ permalink: /
     {% endfor %}
   </div>
 
-  <div class="flex justify-center">
-    <a
-      href="/projects"
-      class="mt-8 px-3 py-2 link-button">
-      View all projects &gt;
-    </a>
-  </div>
 </div>
 
 <div class="mt-16">

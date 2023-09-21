@@ -171,7 +171,7 @@
 }
 
 .link-button {
-  @apply underline-none text-zinc-900 text-sm dark:text-white rounded-lg border-2 border-zinc-900 dark:border-gray-300 transition-all duration-100 hover:scale-110;
+  @apply underline-none text-zinc-900 text-sm dark:text-white rounded-lg border-2 border-zinc-900 dark:border-gray-300 transition-all duration-100 hover:bg-zinc-200 dark:hover:bg-zinc-700;
 }
 
 .tag {
@@ -196,22 +196,22 @@
 .project-subsection {
   margin-top: 0px;
   margin-top: 2px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: minmax(250px, auto);
-  grid-gap: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 .card {
   @apply rounded-lg;
   padding: 1rem;
+  margin: 0.5rem;
   background: #ffffff;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   color: #ffffff;
-  height: 16rem;
-  width: 16rem;
+  height: 12rem;
+  width: 12rem;
   transition: 0.4s ease-in-out;
   cursor: pointer;
 }
@@ -227,8 +227,7 @@
   position:relative;
   height:100%;
   width:100%;
-  text-align:left;  margin-left:0.6rem;
-  margin-bottom:0.5rem;
+  text-align:left;
   transition: 0.4s ease-in-out;
   opacity: 0;
 }
