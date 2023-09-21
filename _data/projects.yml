@@ -6,14 +6,13 @@ formula1-epp-model:
   title: 'Formula 1 EPP Model'
   type: 'nerdy'
   in-main: 'true'
-  cover: 'formula1-epp-model-cover.webp'
   year: '2015'
   stack:
     - 'Design'
     - 'Solidworks'
     - 'Modelling'
   images:
-    - source: 'formula1-epp-model-cover.webp'
+    - source: 'formula1-epp-model.webp'
       alt: 'Final EPP Model'
     - source: 'formula1-mockup-prev.webp'
       alt: 'Blocks beforehand'
@@ -22,9 +21,12 @@ formula1-epp-model:
     - source: 'formula1-design-solidworks.webp'
       alt: 'Solidworks design'
 
+
 jet-impact-underside-superhydrophobic-surface:
   title: 'Jet Impact on the Underside of a Superhydrophobic Surface'
   type: 'nerdy'
   in-main: 'true'
-  cover: 'jet-impact-underside-superhydrophobic-surface-cover.webp'
+  images:
+  - source: 'jet-impact-underside-superhydrophobic-surface-droplet.webp'
+    alt: "Droplet"
 

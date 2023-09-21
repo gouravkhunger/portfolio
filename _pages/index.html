@@ -39,7 +39,7 @@ permalink: /
     <article class="project-subsection">
       {% for project in site.data.projects %}
         {% if project[1].type == "nerdy" and project[1].in-main == "true" %}
-          {% include project.html %}
+          {% include project_card.html %}
         {% endif %}
       {% endfor %}
     </article>
@@ -48,7 +48,7 @@ permalink: /
   <article class="project-subsection">
     {% for project in site.data.projects %}
       {% if project[1].type == "human" and project[1].in-main == "true" %}
-        {% include project.html %}
+        {% include project_card.html %}
       {% endif %}
     {% endfor %}
   </article>
@@ -57,7 +57,7 @@ permalink: /
   <article class="project-subsection">
     {% for project in site.data.projects %}
       {% if project[1].type == "human" and project[1].in-main == "true" %}
-        {% include project.html %}
+        {% include project_card.html %}
       {% endif %}
     {% endfor %}
   </article>
@@ -69,8 +69,6 @@ permalink: /
       View all projects &gt;
     </a>
   </div>
-
-
 </section>
 
 <div class="section-title" id="section:awards">
@@ -125,7 +123,7 @@ permalink: /
 
     {% for project in site.data.projects %}
       {% if projects contains project[0] %}
-        {% include project.html %}
+        {% include project_card.html %}
       {% endif %}
     {% endfor %}
   </div>

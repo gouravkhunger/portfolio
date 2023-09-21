@@ -16,7 +16,7 @@ permalink: /projects
   <div class="project-subsection">
     {% for project in site.data.projects %}
       {% if project[1].type == "nerdy"%}
-        {% include project.html %}
+        {% include project_card.html %}
       {% endif %}
     {% endfor %}
   </div>
