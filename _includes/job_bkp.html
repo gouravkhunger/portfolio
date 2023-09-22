@@ -1,0 +1,44 @@
+<div class="relative flex flex-row items-center{% if forloop.first %} pb-4{% elsif forloop.last %} pt-4{% else %} py-4{% endif %}">
+  <div class="w-1/6 flex flex-col sm:mr-0 items-center">
+    {% if forloop.first != true %}
+    <div 
+      style="height: {{ job.bars.top }}"
+      class="absolute top-0 w-0 mx-auto border-l-2 border-black dark:border-white">
+    </div>
+    {% endif %}
+    <div class="p-4 rounded-full border-2 border-black dark:border-white">
+      {% assign last_char = job.company.name | slice: -1 %}
+      <img
+        alt="{{ job.company.name }}'{% if last_char != 's' %}s{% endif %} logo"
+        src="{{ job.company.logo }}" class="w-6 h-6" loading="lazy" />
+    </div>
+    {% if forloop.last != true %}
+    <div 
+      style="height: {{ job.bars.bottom }}"
+      class="absolute bottom-0 w-0 mx-auto border-l-2 border-black dark:border-white">
+    </div>
+    {% endif %}
+  </div>
+  <div class="mt-4 pl-6 sm:pl-0 sm:mt-0 w-5/6">
+    <span class="text-2xl">
+      {{ job.company.name }}
+    </span>
+    <a
+      target="_blank" class="underline-none" href="{{ job.company.url }}"
+      aria-label="Visit {{ job.company.name }}'{% if last_char != 's' %}s{% endif %} website">
+      {% include link_svg.html %}
+    </a>
+    {% assign positions = job.positions | reverse %}
+    {% for position in positions %}
+    <span class="{% if forloop.first != true %}mt-2 {% endif %}flex flex-row font-black items-center text-xs text-slate-500 dark:text-slate-300">
+      {{ position.name }} &bull; {{ position.type }}
+    </span>
+    <span class="text-xs text-slate-500 dark:text-slate-300">
+      {{ position.from | date: '%b %Y'}}
+      —
+      {% if position.to %}{{ position.to | date: '%b %Y'}}{%else%}Present{% endif %}
+    </span>
+    {% endfor %}
+    <p class="mt-2">{{ job.company.description }}</p>
+  </div>
+</div>

@@ -75,17 +75,12 @@ permalink: /
 </section>
 
 <!--WORK AND EDUCATION-->
+
 <div class="section-title" id="section:work_experience">
   <h2 class="font-black">
     Work Experience
-    <p class="mt-2 text-slate-500 dark:text-slate-300">Organizations that I've contributed to</p>
-    <div class="mt-6">
-      {% assign workexp = site.data.workexp | reverse %}
-      {% for job in workexp %}
-      {% include job.html %}
-      {% endfor %}
-    </div>
   </h2>
+  {% include job.html %}
 </div>
 
 
