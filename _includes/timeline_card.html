@@ -1,0 +1,8 @@
+{% assign gridRowStart = initialYear | minus: item[1].to | plus: 1%}
+{% assign gridRowEnd = gridRowStart | plus: item[1].to | minus: item[1].from%}
+<div class="container {{ columnSide }} row-start-{{ gridRowStart }} row-end-{{ gridRowEnd }}">
+    <div class="content">
+        <a href="{{ item[1].url }}" target="_blank" class="text-lg underline-none">{{ item[1].name }}</a>
+        <div class="text-sm h_grey">{{ item[1].position }}, {{ item[1].from }} - {{ item[1].to }}</div>
+    </div>
+</div>

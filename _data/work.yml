@@ -1,0 +1,21 @@
+sensefly:
+  name: "senseFly"
+  url: "https://www.sensefly.com"
+  position: "Aerodynamic Engineer"
+  from: 2019
+  to: 2023
+  description: "Fixed wing drones aerodynamic design, optimization and validation"
+  stack:
+    - "Windtunnel"
+    - "OpenFOAM"
+    - "ANSYS Fluent"
+
+delft:
+  name: "TU Delft"
+  url: "https://www.tudelft.nl/en/ae"
+  position: "Teaching Assistant"
+  from: 2017
+  to: 2018
+  description: "Courses 'Simulation, Validation and Verification' and 'Computational Methods'"
+  stack:
+

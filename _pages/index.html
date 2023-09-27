@@ -39,7 +39,7 @@ permalink: /
 <section class="section-title" id="section:projects">
   <h2 class="font-black"><a href="/projects" class="underline-none">Projects</a></h2>
 
-  <h3 class="h_grey mt-6">Nerdy</h3>
+  <h3 class="h_grey mt-8">Nerdy</h3>
     <article class="project-subsection">
       {% for project in site.data.projects %}
         {% if project[1].type == "nerdy" and project[1].in-main == "true" %}
@@ -48,7 +48,7 @@ permalink: /
       {% endfor %}
     </article>
 
-  <h3 class="h_grey mt-6">Human</h3>
+  <h3 class="h_grey mt-8">Human</h3>
   <article class="project-subsection">
     {% for project in site.data.projects %}
       {% if project[1].type == "human" and project[1].in-main == "true" %}
@@ -74,13 +74,12 @@ permalink: /
   </div>
 </section>
 
-<!--WORK AND EDUCATION-->
 
-<div class="section-title" id="section:work_experience">
+<div class="section-title" id="section:timeline">
   <h2 class="font-black">
-    Work Experience
+    Timeline
   </h2>
-  {% include job.html %}
+  {% include timeline.html %}
 </div>
 
 

@@ -296,50 +296,70 @@
 
 }
 
-/* Jobs and Education Section */
+/* Timeline Section */
 
-/* The actual timeline (the vertical ruler) */
 .timeline {
   position: relative;
   margin: 0 auto;
+  @apply grid grid-cols-2  gap-1 sm:gap-8
 }
 
-/* The actual timeline (the vertical ruler) */
-.timeline::after {
-  content: '';
-  position: absolute;
-  width: 6px;
-  background-color: rgb(24 24 27);  /* zinc-900 */
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  margin-left: -3px;
-}
-
+.timeline-side {
+  display: grid;
+  grid-template-rows: repeat(12, 2.5rem);
+  }
 /* Container around content */
 .container {
-  padding: 10px 40px;
   position: relative;
-  background-color: inherit;
-  width: 50%;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 /* Place the container to the left */
 .left {
-  left: 0;
+  right: 0px;
+  text-align: right;
 }
 
 /* Place the container to the right */
 .right {
-  left: 50%;
+  left: 0px;
+  text-align: left;
 }
 
 /* The actual content */
 .content {
-  padding: 20px 30px;
-  background-color: white;
-  position: relative;
-  border-radius: 6px;
+  padding: 0px 32px;
 }
 
+/* The line */
+.container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 10px; /* Adjust the width of the line as needed */
+  height: 100%;
+  border-radius: 5px; /* Adjust the border-radius to make the edge rounded */
+}
 
+.container.left {
+  justify-content: flex-end;
+}
+
+.container.right {
+  justify-content: flex-start;
+}
+
+.container.left::after {
+  right: 0px;
+  @apply bg-orange-500 dark:bg-slate-300
+}
+
+.container.right::after {
+  @apply bg-orange-400 dark:bg-slate-400
+}
+
+.timeline h3 {
+  @apply text-slate-800 dark:text-slate-300 mt-6
+}
