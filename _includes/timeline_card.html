@@ -1,8 +1,15 @@
-{% assign gridRowStart = initialYear | minus: item[1].to | plus: 1%}
-{% assign gridRowEnd = gridRowStart | plus: item[1].to | minus: item[1].from%}
-<div class="container {{ columnSide }} row-start-{{ gridRowStart }} row-end-{{ gridRowEnd }}">
+{% assign gridRowStart = initialYear | minus: item[1].to-year | plus: 1 %}
+{% assign gridRowEnd = gridRowStart | plus: item[1].to-year | minus: item[1].from-year %}
+<div class="container {{ columnSide }}"
+     style="grid-row-start: {{ gridRowStart }}; grid-row-end: {{ gridRowEnd }}; grid-column-start: {{ column }}">
     <div class="content">
         <a href="{{ item[1].url }}" target="_blank" class="text-lg underline-none">{{ item[1].name }}</a>
-        <div class="text-sm h_grey">{{ item[1].position }}, {{ item[1].from }} - {{ item[1].to }}</div>
+        <div class="text-sm h_grey hidden sm:block">
+            {{ item[1].position }},
+            {{ item[1].from-month }} {{ item[1].from-year }} - {{ item[1].to-month }} {{ item[1].to-year }} </div>
+        <div class="text-sm h_grey block sm:hidden"> {{ item[1].position }}</div>
+        <div class="text-sm h_grey block sm:hidden">
+            {{ item[1].from-month }} {{ item[1].from-year }} -
+            {{ item[1].to-month }} {{ item[1].to-year }} </div>
     </div>
 </div>

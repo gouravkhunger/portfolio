@@ -1,28 +1,20 @@
 {% assign initialYear = 2023 %}
 
-<div class="timeline">
+<div class="timeline-title">
     <h3 class="text-center sm:text-right mr-8">Work</h3>
     <h3 class="text-center sm:text-left ml-8">Education</h3>
 </div>
-<div class="timeline">
-    <div class="timeline-side">
-        {% assign columnSide = 'left' %}
-            {% for item in site.data.work %}
-                {% include timeline_card.html %}
-            {% endfor %}
-    </div>
-    <div class="timeline-side">
-            {% assign columnSide = 'right' %}
-                {% for item in site.data.education %}
-                    {% include timeline_card.html %}
-                {% endfor %}
+<div class="timeline-content">
+    {% assign columnSide = 'left' %}
+    {% assign column = 1 %}
+        {% for item in site.data.work %}
+            {% include timeline_card.html %}
+        {% endfor %}
 
-    </div>
+    {% assign columnSide = 'right' %}
+    {% assign column = 2 %}
+        {% for item in site.data.education %}
+            {% include timeline_card.html %}
+        {% endfor %}
 </div>
 
-<div class="flex justify-center">
-    <a href="/assets/pdfs/CV-RobertoMartinezdelaCruz-24032023.pdf"
-       class="mt-8 px-3 py-2 link-button">
-       View full CV
-    </a>
-</div>

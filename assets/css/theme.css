@@ -4,6 +4,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* General */
+
 @layer base {
   * {
     -webkit-tap-highlight-color: transparent;
@@ -22,7 +24,7 @@
   footer {
     @apply max-w-5xl mx-auto px-6 mt-16 mb-6 text-center;
   }
-  
+
   main {
     @apply mx-6 mt-32 max-w-4xl lg:mx-auto;
   }
@@ -35,23 +37,50 @@
     background-size: 0% 0rem;
   }
 
-  nav a {
-    @apply pb-1 bg-gradient-to-r from-slate-800 to-slate-800 dark:from-slate-300 dark:to-slate-300;
-    background-size: 0% 0.125rem;
-    background-repeat: no-repeat;
-    background-position: left bottom;
-    transition: background-size 300ms ease;
-    text-decoration: none;
+   ul li {
+        @apply list-disc list-outside ml-8 md:ml-12;
+    }
+    ul li:not(:last-child) {
+        @apply mb-2;
+    }
   }
 
-  nav a:hover {
-      background-size: 100% 0.125rem;
+  #instantclick-bar {
+    @apply bg-black dark:bg-white;
   }
 
-  nav a:not(:last-child) {
-    @apply mr-4;
+  #modal {
+    @apply hidden fixed top-0 left-0 justify-center items-center w-full h-full backdrop-blur-sm shadow-md z-20;
   }
 
+  .section-title {
+      @apply mt-16;
+  }
+
+
+  .frozen {
+    @apply w-full fixed top-0 left-0;
+    z-index: 100;
+  }
+
+  .underline-none {
+    @apply inline-block;
+  }
+
+  .underline-none:hover {
+    background-size: 0% 0rem;
+  }
+
+  .round-button {
+    @apply w-10 h-10 p-2 rounded-full flex items-center justify-center hover:ring-2 focus:ring-2 ring-zinc-900 dark:ring-white transition-all;
+  }
+
+  .round-button > svg {
+    @apply w-6 h-6 text-gray-800 dark:text-white;
+  }
+
+
+/* Font and Typography */
   h1, h2, h3, h4, h5, h6 {
     @apply mb-2;
   }
@@ -74,52 +103,31 @@
   h6 {
       @apply text-base;
   }
-  ul li {
-      @apply list-disc list-outside ml-8 md:ml-12;
+  .h_grey {
+    @apply text-slate-500 dark:text-slate-300
   }
-  ul li:not(:last-child) {
-      @apply mb-2;
-  }
-}
-
-#instantclick-bar {
-  @apply bg-black dark:bg-white;
-}
-
-#modal {
-  @apply hidden fixed top-0 left-0 justify-center items-center w-full h-full backdrop-blur-sm shadow-md z-20;
-}
-
-.section-title {
-    @apply mt-16;
-}
-
-
-.frozen {
-  @apply w-full fixed top-0 left-0;
-  z-index: 100;
-}
-
-.underline-none {
-  @apply inline-block;
-}
-
-.underline-none:hover {
-  background-size: 0% 0rem;
-}
-
-.round-button {
-  @apply w-10 h-10 p-2 rounded-full flex items-center justify-center hover:ring-2 focus:ring-2 ring-zinc-900 dark:ring-white transition-all;
-}
-
-.round-button > svg {
-  @apply w-6 h-6 text-gray-800 dark:text-white;
-}
 
 /* Nav Menu */
 
 .desktop-nav {
   @apply hidden sm:block;
+}
+
+nav a {
+@apply pb-1 bg-gradient-to-r from-slate-800 to-slate-800 dark:from-slate-300 dark:to-slate-300;
+background-size: 0% 0.125rem;
+background-repeat: no-repeat;
+background-position: left bottom;
+transition: background-size 300ms ease;
+text-decoration: none;
+}
+
+nav a:hover {
+  background-size: 100% 0.125rem;
+}
+
+nav a:not(:last-child) {
+@apply mr-4;
 }
 
 .mobile-nav {
@@ -184,11 +192,6 @@
 
 .content p:not(:last-child), .content h1, .content h2, .content h3, .content h4, .content h5, .content h6, .content ul {
   @apply mb-6;
-}
-
-
-.h_grey {
-  @apply text-slate-500 dark:text-slate-300
 }
 
 /* Project Section */
@@ -298,17 +301,26 @@
 
 /* Timeline Section */
 
-.timeline {
+.timeline-title {
   position: relative;
-  margin: 0 auto;
-  @apply grid grid-cols-2  gap-1 sm:gap-8
+  @apply grid grid-cols-2  gap-1 md:gap-4
 }
 
-.timeline-side {
+.timeline-content {
   display: grid;
-  grid-template-rows: repeat(12, 2.5rem);
-  }
-/* Container around content */
+  grid-template-columns: repeat(2, 0.5fr);
+  grid-template-rows: repeat(12, minmax(1.5rem, auto));
+  grid-row-gap: 0.25rem;
+  @apply gap-x-1 md:gap-x-4
+
+}
+
+@media screen and (max-width: 768px) {
+    .timeline-side {
+      grid-template-rows: repeat(12, 8.5rem); /* Adjust the row height as needed */
+    }
+}
+
 .container {
   position: relative;
   width: 100%;
@@ -316,21 +328,18 @@
   align-items: center;
 }
 
-/* Place the container to the left */
 .left {
   right: 0px;
   text-align: right;
 }
 
-/* Place the container to the right */
 .right {
   left: 0px;
   text-align: left;
 }
 
-/* The actual content */
 .content {
-  padding: 0px 32px;
+  padding: 7px 32px;
 }
 
 /* The line */
