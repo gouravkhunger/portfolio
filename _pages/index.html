@@ -19,13 +19,13 @@ permalink: /
     <p class="mt-6 dark:text-gray-400">Welcome to my portfolio. Find below some of my favourite projects (nerdy, sporty or 'humany') and a small summary of my academic and professional background </p>
     <div class="mt-4 -ml-2 flex">
       <a
-        href="https://l.gourav.sh/github"
+        href="https://github.com/robertomzc/"
         class="underline-none round-button mr-2"
         aria-label="Visit Roberto's GitHub profile">
         {% include github_svg.html %}
       </a>
       <a
-        href="https://l.gourav.sh/linkedin"
+        href="https://www.linkedin.com/in/robertomzc/"
         class="underline-none round-button ml-2"
         aria-label="Visit Roberto's LinkedIn profile">
         {% include linkedin_svg.html %}
@@ -68,7 +68,7 @@ permalink: /
 
   <div class="flex justify-center">
     <a href="/projects"
-       class="mt-8 px-3 py-2 link-button">
+       class="mt-8 link-button">
       View all projects &gt;
     </a>
   </div>
@@ -76,22 +76,25 @@ permalink: /
 
 
 <div class="section-title" id="section:timeline">
-  <h2 class="font-black">
+  <h2 class="font-black"><a href="/timeline" class="underline-none">
     Timeline
-  </h2>
+  </a></h2>
   {% include timeline.html %}
+  <div class="grid justify-center gap-4" style="grid-template-columns: 50% 50%;">
+    <div class="grid justify-center" style="grid-template-columns: 1fr auto;">
+      <div></div>
+        <a href="/assets/pdfs/CV-RobertoMartinezdelaCruz-24032023.pdf" class="mt-8 px-3 py-2 link-button text-right">
+          View CV (PDF)
+        </a>
+    </div>
 
-  <div class="grid grid-cols-2 justify-center gap-4">
-    <a href="/assets/pdfs/CV-RobertoMartinezdelaCruz-24032023.pdf"
-       class="mt-8 py-2 link-button text-right w-auto">
-      View full CV
-    </a>
-    <a href="/timeline"
-       class="mt-8 px-3 py-2 link-button w-auto">
-      View full timeline >
-    </a>
+    <div class="grid justify-center" style="grid-template-columns: auto 1fr;">
+        <a href="/timeline" class="mt-8 link-button">
+          View full timeline >
+        </a>
+      <div></div>
+    </div>
   </div>
-
 </div>
 
 
@@ -117,86 +120,10 @@ permalink: /
   <div class="flex justify-center">
     <a
       href="/wins"
-      class="mt-8 px-3 py-2 link-button">
+      class="mt-8 link-button">
       View all &gt;
     </a>
   </div>
 </div>
 
-<div class="section-title" id="section:featured_projects">
-  <h2 class="font-black">
-    Featured projects
-  </h2>
-  <p class="mt-2 text-slate-500 dark:text-slate-300">Projects that I'm proud of</p>
 
-  <div class="mt-6 gap-4 grid grid-flow-row grid-cols-1 sm:grid-cols-3">
-    {% assign projects = 'genics-blog,jekyllex,jekyll-auto-authors' | split: ',' %}
-
-    {% for project in site.data.projects %}
-      {% if projects contains project[0] %}
-        {% include project_card.html %}
-      {% endif %}
-    {% endfor %}
-  </div>
-
-</div>
-
-<div class="mt-16">
-  <h2 class="font-black">
-    Featured articles
-  </h2>
-  <p class="mt-2 text-slate-500 dark:text-slate-300">Articles that I'm proud of</p>
-
-  <div class="mt-6 gap-4 grid grid-flow-row">
-    {% assign articles = 'swipe-animations,3-years,android-application-fundamentals' | split: ',' %}
-
-    {% for str in articles %}
-      {% for article in site.data.articles %}
-        {% if article[0] contains str %}
-          {% include article.html %}
-          {% break %}
-        {% endif %}
-      {% endfor %}
-    {% endfor %}
-  </div>
-
-  <div class="flex justify-center">
-    <a
-      href="/articles"
-      class="mt-8 px-3 py-2 link-button">
-      View all articles &gt;
-    </a>
-  </div>
-</div>
-
-<div class="mt-16">
-  <h2 class="font-black">
-    Testimonials
-  </h2>
-  <p class="mt-2 text-slate-500 dark:text-slate-300">What people say about me</p>
-  <div class="mt-6 gap-4 grid grid-flow-row grid-cols-1 md:grid-cols-3">
-    {% for testimonial in site.data.testimonials limit: 3 %}
-    {% include testimonial.html %}
-    {% endfor %}
-  </div>
-
-  <div class="flex justify-center">
-    <a
-      href="/testimonials"
-      class="mt-8 px-3 py-2 link-button">
-      View all &gt;
-    </a>
-  </div>
-</div>
-
-<h2 class="section-title font-black">
-  Contact
-</h2>
-<p class="mt-2 text-slate-500 dark:text-slate-300">Ways you could reach out to me.</p>
-
-<div class="mt-6 text-lg">
-  <p>If you have business related queries, please contact me through my <a href="mailto:gouravkhunger18@gmail.com">email address</a>.</p>
-  <p class="mt-2">
-    To get in touch regarding Genics, please send an e-mail to <a href="mailto:contact@genicsblog.com">contact@genicsblog.com</a>.
-  </p>
-</div>

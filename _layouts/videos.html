@@ -20,7 +20,7 @@ layout: default
   {% if page.page_number > 1 %}
   <a
     href="/videos{% if page.page_number != 2 %}/page/{{ page.page_number | minus: 1 }}{% endif %}"
-    class="px-3 py-2 link-button">
+    class="link-button">
     &lt; Previous
   </a>
   {% endif %}
@@ -30,7 +30,7 @@ layout: default
   {% if page.page_number < page.total_pages %}
   <a
     href="/videos/page/{{ page.page_number | plus: 1 }}"
-    class="px-3 py-2 link-button">
+    class="link-button">
     Next &gt;
   </a>
   {% endif %}

@@ -2,11 +2,11 @@
   url: "/"
 - title: Projects
   url: "/projects"
-- title: Work
-  url: "/work_experience"
+- title: Timeline
+  url: "/timeline"
 - title: Stack
   url: "/stack"
 - title: Awards
   url: "/awards"
 - title: Contact
-  url: "mailto:"
+  url: "/contact"
