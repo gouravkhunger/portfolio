@@ -4,9 +4,9 @@
   url: "/projects"
 - title: Timeline
   url: "/timeline"
-- title: Stack
-  url: "/stack"
 - title: Awards
   url: "/awards"
+- title: Testimonials
+  url: "/testimonials"
 - title: Contact
   url: "/contact"

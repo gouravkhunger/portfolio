@@ -11,8 +11,9 @@
         <div class="text-sm h_grey block sm:hidden"> {{ item[1].position }}</div>
         <div class="text-sm h_grey block sm:hidden">
             {{ item[1].from-month }} {{ item[1].from-year }} -
-            {{ item[1].to-month }} {{ item[1].to-year }} </div>
-        {% if page.slug == timeline.html %}
+            {{ item[1].to-month }} {{ item[1].to-year }}
+        </div>
+        {% if page.url contains "timeline" %}
             <div class="text-xs h-grey">
                 {{ item[1].description }}
             </div>
