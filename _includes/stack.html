@@ -1,11 +1,10 @@
 <div class="ml-4 flex justify-center">
-    <div class="flex flex-wrap mt-10 gap-8">
+    <div class="stack-row">
         {% for item in site.data.stack.software %}
                 <a class="underline-none" href="{{ item[1].url }}" target="_blank">
                     <img loading="lazy"
                      src="/assets/images/stack/{{ item[1].icon }}"
                      alt="Some software image"
-                     class="w-12 h-12 object-contain"
                      title="{{ item[1].title }}"/>
                 </a>
         {% endfor %}

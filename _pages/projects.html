@@ -13,11 +13,9 @@ permalink: /projects
 
 <h3 class="h_grey mt-6">Nerdy</h3>
 <article class="project-subsection">
-  <div class="project-subsection">
     {% for project in site.data.projects %}
       {% if project[1].type == "nerdy"%}
         {% include project_card.html %}
       {% endif %}
     {% endfor %}
-  </div>
 </article>

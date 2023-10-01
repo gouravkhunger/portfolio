@@ -5,7 +5,7 @@
 formula1-epp-model:
   title: 'Formula 1 EPP Model'
   type: 'nerdy'
-  in-main: 'true'
+  in-index: 'true'
   year: '2015'
   stack:
     - 'Design'
@@ -25,7 +25,7 @@ formula1-epp-model:
 jet-impact-underside-superhydrophobic-surface:
   title: 'Jet Impact on the Underside of a Superhydrophobic Surface'
   type: 'nerdy'
-  in-main: 'true'
+  in-index: 'true'
   images:
   - source: 'jet-impact-underside-superhydrophobic-surface-droplet.webp'
     alt: "Droplet"

@@ -1,10 +1,11 @@
 <a href="/project/{{ project[0] }}" class="underline-none flex items-center">
   <div class="card" style="background-image: url(/assets/images/projects/{{ project[0] }}/{{ project[1].images[0].source}});">
     <div class="project-bio">
-      <p>{{project[1].title}}</p>
+      <p style="align-self: last">{{project[1].title}}</p>
     </div>
   </div>
-  <p class="sm:hidden text-center w-64">
+</a>
+
+<p class="sm:hidden text-center w-64">
     {{project[1].title}}
   </p>
-</a>

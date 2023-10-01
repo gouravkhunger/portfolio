@@ -57,7 +57,6 @@
       @apply mt-16;
   }
 
-
   .frozen {
     @apply w-full fixed top-0 left-0;
     z-index: 100;
@@ -186,7 +185,7 @@ nav a:not(:last-child) {
   @apply py-1 px-1.5 text-xs rounded-md bg-gray-200 dark:bg-gray-700;
 }
 
-.project, .video, .testimonial, .article, .achievement {
+.project, .video {
   @apply mx-2 p-4 flex flex-col justify-center rounded-lg border-2 border-transparent hover:border-zinc-900 dark:hover:border-slate-300;
 }
 
@@ -225,8 +224,7 @@ nav a:not(:last-child) {
 .project-bio {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: start;
+  align-items: flex-end;
   height:100%;
   width:100%;
   text-align:left;
@@ -315,7 +313,6 @@ nav a:not(:last-child) {
 
 }
 
-
 .container {
   position: relative;
   width: 100%;
@@ -372,6 +369,43 @@ nav a:not(:last-child) {
 
 .timeline h3 {
   @apply text-slate-800 dark:text-slate-300 mt-6
+}
+
+/* Stack */
+.stack-row {
+@apply flex flex-wrap mt-10 gap-8
+}
+
+.stack-row img {
+@apply w-12 h-12 object-contain hover:scale-110
+}
+
+/* Awards */
+
+.award-card {
+  @apply mx-2 p-4 flex flex-col justify-center rounded-lg border-2 border-transparent hover:border-zinc-900 dark:hover:border-slate-300;
+}
+
+.awards-subsection {
+  margin-top: 0px;
+  margin-top: 2px;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  @apply justify-center sm:justify-start;
+}
+
+/* References */
+
+.references-subsection {
+  margin-top: 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.reference-card {
+  @apply w-auto sm:w-52 h-auto mx-2 p-3 flex flex-col justify-center align-top rounded-lg border-2 border-transparent hover:border-zinc-900 dark:hover:border-slate-300;
 }
 
 /* Contact */

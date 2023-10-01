@@ -10,8 +10,8 @@ collections:
   projects:
     permalink: /project/:name
     output: true
-  achievements:
-    permalink: /achievement/:name
+  references:
+    permalink: /references/:name
     output: true
 
 defaults:
@@ -20,9 +20,9 @@ defaults:
     values:
       layout: project
   - scope:
-      path: "_achievements/*.md"
+      path: "_references/*.md"
     values:
-      layout: achievement
+      layout: reference
 
 plugins:
   - jekyll-sitemap
