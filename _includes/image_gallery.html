@@ -22,8 +22,8 @@
         {% for image in site.data.projects[projectName].images %}
             <img
                 loading="lazy"
-                src="/assets/images/projects/{{ projectName }}/{{ image.source }}"
-                alt="{{ image.alt }}"
+                src="/assets/images/projects/{{ projectName }}/{{ image }}"
+                alt="Gallery Image"
             />
         {% endfor %}
 
@@ -40,7 +40,7 @@
 
     const galleryImages = [
         {% for image in site.data.projects[projectName].images %}
-            "/assets/images/projects/{{ projectName }}/{{ image.source }}",
+            "/assets/images/projects/{{ projectName }}/{{ image }}",
         {% endfor %}
     ];
 

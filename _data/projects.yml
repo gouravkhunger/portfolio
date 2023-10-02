@@ -2,6 +2,18 @@
 # NERDY #
 #########
 
+delft-formula-student-team:
+  title: 'Wind Aerostructures FS Team Delft'
+  type: 'nerdy'
+  in-index: 'true'
+  year: '2016'
+  stack:
+    - 'Preimpregnated Carbon Fiber'
+    - 'Resin Transfer Moulding'
+  images:
+    - 'MouldNewMouldlessMethodForCarbonFiberManufacturing.jpg'
+    - 'NewMouldlessMethodForCarbonFiberManufacturing.jpg'
+
 formula1-epp-model:
   title: 'Formula 1 EPP Model'
   type: 'nerdy'
@@ -12,21 +24,148 @@ formula1-epp-model:
     - 'Solidworks'
     - 'Modelling'
   images:
-    - source: 'formula1-epp-model.webp'
-      alt: 'Final EPP Model'
-    - source: 'formula1-mockup-prev.webp'
-      alt: 'Blocks beforehand'
-    - source: 'formula1-design-byhand.webp'
-      alt: 'By hand design'
-    - source: 'formula1-design-solidworks.webp'
-      alt: 'Solidworks design'
+    - 'formula1-epp-model.webp'
+    - 'formula1-mockup-prev.webp'
+    - 'formula1-design-byhand.webp'
+    - 'formula1-design-solidworks.webp'
 
 
 jet-impact-underside-superhydrophobic-surface:
   title: 'Jet Impact on the Underside of a Superhydrophobic Surface'
   type: 'nerdy'
   in-index: 'true'
+  year: '2018'
+  stack:
+    - 'LabView'
+    - 'MATLAB'
   images:
-  - source: 'jet-impact-underside-superhydrophobic-surface-droplet.webp'
-    alt: "Droplet"
+  - 'ExperimentalSetup.jpg'
+  - 'Cytonix800MContinuousFilm.png'
+  - 'TopView_GlassWaterPatch.png'
+  - 'TopView_NeverWetWaterPatch.png'
+  - 'ContactAngle_Cytonix.tiff'
+  - 'ExperimentalSetupDisassembled.jpg'
 
+upm12c-bodywork:
+  title: 'UPM12C Bodywork'
+  type: 'nerdy'
+  in-index: 'true'
+  year: '2015'
+  stack:
+    - 'Composite Materials'
+    - 'Wet Lay-up'
+  images:
+    - 'FormulaStudentUPMRacingUPM12C.jpg'
+    - 'BodyWorkMould.jpg'
+    - 'BodyWorkCarbonFiberOnGoing.jpg'
+    - 'FormulaStudentSpain_AllTeam.jpg'
+
+upm13c-wings:
+  title: 'UPM13C Wings'
+  type: 'nerdy'
+  in-index: 'true'
+  year: '2016'
+  stack:
+    - 'Composite Materials'
+    - 'ANSYS CFX'
+    - 'CATIA'
+  images:
+    - 'FrontAndRearWingCarbonFibreManufacturing.jpg'
+    - 'FrontAndRearWingEndPlatesCarbonFibreManufacturing.jpg'
+    - 'FrontAndRearWingRibsCarbonFibreManufacturing.jpg'
+    - 'FrontAndRearWingRibsCutCarbonFibreManufacturing.jpg'
+    - 'UPM13CCATIADesign.JPG'
+    - 'ANSYSFluentCFDSimulation.PNG'
+
+renault-sport-f1:
+  title: 'Renault Sport Formula 1'
+  type: 'nerdy'
+  in-index: 'true'
+  year: '2017'
+  stack:
+    - 'Particle Image Velocimetry (PIV)'
+    - 'Windtunnel Experiments'
+  images:
+    - 'RS17Formula1.jpg'
+
+scientific-campus:
+  title: 'Summer Scientific Campus'
+  type: 'nerdy'
+  in-index: 'false'
+  year: '2010'
+  stack:
+    - 'Windtunnel Experiments'
+  images:
+    - 'SmallWindTunnelExperiments.jpg'
+    - 'AerodynamicsPresentation2.jpg'
+    - 'ScientificCampusAllTogether.jpg'
+
+water-rockets:
+  title: 'Water Rockets'
+  type: 'nerdy'
+  in-index: 'false'
+  year: '2004'
+  stack:
+    - 'Science'
+  images:
+    - 'WaterRocketLaunch.JPG'
+    - 'WaterRocketMaxAltitudMeasurement.JPG'
+    - 'WaterRocketPreparation.JPG'
+
+alps-bike-tour:
+  title: 'French Alps 4-day bike tour'
+  type: 'sporty'
+  in-index: 'true'
+  year: '2017'
+  images:
+    - 'MiniTourDeFrance.jpg'
+    - 'ColduGalibierFinalFoto.jpeg'
+      
+haute-route-2022:
+  title: 'Haute Route Back-country Ski'
+  type: 'sporty'
+  in-index: 'true'
+  year: '2022'
+  images:
+    - 'BertolZermatt.png'
+    - 'PasdeChevres.jpg'
+    - 'HauteRouteGroup.jpg'
+
+weissmies-alpinism:
+  title: 'Weissmeis Summit'
+  type: 'sporty'
+  in-index: 'true'
+  year: '2022'
+  images:
+    - 'WeissmiesCover.jpg'
+
+indonesia-teaching-english:
+  title: 'Ndulu Project English Teacher in Indonesia'
+  type: 'human'
+  in-index: 'true'
+  year: '2017'
+  images:
+    - 'EnglishNduluEnglish.jpg'
+    - 'EnglishNduluEnglishClassPinkBackPack.jpg'
+    - 'HighSchoolTeaching.jpg'
+    - 'HighSchoolTeachingClass.jpg'
+    - 'Surfing.jpg'
+
+berkeley-project:
+  title: 'Berkeley Project Volunteer'
+  type: 'human'
+  in-index: 'true'
+  year: '2017'
+  images:
+    - 'BerkeleyProjectPeople.JPEG'
+    - 'BerkeleyProjectCuttingWood.JPEG'
+    - 'BerkeleyProjectCuttingCleaning.JPEG'
+
+trofeo-zosimo-ibanez:
+  title: 'Referee at Trofeo Zósimo Ibañez'
+  type: 'human'
+  in-index: 'true'
+  year: '2014-2016'
+  images:
+    - 'RefereeTrofeoZosimoIbanez.jpg'
+    - 'LogoTrofeoZosimoIbanez.jpg'

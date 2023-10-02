@@ -60,7 +60,7 @@ permalink: /
   <h3 class="h_grey mt-6">Sporty</h3>
   <article class="project-subsection">
     {% for project in site.data.projects %}
-      {% if project[1].type == "human" and project[1].in-index == "true" %}
+      {% if project[1].type == "sporty" and project[1].in-index == "true" %}
         {% include project_card.html %}
       {% endif %}
     {% endfor %}

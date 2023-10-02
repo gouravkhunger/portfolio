@@ -19,3 +19,21 @@ permalink: /projects
       {% endif %}
     {% endfor %}
 </article>
+
+<h3 class="h_grey mt-6">Human</h3>
+<article class="project-subsection">
+    {% for project in site.data.projects %}
+        {% if project[1].type == "human"%}
+            {% include project_card.html %}
+        {% endif %}
+    {% endfor %}
+</article>
+
+<h3 class="h_grey mt-6">Sporty</h3>
+<article class="project-subsection">
+    {% for project in site.data.projects %}
+        {% if project[1].type == "sporty"%}
+            {% include project_card.html %}
+        {% endif %}
+    {% endfor %}
+</article>
