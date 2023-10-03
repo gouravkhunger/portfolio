@@ -214,7 +214,7 @@ nav a:not(:last-child) {
   color: #ffffff;
   transition: 0.4s ease-in-out;
   cursor: pointer;
-  @apply w-56 h-56 sm:w-48 sm:h-48 rounded-lg
+  @apply w-56 h-56 sm:w-52 sm:h-52 rounded-lg
 }
 
 .card:hover {
@@ -261,7 +261,7 @@ nav a:not(:last-child) {
 
 .arrow {
     position: absolute;
-    bottom: 45%;
+    top: 10rem;
     background-color: transparent;
     cursor: pointer;
 }

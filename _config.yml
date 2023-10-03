@@ -1,10 +1,10 @@
 title: Roberto Martinez de la Cruz
 email: robertomzc@gmail.com
 description: >-
-  Collection of some projects and background that made me proud of. (Aerospace) Engineering, sports and people.
+  Portfolio of Roberto Martinez de la Cruz | Aerospace Engineer - Resume, projects, sports, adventures and people.
 baseurl: ""
-url: "https://gourav.sh"
-google_analytics: "G-GSRER1MM23"
+url: ""
+google_analytics: ""
 
 collections:
   projects:

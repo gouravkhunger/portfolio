@@ -1,17 +1,19 @@
+
+
 {% assign projectName =  page.name | remove: '.md' %}
 
 <div class="arrow-gallery">
     <div class="gallery-item">
         <img
-                loading="lazy"
+                loading="eager"
                 id="gallery-image"
                 src=""
                 alt="Gallery Image"
         />
-        <div class="arrow left-arrow round-button" onclick="changeImage(-1)">
+        <div class="arrow left-arrow round-button" id="leftarrow" onclick="changeImage(-1)">
             {% include left_arrow.html %}
         </div>
-        <div class="arrow right-arrow round-button"  onclick="changeImage(1)">
+        <div class="arrow right-arrow round-button" id="rightarrow" onclick="changeImage(1)">
             {% include right_arrow.html %}
         </div>
     </div>
@@ -21,7 +23,7 @@
     <div class="scrolling-container" id="scrollingContainer">
         {% for image in site.data.projects[projectName].images %}
             <img
-                loading="lazy"
+                loading="eager"
                 src="/assets/images/projects/{{ projectName }}/{{ image }}"
                 alt="Gallery Image"
             />
@@ -31,7 +33,7 @@
 </div>
 
 
-<!--Change image function-->
+
 <script>
     let currentIndex = 0;
     let touchStartX = 0;
@@ -44,6 +46,18 @@
         {% endfor %}
     ];
 
+    function toggleArrows() {
+        const leftArrow = document.getElementById('leftarrow');
+        const rightArrow = document.getElementById('rightarrow');
+
+        if (galleryImages.length <= 1) {
+            leftArrow.style.display = 'none';
+            rightArrow.style.display = 'none';
+        } else {
+            leftArrow.style.display = 'block';
+            rightArrow.style.display = 'block';
+        }
+    }
 
     function changeImage(offset) {
       currentIndex += offset;
@@ -57,5 +71,8 @@
       gallery.src = galleryImages[currentIndex];
     }
 
+    // Initial setup
     gallery.src = galleryImages[currentIndex];
+    toggleArrows();
+
 </script>

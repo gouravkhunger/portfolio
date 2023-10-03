@@ -11,8 +11,8 @@ delft-formula-student-team:
     - 'Preimpregnated Carbon Fiber'
     - 'Resin Transfer Moulding'
   images:
-    - 'MouldNewMouldlessMethodForCarbonFiberManufacturing.jpg'
     - 'NewMouldlessMethodForCarbonFiberManufacturing.jpg'
+    - 'MouldNewMouldlessMethodForCarbonFiberManufacturing.jpg'
 
 formula1-epp-model:
   title: 'Formula 1 EPP Model'
@@ -43,13 +43,13 @@ jet-impact-underside-superhydrophobic-surface:
   - 'Cytonix800MContinuousFilm.png'
   - 'TopView_GlassWaterPatch.png'
   - 'TopView_NeverWetWaterPatch.png'
-  - 'ContactAngle_Cytonix.tiff'
+  - 'ContactAngle_Cytonix.jpg'
   - 'ExperimentalSetupDisassembled.jpg'
 
 upm12c-bodywork:
   title: 'UPM12C Bodywork'
   type: 'nerdy'
-  in-index: 'true'
+  in-index: 'false'
   year: '2015'
   stack:
     - 'Composite Materials'
@@ -103,14 +103,14 @@ scientific-campus:
 water-rockets:
   title: 'Water Rockets'
   type: 'nerdy'
-  in-index: 'false'
+  in-index: 'true'
   year: '2004'
   stack:
     - 'Science'
   images:
-    - 'WaterRocketLaunch.JPG'
-    - 'WaterRocketMaxAltitudMeasurement.JPG'
     - 'WaterRocketPreparation.JPG'
+    - 'WaterRocketLaunch.JPG'
+    - 'WaterRocketMaxAltitudMeasurement.jpg'
 
 alps-bike-tour:
   title: 'French Alps 4-day bike tour'
@@ -145,9 +145,9 @@ indonesia-teaching-english:
   in-index: 'true'
   year: '2017'
   images:
+    - 'HighSchoolTeaching.jpg'
     - 'EnglishNduluEnglish.jpg'
     - 'EnglishNduluEnglishClassPinkBackPack.jpg'
-    - 'HighSchoolTeaching.jpg'
     - 'HighSchoolTeachingClass.jpg'
     - 'Surfing.jpg'
 
@@ -157,9 +157,9 @@ berkeley-project:
   in-index: 'true'
   year: '2017'
   images:
-    - 'BerkeleyProjectPeople.JPEG'
-    - 'BerkeleyProjectCuttingWood.JPEG'
-    - 'BerkeleyProjectCuttingCleaning.JPEG'
+    - 'BerkeleyProjectPeople.jpeg'
+    - 'BerkeleyProjectCuttingWood.jpeg'
+    - 'BerkeleyProjectCleaning.jpeg'
 
 trofeo-zosimo-ibanez:
   title: 'Referee at Trofeo Zósimo Ibañez'

@@ -1,6 +1,6 @@
-----
+---
 hasGallery: true
-----
+---
 
 Who has not dreamt of constructing a rocket to reach the Moon?
 Although for this project I was mere public (helper if any), being my dad the responsible of the concept,
