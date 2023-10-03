@@ -1,4 +1,4 @@
-<div class="mx-auto mb-16 frozen">
+<div class="mx-auto mb-8 frozen">
   <header>
     <div>
       <button aria-label="Toggle Dark Mode" type="button" class="theme-toggle round-button">
@@ -15,6 +15,7 @@
         {% for item in site.data.nav %}
         <a href="{{ item.url }}" {% if item.target %} target="{{ item.target }}" {% endif %}>{{ item.title }}</a>
         {% endfor %}
+
       </div>
       <div class="burgers">
         <div class="bar1"></div>

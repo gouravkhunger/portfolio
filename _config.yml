@@ -1,17 +1,17 @@
-title: Gourav Khunger
-email: gouravkhunger18@gmail.com
+title: Roberto Martinez de la Cruz
+email: robertomzc@gmail.com
 description: >-
-  Gourav Khunger is a software developer and a self-taught programmer. He specialises in native Android app development and is passionate about Open Source. Checkout his projects on Github!
+  Portfolio of Roberto Martinez de la Cruz | Aerospace Engineer - Resume, projects, sports, adventures and people.
 baseurl: ""
-url: "https://gourav.sh"
-google_analytics: "G-GSRER1MM23"
+url: ""
+google_analytics: ""
 
 collections:
   projects:
     permalink: /project/:name
     output: true
-  achievements:
-    permalink: /achievement/:name
+  references:
+    permalink: /references/:name
     output: true
 
 defaults:
@@ -20,9 +20,9 @@ defaults:
     values:
       layout: project
   - scope:
-      path: "_achievements/*.md"
+      path: "_references/*.md"
     values:
-      layout: achievement
+      layout: reference
 
 plugins:
   - jekyll-sitemap

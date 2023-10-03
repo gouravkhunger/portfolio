@@ -1,0 +1,63 @@
+jet-impingement-paper:
+  name: "Jet impingement on the underside of a superhydrophobic surface"
+  description: "Journal of Fluid Mechanics article summarizing part of the MSc Thesis at U.C. Berkeley"
+  place: "Journal of Fluid Mechanics"
+  date: "Feb 2021"
+  in-index: "true"
+  url: "/assets/pdfs/jet-impingement-on-the-underside-of-a-superhydrophobic-surface.pdf"
+
+van-der-maas-fund:
+  name: "Prof. HJ van der Maas Fund"
+  description: "Complementary research grant for the completion of 9 months’ research at UC Berkeley."
+  place: "TU Delft"
+  date: "May 2018"
+  in-index: "false"
+  url: "https://www.tudelft.nl/en/student/faculties/ae-student-portal/services/financial-matters/prof-hj-van-der-maas-fund"
+
+justus-van-effe-grant:
+  name: "Justus & Louise van Effe Research Grant"
+  description: "Research Grant awarded by TU Delft for the completion of 9-month research at U.C. Berkeley. Criteria: GPA above 8/10, within top 10% of the Aerospace MSc promotion and relevant research topic for society."
+  place: "TU Delft"
+  date: "Mar 2018"
+  in-index: "true"
+  url: "https://www.tudelft.nl/studenten/ondersteuning/study-internship-abroad/funding-scholarships/justus-louise-van-effen-research-grant"
+
+extraordinary-award-upm:
+  name: "Extraordinary Award"
+  description: "Award for standing among the 5% best grades in first year of Aerospace Engineering BSc."
+  place: "Universidad Politécnica de Madrid"
+  date: "Sept 2013"
+  in-index: "false"
+  url: "/assets/pdf/Extraordinary_Award_Universidad_Politecnica_Madrid.pdf"
+
+excellence-scholarship-madrid:
+  name: "Excellence Scholarship"
+  description: "One year tuition fees scholarship for being within the 1.100 best GPA among all Bachelor degrees in Madrid (top 4%)."
+  place: "Universidad Politécnica de Madrid"
+  date: "June 2013 & June 2014"
+  in-index: "true"
+  url: "https://www.comunidad.madrid/servicios/educacion/becas-excelencia-universitarios"
+
+university-access-exams:
+  name: "Best 100 grades in Madrid's University Access Exams"
+  description: "Diploma for being within the best 100 grades of the University Access Exams (PAU in spanish) in Madrid "
+  place: "Universidad Complutense de Madrid"
+  date: "May 2013"
+  in-index: "false"
+  url: "site/assets/best-one-hundred-grades-university-access-exams.pdf"
+
+honorable-mention-zola:
+  name: "Honorable Mention"
+  description: "Award given by at the end of high school to the most outstanding students "
+  place: " C.E. Zola"
+  date: "June 2012"
+  in-index: "false"
+  url: "site/assets/CE_Zola_Graduation_Grades.pdf"
+
+madrid-chess-league:
+  name: "Madrid Chess League"
+  description: "Second Place in the Madrid Chess League"
+  place: "Madrid, Spain"
+  date: "2004"
+  in-index: "false"
+

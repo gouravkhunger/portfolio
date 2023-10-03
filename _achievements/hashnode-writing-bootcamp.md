@@ -1,3 +1,0 @@
----
-hasThumbnail: true
----

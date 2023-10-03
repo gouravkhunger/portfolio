@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+{% assign reference = site.data.references[page.slug] %}
+<h2 class="mt-8 font-black">{{ reference.name }}</h2>
+<p class="mt-2 mb-2 text-slate-500 dark:text-slate-300">{{ reference.relationship }}</p>
+
+
+{% assign content = page.content | strip_newlines %}
+{% if content != "" %}
+<div class="mt-10 content">
+  {{ page.content }}
+</div>
+{% endif %}
+
+<div class="flex justify-center">
+  <a  href="{{ reference.pdf }}" class="mt-8 link-button"  target="_blank">View PDF</a>
+</div>

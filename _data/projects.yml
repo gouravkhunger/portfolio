@@ -1,129 +1,171 @@
-genics-blog:
-  name: Genics Blog
-  excerpt: "An open source blogging platform for software developers to share their technical knowledge and gain reach. Read by 1k+ people per month."
-  stack: ["Ruby", "Python", "Shell", "JavaScript"]
+#########
+# NERDY #
+#########
 
-jekyllex:
-  name: JekyllEx
-  excerpt: "A android app to control a jekyll powered blogs from an Android device. Uses GitHub API, WIP for native Jekyll binaries."
-  stack: ["Kotlin", "C++", "NDK"]
+delft-formula-student-team:
+  title: 'Wind Aerostructures FS Team Delft'
+  type: 'nerdy'
+  in-index: 'true'
+  year: '2016'
+  stack:
+    - 'Preimpregnated Carbon Fiber'
+    - 'Resin Transfer Moulding'
+  images:
+    - 'NewMouldlessMethodForCarbonFiberManufacturing.jpg'
+    - 'MouldNewMouldlessMethodForCarbonFiberManufacturing.jpg'
 
-code-19:
-  name: Code-19
-  excerpt: "A non-profit fund raising coding contest initiated to foster interest regarding competitive programming among young students while contributing to India's fight against COVID-19."
-  stack: ["C++", "Python"]
+formula1-epp-model:
+  title: 'Formula 1 EPP Model'
+  type: 'nerdy'
+  in-index: 'true'
+  year: '2015'
+  stack:
+    - 'Design'
+    - 'Solidworks'
+    - 'Modelling'
+  images:
+    - 'formula1-epp-model.webp'
+    - 'formula1-mockup-prev.webp'
+    - 'formula1-design-byhand.webp'
+    - 'formula1-design-solidworks.webp'
 
-ruby-android:
-  name: Ruby for Android
-  excerpt: "[WIP] I'm trying to compile the Ruby language for Android so that software like Jekyll can be ported to Android."
-  stack: ["Shell"]
 
-impilo:
-  name: Impilo
-  excerpt: "A health and sanitation management platform that connects people and municipalities to work towards a better environment."
-  stack: ["Java", "PHP"]
+jet-impact-underside-superhydrophobic-surface:
+  title: 'Jet Impact on the Underside of a Superhydrophobic Surface'
+  type: 'nerdy'
+  in-index: 'true'
+  year: '2018'
+  stack:
+    - 'LabView'
+    - 'MATLAB'
+  images:
+  - 'ExperimentalSetup.jpg'
+  - 'Cytonix800MContinuousFilm.png'
+  - 'TopView_GlassWaterPatch.png'
+  - 'TopView_NeverWetWaterPatch.png'
+  - 'ContactAngle_Cytonix.jpg'
+  - 'ExperimentalSetupDisassembled.jpg'
 
-ics-reader-jekyll-plugin:
-  name: ICS Reader
-  excerpt: "A custom Jekyll plugin that reads ICS files and exposes event details to liquid variable for rendering calendars."
-  stack: ["Ruby"]
+upm12c-bodywork:
+  title: 'UPM12C Bodywork'
+  type: 'nerdy'
+  in-index: 'false'
+  year: '2015'
+  stack:
+    - 'Composite Materials'
+    - 'Wet Lay-up'
+  images:
+    - 'FormulaStudentUPMRacingUPM12C.jpg'
+    - 'BodyWorkMould.jpg'
+    - 'BodyWorkCarbonFiberOnGoing.jpg'
+    - 'FormulaStudentSpain_AllTeam.jpg'
 
-fontize:
-  name: Fontize
-  excerpt: "An Android library written in kotlin that enables android apps to have multiple fonts for views and switch between them in a jiffy!"
-  stack: ["Kotlin"]
+upm13c-wings:
+  title: 'UPM13C Wings'
+  type: 'nerdy'
+  in-index: 'true'
+  year: '2016'
+  stack:
+    - 'Composite Materials'
+    - 'ANSYS CFX'
+    - 'CATIA'
+  images:
+    - 'FrontAndRearWingCarbonFibreManufacturing.jpg'
+    - 'FrontAndRearWingEndPlatesCarbonFibreManufacturing.jpg'
+    - 'FrontAndRearWingRibsCarbonFibreManufacturing.jpg'
+    - 'FrontAndRearWingRibsCutCarbonFibreManufacturing.jpg'
+    - 'UPM13CCATIADesign.JPG'
+    - 'ANSYSFluentCFDSimulation.PNG'
 
-accolib:
-  name: Accolib
-  excerpt: "An easy to use android library that helps you create accordions in an Android app with ease."
-  stack: ["Kotlin"]
+renault-sport-f1:
+  title: 'Renault Sport Formula 1'
+  type: 'nerdy'
+  in-index: 'true'
+  year: '2017'
+  stack:
+    - 'Particle Image Velocimetry (PIV)'
+    - 'Windtunnel Experiments'
+  images:
+    - 'RS17Formula1.jpg'
 
-jekyll-auto-authors:
-  name: Jekyll Auto Authors
-  excerpt: "The only ruby gem for jekyll that truly adds paginated multi-authors support to a Jekyll powered site. Solves a 12 year old problem."
-  stack: ["Ruby"]
+scientific-campus:
+  title: 'Summer Scientific Campus'
+  type: 'nerdy'
+  in-index: 'false'
+  year: '2010'
+  stack:
+    - 'Windtunnel Experiments'
+  images:
+    - 'SmallWindTunnelExperiments.jpg'
+    - 'AerodynamicsPresentation2.jpg'
+    - 'ScientificCampusAllTogether.jpg'
 
-jekyll-url-metadata:
-  name: Jekyll URL Metadata
-  excerpt: "A jekyll plugin to expose meta data of a webpage to liquid variables by extractging them just from its url string."
-  stack: ["Ruby"]
+water-rockets:
+  title: 'Water Rockets'
+  type: 'nerdy'
+  in-index: 'true'
+  year: '2004'
+  stack:
+    - 'Science'
+  images:
+    - 'WaterRocketPreparation.JPG'
+    - 'WaterRocketLaunch.JPG'
+    - 'WaterRocketMaxAltitudMeasurement.jpg'
 
-quotes-app:
-  name: Quotes App
-  excerpt: "A Quotes App with a cool swiping UI. Allows bookmarks and sharing beautiful images of quotes."
-  stack: ["Kotlin"]
+alps-bike-tour:
+  title: 'French Alps 4-day bike tour'
+  type: 'sporty'
+  in-index: 'true'
+  year: '2017'
+  images:
+    - 'MiniTourDeFrance.jpg'
+    - 'ColduGalibierFinalFoto.jpeg'
+      
+haute-route-2022:
+  title: 'Haute Route Back-country Ski'
+  type: 'sporty'
+  in-index: 'true'
+  year: '2022'
+  images:
+    - 'BertolZermatt.png'
+    - 'PasdeChevres.jpg'
+    - 'HauteRouteGroup.jpg'
 
-text-recognizer:
-  name: Text Recognizer
-  excerpt: "An android app that uses Google's ML Kit to recognize texts from images."
-  stack: ["Java", "Kotlin"]
+weissmies-alpinism:
+  title: 'Weissmeis Summit'
+  type: 'sporty'
+  in-index: 'true'
+  year: '2022'
+  images:
+    - 'WeissmiesCover.jpg'
 
-jekyll-hostname:
-  name: Jekyll Hostname
-  excerpt: "A Jekyll plugin that allows you to extract the hostname from a URL string by providing a handy liquid filters."
-  stack: ["Ruby"]
+indonesia-teaching-english:
+  title: 'Ndulu Project English Teacher in Indonesia'
+  type: 'human'
+  in-index: 'true'
+  year: '2017'
+  images:
+    - 'HighSchoolTeaching.jpg'
+    - 'EnglishNduluEnglish.jpg'
+    - 'EnglishNduluEnglishClassPinkBackPack.jpg'
+    - 'HighSchoolTeachingClass.jpg'
+    - 'Surfing.jpg'
 
-next-gen-hello-world-program:
-  name: NextGenHelloWorld
-  excerpt: "A java program that implements multi-threading to showcase how to make a cool hello world program."
-  stack: ["Java"]
+berkeley-project:
+  title: 'Berkeley Project Volunteer'
+  type: 'human'
+  in-index: 'true'
+  year: '2017'
+  images:
+    - 'BerkeleyProjectPeople.jpeg'
+    - 'BerkeleyProjectCuttingWood.jpeg'
+    - 'BerkeleyProjectCleaning.jpeg'
 
-deref:
-  name: Deref
-  excerpt: "A Web, API and CLI interface to find a URL's redirection path without manually opening it."
-  stack: ["Javascript", "Node.js"]
-
-directrix:
-  name: Directrix
-  excerpt: "An API to setup a custom domain branded link shortener / redirector easily."
-  stack: ["Javascript", "Node.js"]
-
-hbdwish:
-  name: HBD Wish
-  excerpt: "A Next.js web app to generate birthday wishe card links that can be sent to your friends."
-  stack: ["Next.js"]
-
-strikeit:
-  name: StrikeIt
-  excerpt: "A Next.js web app to add strike through to texts."
-  stack: ["Next.js"]
-
-genics-bot:
-  name: Genics Bot
-  excerpt: "Community bot for genicsblog.com's discord server."
-  stack: ["Javascript", "discord.js"]
-
-jekyllex-api:
-  name: Jekyllex API
-  excerpt: "A proxy API to fetch user profile and indentities securely from the Auth0 User Management API."
-  stack: ["Javascript", "Node.js"]
-
-recycleaid:
-  name: RecycleAid
-  excerpt: "A web app that instructs how to recycle objects in an image and what things could be built with them."
-  stack: ["Jupyter", "Python", "Javascript"]
-
-jekyll-hashsert:
-  name: Jekyll Hashsert
-  excerpt: "A jekyll plugin that inserts random hashes of custom length into strings."
-  stack: ["Ruby"]
-
-room-paging3-demo:
-  name: Room Paging3 Demo
-  excerpt: "A demo implementation of the Paging3 library with a local Room data source without a network layer."
-  stack: ["Kotlin"]
-
-auth0-demo-android:
-  name: Auth0 Demo Android
-  excerpt: "A demo implementation of the Auth0 SDKs to add authentication functionalities in an Android app."
-  stack: ["Kotlin"]
-
-portfolio:
-  name: Portfolio website
-  excerpt: "The code for this portfolio website. Built with Ruby, HTML, TailwindCSS and Javascript."
-  stack: ["Ruby", "Javascript"]
-
-prs-demo:
-  name: PRs Demo
-  excerpt: "Demo repository for tutorial about GitHub Pull Requests on genicsblog.com."
-  stack: ["MD"]
+trofeo-zosimo-ibanez:
+  title: 'Referee at Trofeo Zósimo Ibañez'
+  type: 'human'
+  in-index: 'true'
+  year: '2014-2016'
+  images:
+    - 'RefereeTrofeoZosimoIbanez.jpg'
+    - 'LogoTrofeoZosimoIbanez.jpg'

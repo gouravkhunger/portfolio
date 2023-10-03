@@ -1,0 +1,32 @@
+berkeley:
+  name: "U.C. Berkeley"
+  url: "https://flow.berkeley.edu/"
+  position: "Master Thesis"
+  from-year: 2018
+  to-year: 2019
+  description: "Drag friction reduction via air layer over superhydrophobic surfaces"
+  stack:
+    - "Hydrophobicity"
+    - "LabVew"
+    - "Design of Experiments"
+
+delft:
+  name: "TU Delft"
+  url: "https://www.tudelft.nl/en/ae"
+  position: "MSc Aerospace Engineering"
+  from-year: 2016
+  to-year: 2018
+  description: "Aerodynamics specialization"
+  stack:
+    - "Aerodynamics"
+    - "CFD"
+
+
+upm:
+  name: "UPM"
+  url: "https://www.etsiae.upm.es/"
+  position: "BSc Aerospace Engineering"
+  from-year: 2012
+  to-year: 2016
+  description: "Bachelors in Aerospace Engineering. Top 5%"
+  stack:

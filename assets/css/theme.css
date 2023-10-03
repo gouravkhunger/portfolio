@@ -4,24 +4,27 @@
 @tailwind components;
 @tailwind utilities;
 
+/* General */
+
 @layer base {
   * {
     -webkit-tap-highlight-color: transparent;
   }
 
   body {
-    @apply bg-slate-50 dark:bg-zinc-900 dark:text-white;
+    @apply bg-stone-50 dark:bg-zinc-900 dark:text-white;
     font-family: "Sen", sans-serif;
   }
 
   header {
-    @apply max-w-5xl mx-auto px-6 my-3 flex justify-between items-center text-lg;
+    @apply max-w-5xl mx-auto h-10 px-6 py-6 flex justify-between items-center text-lg bg-stone-50 dark:bg-zinc-900;
   }
 
+
   footer {
-    @apply max-w-5xl mx-auto px-6 mt-16 mb-6 flex flex-col-reverse sm:flex-row justify-between items-center;
+    @apply max-w-5xl mx-auto px-6 mt-16 mb-6 text-center;
   }
-  
+
   main {
     @apply mx-6 mt-32 max-w-4xl lg:mx-auto;
   }
@@ -34,23 +37,49 @@
     background-size: 0% 0rem;
   }
 
-  nav a {
-    @apply pb-1 bg-gradient-to-r from-slate-800 to-slate-800 dark:from-slate-300 dark:to-slate-300;
-    background-size: 0% 0.125rem;
-    background-repeat: no-repeat;
-    background-position: left bottom;
-    transition: background-size 300ms ease;
-    text-decoration: none;
+   ul li {
+        @apply list-disc list-outside ml-8 md:ml-12;
+    }
+    ul li:not(:last-child) {
+        @apply mb-2;
+    }
   }
 
-  nav a:hover {
-      background-size: 100% 0.125rem;
+  #instantclick-bar {
+    @apply bg-black dark:bg-white;
   }
 
-  nav a:not(:last-child) {
-    @apply mr-4;
+  #modal {
+    @apply hidden fixed top-0 left-0 justify-center items-center w-full h-full backdrop-blur-sm shadow-md z-20;
   }
 
+  .section-title {
+      @apply mt-16;
+  }
+
+  .frozen {
+    @apply w-full fixed top-0 left-0;
+    z-index: 100;
+  }
+
+  .underline-none {
+    @apply inline-block;
+  }
+
+  .underline-none:hover {
+    background-size: 0% 0rem;
+  }
+
+  .round-button {
+    @apply w-10 h-10 p-2 rounded-full flex items-center justify-center hover:ring-2 focus:ring-2 ring-zinc-900 dark:ring-white transition-all;
+  }
+
+  .round-button > svg {
+    @apply w-6 h-6 text-gray-800 dark:text-white;
+  }
+
+
+/* Font and Typography */
   h1, h2, h3, h4, h5, h6 {
     @apply mb-2;
   }
@@ -73,45 +102,31 @@
   h6 {
       @apply text-base;
   }
-  ul li {
-      @apply list-disc list-outside ml-8 md:ml-12;
+  .h_grey {
+    @apply text-slate-500 dark:text-slate-300
   }
-  ul li:not(:last-child) {
-      @apply mb-2;
-  }
-}
 
-#instantclick-bar {
-  @apply bg-black dark:bg-white;
-}
-
-#modal {
-  @apply hidden fixed top-0 left-0 justify-center items-center w-full h-full backdrop-blur-sm shadow-md z-20;
-}
-
-.frozen {
-  @apply w-full fixed top-0 left-0 bg-opacity-25 backdrop-blur-md;
-  z-index: 100;
-}
-
-.underline-none {
-  @apply inline-block;
-}
-
-.underline-none:hover {
-  background-size: 0% 0rem;
-}
-
-.round-button {
-  @apply w-10 h-10 p-2 rounded-full flex items-center justify-center hover:ring-2 focus:ring-2 ring-zinc-900 dark:ring-white transition-all;
-}
-
-.round-button > svg {
-  @apply w-6 h-6 text-gray-800 dark:text-white;
-}
+/* Nav Menu */
 
 .desktop-nav {
   @apply hidden sm:block;
+}
+
+nav a {
+@apply pb-1 bg-gradient-to-r from-slate-800 to-slate-800 dark:from-slate-300 dark:to-slate-300;
+background-size: 0% 0.125rem;
+background-repeat: no-repeat;
+background-position: left bottom;
+transition: background-size 300ms ease;
+text-decoration: none;
+}
+
+nav a:hover {
+  background-size: 100% 0.125rem;
+}
+
+nav a:not(:last-child) {
+@apply mr-4;
 }
 
 .mobile-nav {
@@ -163,17 +178,245 @@
 }
 
 .link-button {
-  @apply underline-none text-zinc-900 text-sm dark:text-white rounded-lg border-2 border-zinc-900 dark:border-gray-300 transition-all duration-100 hover:scale-110;
+  @apply  px-3 py-2 underline-none text-zinc-900 text-sm dark:text-white rounded-lg border-2 border-zinc-900 dark:border-gray-300 transition-all duration-100 hover:bg-zinc-200 dark:hover:bg-zinc-700;
 }
 
 .tag {
   @apply py-1 px-1.5 text-xs rounded-md bg-gray-200 dark:bg-gray-700;
 }
 
-.project, .video, .testimonial, .article, .achievement {
+.project, .video {
   @apply mx-2 p-4 flex flex-col justify-center rounded-lg border-2 border-transparent hover:border-zinc-900 dark:hover:border-slate-300;
 }
 
 .content p:not(:last-child), .content h1, .content h2, .content h3, .content h4, .content h5, .content h6, .content ul {
   @apply mb-6;
 }
+
+/* Project Section */
+
+.project-subsection {
+  margin-top: 0px;
+  margin-top: 2px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  @apply justify-center sm:justify-start;
+}
+
+.card {
+  padding: 1rem;
+  margin: 0.5rem;
+  background: #ffffff;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: #ffffff;
+  transition: 0.4s ease-in-out;
+  cursor: pointer;
+  @apply w-56 h-56 sm:w-52 sm:h-52 rounded-lg
+}
+
+.card:hover {
+  box-shadow: inset 1000px 100px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.project-bio {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  height:100%;
+  width:100%;
+  text-align:left;
+  transition: 0.4s ease-in-out;
+  opacity: 0;
+  @apply hidden sm:block
+}
+
+
+.card:hover .project-bio {
+  opacity: 1;
+}
+
+/* Arrow Image Gallery */
+
+.arrow-gallery {
+  position: relative;
+  text-align: center;
+  margin: 20px auto 5px;
+  @apply w-3/4 hidden sm:block
+}
+
+.gallery-item {
+    position: relative;
+}
+
+
+.gallery-item img {
+  max-width: 80%;
+  height: auto;
+  border-radius: 0.75rem;
+  margin: auto;
+}
+
+.arrow {
+    position: absolute;
+    top: 10rem;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.left-arrow {
+    left: 0;
+}
+
+.right-arrow {
+    right: 0;
+}
+
+/* Scroll Image Gallery */
+
+.scroll-gallery {
+    display: flex;
+    overflow-x: scroll; /* Enable horizontal scrolling on smaller screens */
+    white-space: nowrap; /* Prevent line breaks for images */
+    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+    @apply block  sm:hidden
+}
+
+.scrolling-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.scrolling-container img {
+    width: 80%;
+    height: auto;
+    margin-right: 10px;
+    border-radius: 0.75rem;
+
+}
+
+/* Timeline Section */
+
+.timeline-title {
+  position: relative;
+  @apply grid grid-cols-2  gap-1 md:gap-4
+}
+
+.timeline-content {
+  display: grid;
+  grid-template-columns: repeat(2, 0.5fr);
+  grid-template-rows: repeat(12, minmax(1.5rem, auto));
+  grid-row-gap: 0.25rem;
+  @apply gap-x-1 md:gap-x-4
+
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.left {
+  right: 0px;
+  text-align: right;
+}
+
+.right {
+  left: 0px;
+  text-align: left;
+}
+
+.content {
+  padding: 7px 32px;
+}
+
+/* The line */
+.container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 100%;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .container::after {
+        width: 6px;
+    }
+}
+
+.container.left {
+  justify-content: flex-end;
+}
+
+.container.right {
+  justify-content: flex-start;
+}
+
+.container.left::after {
+  right: 0px;
+  @apply bg-orange-500 dark:bg-slate-300
+}
+
+.container.right::after {
+  @apply bg-orange-400 dark:bg-slate-400
+}
+
+.timeline h3 {
+  @apply text-slate-800 dark:text-slate-300 mt-6
+}
+
+/* Stack */
+.stack-row {
+@apply flex flex-wrap mt-10 gap-8
+}
+
+.stack-row img {
+@apply w-12 h-12 object-contain hover:scale-110
+}
+
+/* Awards */
+
+.award-card {
+  @apply mx-2 p-4 flex flex-col justify-center rounded-lg border-2 border-transparent hover:border-zinc-900 dark:hover:border-slate-300;
+}
+
+.awards-subsection {
+  margin-top: 0px;
+  margin-top: 2px;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  @apply justify-center sm:justify-start;
+}
+
+/* References */
+
+.references-subsection {
+  margin-top: 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.reference-card {
+  @apply w-auto sm:w-52 h-auto mx-2 p-3 flex flex-col justify-center align-top rounded-lg border-2 border-transparent hover:border-zinc-900 dark:hover:border-slate-300;
+}
+
+/* Contact */
+
+.contact-label {
+    @apply mb-2
+}
+
+.contact-input-box {
+    border-width: 1px;
+    @apply px-2 mb-4 border-zinc-900 dark:border-gray-300 rounded-md
+}
+
+

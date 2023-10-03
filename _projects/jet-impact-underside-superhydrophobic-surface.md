@@ -1,0 +1,3 @@
+---
+hasGallery: true
+---

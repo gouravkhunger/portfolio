@@ -1,0 +1,23 @@
+simo-makiharju-uc-berkeley:
+  name: "Simo A. Mäkiharju"
+  extract: "... I would like to highlight at this point his intuitive physical understanding, thanks to which we are gaining a fruitful insight into the water impact dynamics ..."
+  relationship: "MSc Thesis Supervisor"
+  pdf: "/assets/pdfs/SimoMakiharju_RecomendationLetter.pdf"
+
+robbie-stevens-rsf1:
+  name: "Robbie Stevens"
+  extract: "... Roberto was a fantastic colleague. In a previous role at the University of Cambridge I was responsible for academic supervision of many truly excellent students but I would be remiss in my duty if I did not state that Roberto is one of the most academically outstanding students I have ever worked with ..."
+  relationship: "Renault F1 Internship Supervisor"
+  url: "/assets/pdfs/RobbieStevens_RSF1_RecomendationLetter.pdf"
+
+steven-hulsoff:
+  name: "Steven Hulshoff"
+  extract: " ... This has been especially true of our course program, which many students find difficult, yet in which he has performed well above average ..."
+  relationship: "Lecturer / Teaching Assistant"
+  url: "/assets/pdfs/SJHulshoff_RecommendationLetter.pdf"
+
+rodolfo-sanz:
+  name: "Rodolfo Sanz"
+  extract: "... As a result of managing a team of 15 students in the FSAE team, Roberto has acquired a brilliant ability to communicate effectively and he is moreover a good team player ..."
+  relationship: "BSc Thesis Supervisor"
+  url: "/assets/pdfs/RodolfoSant_RecomendationLetter.pdf"

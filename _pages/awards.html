@@ -1,0 +1,18 @@
+---
+layout: default
+title: RMZC | Awards & Scholarships
+description: High moments that encouraged or allowed adventures.
+excerpt: High moments that encouraged or allowed adventures.
+permalink: /awards
+---
+
+<h2 class="font-black">
+  Awards & Scholarships
+</h2>
+<p class="mt-2 text-slate-500 dark:text-slate-300">{{ page.excerpt }}</p>
+
+<article class="award-subsection">
+  {% for item in site.data.awards %}
+      {% include award.html %}
+  {% endfor %}
+</article>

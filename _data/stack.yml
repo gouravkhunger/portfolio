@@ -1,0 +1,65 @@
+software:
+  python:
+    title: "Python"
+    url: "https://www.python.org/"
+    icon: "python.svg"
+  matlab:
+    title: "MATLAB"
+    url: "https://www.mathworks.com/products/matlab.html"
+    icon: "matlab.svg"
+  openfoam:
+    title: "OpenFOAM"
+    url: "https://www.openfoam.com/"
+    icon: "openfoam.png"
+  ansys:
+    title: "ANSYS"
+    url: "https://www.ansys.com/"
+    icon: "ansys.png"
+  starccmplus:
+    title: "Star CCM+"
+    url: "https://plm.sw.siemens.com/en-US/simcenter/fluids-thermal-simulation/star-ccm/"
+    icon: "starccmplus.png"
+  paraview:
+    title: "ParaView"
+    url: "https://www.paraview.org/"
+    icon: "paraview.png"
+  solidworks:
+    title: "Solidworks"
+    url: "https://www.solidworks.com/"
+    icon: "solidworks.svg"
+  catia:
+    title: "CATIA"
+    url: "https://www.3ds.com/products-services/catia/"
+    icon: "catia.png"
+  pointwise:
+    title: "Pointwise / Cadence"
+    url: "https://www.pointwise.com/"
+    icon: "pointwise.png"
+  arduino:
+    title: "Arduino"
+    url: "https://www.arduino.cc/"
+    icon: "arduino.png"
+  aws:
+    title: "Amazon AWS"
+    url: "https://aws.amazon.com/"
+    icon: "aws.svg"
+
+
+hardware:
+  windtunnel:
+    title: "Wind Tunnel"
+  flight_testing:
+    title: "Flight Testing"
+  composite_materials:
+    title: "Composite"
+  tig_welding:
+    title: "TIG Welding"
+
+
+soft_skils:
+  teamwork:
+    title: "Teamwork"
+  hard_working:
+    title: "Hard Working"
+  adaptable:
+    title: "Flexible"

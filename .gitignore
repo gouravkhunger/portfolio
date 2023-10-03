@@ -3,8 +3,10 @@ _site
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
+.idea
 vendor
 Gemfile.lock
 .DS_Store
 package-lock.json
 node_modules
+TODO

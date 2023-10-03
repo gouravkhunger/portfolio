@@ -1,0 +1,51 @@
+sensefly:
+  name: "senseFly"
+  url: "https://www.sensefly.com"
+  position: "Aerodynamic Engineer"
+  from-year: 2019
+  to-year: 2023
+  description: "Fixed wing drones aerodynamic design, optimization and validation"
+  stack:
+    - "Windtunnel"
+    - "OpenFOAM"
+    - "ANSYS Fluent"
+
+teaching-assistant-delft:
+  name: "TU Delft"
+  url: "https://www.tudelft.nl/en/ae"
+  position: "Teaching Assistant"
+  from-year: 2017
+  to-year: 2018
+  description: "Courses 'Simulation, Validation and Verification' and 'Computational Methods'"
+  stack:
+
+renault-internship:
+  name: "Renault Sport Formula 1 Team"
+  url: "https://www.alpine-cars.co.uk/formula-1/f1-team.html"
+  position: "Aerodynamics Intern"
+  from-month: 'Feb'
+  from-year: 2017
+  to-month: 'Aug'
+  to-year: 2017
+  description: "Windtunnel Particle Image Velocimetry (PIV) acquisition and postprocessing improvement"
+  stack:
+
+airbus-aeroelastic:
+  name: "AIRBUS"
+  url: "https://www.airbus.com/"
+  position: "Aeroelasticity Intern"
+  from-month: 'Mar'
+  from-year: 2016
+  to-month: 'Jun'
+  to-year: 2016
+  description: "Vertical and Horizontal Tail Planes (HTP & VTP) loads during handling. Fatigue cycles"
+  stack:
+
+upmracing:
+  name: "UPM Racing"
+  url: "https://www.airbus.com/"
+  position: "Frame and Aerodynamics Team Lead"
+  from-year: 2014
+  to-year: 2015
+  description: "Bodywork, rear and front wing, and pedalbox design and manufacturing"
+  stack:
