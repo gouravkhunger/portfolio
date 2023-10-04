@@ -3,8 +3,7 @@ email: robertomzc@gmail.com
 description: >-
   Portfolio of Roberto Martinez de la Cruz | Aerospace Engineer - Resume, projects, sports, adventures and people.
 baseurl: ""
-url: ""
-google_analytics: ""
+url: "https://robertomzc.github.io/portfolio/"
 
 collections:
   projects:
