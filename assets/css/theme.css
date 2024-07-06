@@ -26,7 +26,7 @@
     @apply mx-6 mt-32 max-w-4xl lg:mx-auto;
   }
 
-  footer a, main a:not(.underline-none, .link-button) {
+  footer a, main a:not(.underline-none, .underline-animate, .link-button) {
     @apply border-b-2 border-slate-600 dark:border-slate-200 border-dotted hover:border-b-0;
   }
 
@@ -34,7 +34,7 @@
     background-size: 0% 0rem;
   }
 
-  nav a {
+  nav a, .underline-animate {
     @apply pb-1 bg-gradient-to-r from-slate-800 to-slate-800 dark:from-slate-300 dark:to-slate-300;
     background-size: 0% 0.125rem;
     background-repeat: no-repeat;
@@ -43,7 +43,7 @@
     text-decoration: none;
   }
 
-  nav a:hover {
+  nav a:hover, .underline-animate:hover {
       background-size: 100% 0.125rem;
   }
 

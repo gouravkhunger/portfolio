@@ -2,17 +2,21 @@
 layout: default
 title: Blog | Gourav Khunger | Software Developer
 description: 
-excerpt: 
+excerpt: musings / thoughts / ideas
 permalink: /blog
 ---
 
 <h2 class="font-black">
-  Musings
+  Blog
 </h2>
 <p class="mt-2 text-slate-500 dark:text-slate-300">{{ page.excerpt }}</p>
 
-<div class="mt-10 gap-4 projects grid grid-flow-row grid-cols-1 sm:grid-cols-2">
+<div class="mt-10 md:max-w-2xl gap-2 flex flex-col">
   {% for post in site.posts %}
-    {% include post.html %}
+  <div>
+    <span class="text-slate-500 dark:text-slate-300">{{ post.date | date: '%b %d, %Y' }} &bull;</span>
+    <span class="text-slate-500 dark:text-slate-300">{{ post.type | default: 'Article' | downcase | capitalize }} &bull;</span>
+    <a class="underline-animate" href="{{ post.url }}"><span>{{ post.title }}</span></a>
+  </div>
   {% endfor %}
 </div>

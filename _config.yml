@@ -19,7 +19,7 @@ collections:
 
 defaults:
   - scope:
-      path: "_posts/*.md"
+      path: "_posts/**/*.md"
     values:
       layout: post
   - scope:

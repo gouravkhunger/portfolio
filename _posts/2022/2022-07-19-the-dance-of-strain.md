@@ -1,5 +1,6 @@
 ---
-title: 
+type: poem
+title: The dance of strain
 ---
 
 ---
@@ -24,8 +25,6 @@ All in all, bound to time's desire.<br />
 A day shall come, not of pain,<br />
 Where things unroll through a lively satire,<br />
 Letting go, of the inmost hurricane.<br />
-<br />
-- GK
 </div>
 
 ---

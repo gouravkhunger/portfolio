@@ -5,7 +5,7 @@ layout: default
 {% if page.hasThumbnail %}
 <img
   loading="lazy" class="mx-auto rounded-xl"
-  src="/assets/images/blog/{{ page.name | remove: '.md' }}.webp" />
+  src="/assets/images/blog/{{ page.date | date: '%Y/%m' }}/{{ page.title | slugify | remove: '.md' }}/thumbnail.webp" />
 {% elsif page.youtube %}
 <iframe
   src="https://www.youtube.com/embed/{{ page.youtube }}"
