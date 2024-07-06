@@ -9,12 +9,18 @@ permalink: /blog
 <h2 class="font-black">
   Blog
 </h2>
-<p class="mt-2 text-slate-500 dark:text-slate-300">{{ page.excerpt }}</p>
+<p class="mt-2 mb-4 text-slate-500 dark:text-slate-300">{{ page.excerpt }}</p>
 
-<div class="mt-10 md:max-w-2xl gap-2 flex flex-col">
+<div class="md:max-w-2xl gap-2 flex flex-col">
+  {% assign year = "" %}
   {% for post in site.posts %}
-  <div>
-    <span class="text-slate-500 dark:text-slate-300">{{ post.date | date: '%b %d, %Y' }} &bull;</span>
+  {% assign current_year = post.date | date: '%Y' %}
+  {% if year != current_year %}
+  {% assign year = current_year %}
+  <h3 class="mt-6">{{ year }}</h3>
+  {% endif %}
+  <div class="ml-4">
+    <span class="text-slate-500 dark:text-slate-300">{{ post.date | date: '%b %d' }} &bull;</span>
     <span class="text-slate-500 dark:text-slate-300">{{ post.type | default: 'Article' | downcase | capitalize }} &bull;</span>
     <a class="underline-animate" href="{{ post.url }}"><span>{{ post.title }}</span></a>
   </div>
