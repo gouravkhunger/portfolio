@@ -10,7 +10,7 @@
         src="{{ testimonial.picture }}" class="w-12 h-12 rounded-full" loading="lazy" />
       <div class="ml-4 flex flex-col truncate">
         <span class="truncate">{{ testimonial.name }}</span>
-        <span class="text-slate-500 dark:text-slate-300 text-sm">{{ testimonial.role | markdownify }}</span>
+        <span class="subtext text-sm">{{ testimonial.role | markdownify }}</span>
       </div>
     </div>
   </div>

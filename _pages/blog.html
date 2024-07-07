@@ -9,7 +9,7 @@ permalink: /blog
 <h2 class="font-black">
   Blog
 </h2>
-<p class="mt-2 mb-4 text-slate-500 dark:text-slate-300">{{ page.excerpt }}</p>
+<p class="mt-2 mb-4 subtext">{{ page.excerpt }}</p>
 
 <div class="md:max-w-2xl gap-2 flex flex-col">
   {% assign year = "" %}
@@ -20,8 +20,8 @@ permalink: /blog
   <h3 class="mt-6">{{ year }}</h3>
   {% endif %}
   <div class="ml-4">
-    <span class="text-slate-500 dark:text-slate-300">{{ post.date | date: '%b %d' }} &bull;</span>
-    <span class="text-slate-500 dark:text-slate-300">{{ post.type | default: 'Article' | downcase | capitalize }} &bull;</span>
+    <span class="subtext">{{ post.date | date: '%b %d' }} &bull;</span>
+    <span class="subtext">{{ post.type | default: 'Article' | downcase | capitalize }} &bull;</span>
     <a class="underline-animate" href="{{ post.url }}"><span>{{ post.title | default: "Untitled" }}</span></a>
   </div>
   {% endfor %}

@@ -30,10 +30,10 @@
     </a>
     {% assign positions = job.positions | reverse %}
     {% for position in positions %}
-    <span class="{% if forloop.first != true %}mt-2 {% endif %}flex flex-row font-black items-center text-xs text-slate-500 dark:text-slate-300">
+    <span class="{% if forloop.first != true %}mt-2 {% endif %}flex flex-row font-black items-center text-xs subtext">
       {{ position.name }} &bull; {{ position.type }}
     </span>
-    <span class="text-xs text-slate-500 dark:text-slate-300">
+    <span class="text-xs subtext">
       {{ position.from | date: '%b %Y'}}
       —
       {% if position.to %}{{ position.to | date: '%b %Y'}}{%else%}Present{% endif %}

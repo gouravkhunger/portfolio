@@ -19,7 +19,7 @@ layout: default
 
 {% assign project = site.data.projects[page.slug] %}
 <h2 class="mt-10 font-black">{{ project.name }}</h2>
-<p class="mt-2 text-slate-500 dark:text-slate-300">{{ project.excerpt }}</p>
+<p class="mt-2 subtext">{{ project.excerpt }}</p>
 
 <div class="mt-4">
   {% for tech in project.stack %}
