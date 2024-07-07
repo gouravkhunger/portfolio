@@ -26,7 +26,7 @@
     @apply mx-6 mt-32 max-w-4xl lg:mx-auto;
   }
 
-  footer a, main a:not(.underline-none, .link-button) {
+  footer a, main a:not(.underline-none, .underline-animate, .link-button) {
     @apply border-b-2 border-slate-600 dark:border-slate-200 border-dotted hover:border-b-0;
   }
 
@@ -34,7 +34,7 @@
     background-size: 0% 0rem;
   }
 
-  nav a {
+  nav a, .underline-animate {
     @apply pb-1 bg-gradient-to-r from-slate-800 to-slate-800 dark:from-slate-300 dark:to-slate-300;
     background-size: 0% 0.125rem;
     background-repeat: no-repeat;
@@ -43,7 +43,7 @@
     text-decoration: none;
   }
 
-  nav a:hover {
+  nav a:hover, .underline-animate:hover {
       background-size: 100% 0.125rem;
   }
 
@@ -58,26 +58,41 @@
   h1 {
     @apply text-4xl;
   }
+
   h2 {
       @apply text-3xl;
   }
+
   h3 {
       @apply text-2xl;
   }
+
   h4 {
       @apply text-xl;
   }
+
   h5 {
       @apply text-lg;
   }
+
   h6 {
       @apply text-base;
   }
+
   ul li {
       @apply list-disc list-outside ml-8 md:ml-12;
   }
+
   ul li:not(:last-child) {
       @apply mb-2;
+  }
+
+  hr {
+    @apply w-3/4 md:w-1/2 h-0.5 my-6 mx-auto rounded border-0 bg-zinc-300 dark:bg-zinc-600;
+  }
+
+  blockquote {
+    @apply pl-4 py-2 flex flex-col border-l-4 border-slate-300 dark:border-slate-300 text-justify hyphens-auto;
   }
 }
 
@@ -174,6 +189,10 @@
   @apply mx-2 p-4 flex flex-col justify-center rounded-lg border-2 border-transparent hover:border-zinc-900 dark:hover:border-slate-300;
 }
 
-.content p:not(:last-child), .content h1, .content h2, .content h3, .content h4, .content h5, .content h6, .content ul {
+.content p:not(:last-child), .content h1, .content h2, .content h3, .content h4, .content h5, .content h6, .content ul, blockquote {
   @apply mb-6;
+}
+
+.content blockquote {
+  @apply text-slate-500 dark:text-slate-300;
 }
