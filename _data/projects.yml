@@ -5,7 +5,7 @@ genics-blog:
 
 jekyllex:
   name: JekyllEx
-  excerpt: "A android app to control a jekyll powered blogs from an Android device. Uses GitHub API, WIP for native Jekyll binaries."
+  excerpt: "The mobile IDE to manage jekyll powered sites from an Android device. Embeds git, jekyll & ruby natively."
   stack: ["Kotlin", "C++", "NDK"]
 
 code-19:
