@@ -26,8 +26,8 @@
     @apply mx-6 mt-32 max-w-4xl lg:mx-auto;
   }
 
-  footer a, main a:not(.underline-none, .underline-animate, .link-button) {
-    @apply border-b-2 border-slate-600 dark:border-slate-200 border-dotted hover:border-b-0;
+  footer a, main a:not(.underline-none, .underline-animate, .link-button, :has(code)) {
+    @apply underline underline-offset-2 decoration-2 hover:decoration-slate-400 hover:dark:decoration-slate-500;
   }
 
   footer a:hover, main a:hover {
@@ -38,7 +38,7 @@
     @apply pb-1 bg-gradient-to-r from-slate-800 to-slate-800 dark:from-slate-300 dark:to-slate-300;
     background-size: 0% 0.125rem;
     background-repeat: no-repeat;
-    background-position: left bottom;
+    background-position: left calc(100% - 0.1rem);
     transition: background-size 300ms ease;
     text-decoration: none;
   }
@@ -93,6 +93,10 @@
 
   blockquote {
     @apply pl-4 py-2 flex flex-col border-l-4 border-slate-300 dark:border-slate-300 text-justify hyphens-auto;
+  }
+
+  a code {
+    @apply underline;
   }
 }
 
@@ -181,7 +185,7 @@
   @apply underline-none text-zinc-900 text-sm dark:text-white rounded-lg border-2 border-zinc-900 dark:border-gray-300 transition-all duration-100 hover:scale-110;
 }
 
-.tag {
+.tag, code {
   @apply py-1 px-1.5 text-xs rounded-md bg-gray-200 dark:bg-gray-700;
 }
 

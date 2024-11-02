@@ -1,10 +1,14 @@
 title: Gourav Khunger
-email: gouravkhunger18@gmail.com
+email: hi@gourav.sh
 description: >-
   Gourav Khunger is a software developer and a self-taught programmer. He specialises in native Android app development and is passionate about Open Source. Checkout his projects on Github!
 baseurl: ""
 url: "https://gourav.sh"
 google_analytics: "G-GSRER1MM23"
+
+markdown: kramdown
+kramdown:
+  parse_block_html: true
 
 collections:
   posts:

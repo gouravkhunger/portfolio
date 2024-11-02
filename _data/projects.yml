@@ -5,7 +5,7 @@ genics-blog:
 
 jekyllex:
   name: JekyllEx
-  excerpt: "A android app to control a jekyll powered blogs from an Android device. Uses GitHub API, WIP for native Jekyll binaries."
+  excerpt: "The mobile IDE to manage jekyll powered sites from an Android device. Embeds git, jekyll & ruby natively."
   stack: ["Kotlin", "C++", "NDK"]
 
 code-19:
@@ -15,7 +15,7 @@ code-19:
 
 ruby-android:
   name: Ruby for Android
-  excerpt: "[WIP] I'm trying to compile the Ruby language for Android so that software like Jekyll can be ported to Android."
+  excerpt: "Bootstrapped Ruby & GitHub Pages environment for Android so that Jekyll static site generator can run natively."
   stack: ["Shell"]
 
 impilo:
