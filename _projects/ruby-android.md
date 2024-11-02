@@ -111,13 +111,13 @@ The bootstraps were still big: 75mb per arch, but way better than what it were a
 
 ## FAQs
 
-#### Why?
+#### Just, why?
 
 Obsession
 
 #### Are you mad?
 
-Yes
+Lol
 
 #### Is Jekyll dead?
 
