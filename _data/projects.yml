@@ -15,7 +15,7 @@ code-19:
 
 ruby-android:
   name: Ruby for Android
-  excerpt: "[WIP] I'm trying to compile the Ruby language for Android so that software like Jekyll can be ported to Android."
+  excerpt: "Bootstrapped Ruby & GitHub Pages environment for Android so that Jekyll static site generator can run natively."
   stack: ["Shell"]
 
 impilo:

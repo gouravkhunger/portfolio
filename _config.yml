@@ -6,6 +6,10 @@ baseurl: ""
 url: "https://gourav.sh"
 google_analytics: "G-GSRER1MM23"
 
+markdown: kramdown
+kramdown:
+  parse_block_html: true
+
 collections:
   posts:
     output: true
