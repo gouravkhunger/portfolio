@@ -1,11 +1,5 @@
-<div class="relative flex flex-row items-center{% if forloop.first %} pb-4{% elsif forloop.last %} pt-4{% else %} py-4{% endif %}">
+<div class="flex flex-row">
   <div class="w-1/6 flex flex-col sm:mr-0 items-center">
-    {% if forloop.first != true %}
-    <div 
-      style="height: {{ job.bars.top }}"
-      class="absolute top-0 w-0 mx-auto border-l-2 border-black dark:border-white">
-    </div>
-    {% endif %}
     <div class="p-4 rounded-full border-2 border-black dark:border-white">
       {% assign last_char = job.company.name | slice: -1 %}
       <img
@@ -13,9 +7,7 @@
         src="{{ job.company.logo }}" class="w-6 h-6" loading="lazy" />
     </div>
     {% if forloop.last != true %}
-    <div 
-      style="height: {{ job.bars.bottom }}"
-      class="absolute bottom-0 w-0 mx-auto border-l-2 border-black dark:border-white">
+    <div class="h-full mx-auto border-l-2 border-black dark:border-white">
     </div>
     {% endif %}
   </div>
@@ -39,6 +31,6 @@
       {% if position.to %}{{ position.to | date: '%b %Y'}}{%else%}Present{% endif %}
     </span>
     {% endfor %}
-    <p class="mt-2">{{ job.company.description }}</p>
+    <p class="mt-2{% if forloop.last != true %} mb-8{% endif %}">{{ job.company.description }}</p>
   </div>
 </div>

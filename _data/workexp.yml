@@ -8,8 +8,6 @@
       type: "Internship"
       from: 2021-12-08
       to: 2022-03-08
-  bars:
-    top: 35%
 
 - company:
     name: "BeyondWords"
@@ -24,5 +22,3 @@
     - name: "Software Developer"
       type: "Part-time"
       from: 2022-11-01
-  bars:
-    bottom: 39%
