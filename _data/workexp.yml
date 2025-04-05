@@ -22,3 +22,12 @@
     - name: "Software Developer"
       type: "Part-time"
       from: 2022-11-01
+
+- company:
+    name: "Axial Educations"
+    url: "https://axialeducations.com"
+    logo: "/assets/images/logos/axial-logo.webp"
+    description: "Axial Educations is a leading coaching institute in Punjab, India."
+  positions:
+    - name: "Freelance Software Developer"
+      from: 2024-12-23
