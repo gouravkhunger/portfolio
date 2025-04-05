@@ -114,8 +114,8 @@ permalink: /
     Work Experience
     <p class="mt-2 subtext">Organizations that I've contributed to</p>
     <div class="mt-6">
-    {% assign workexp = site.data.workexp | reverse %}
-    {% for job in workexp %}
+    {% assign work = site.data.work | reverse %}
+    {% for job in work %}
       {% include job.html %}
     {% endfor %}
     </div>
