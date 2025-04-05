@@ -11,15 +11,15 @@ kramdown:
   parse_block_html: true
 
 collections:
+  pages:
+    output: true
+    permalink: /:title
   posts:
     output: true
     permalink: /post/:title
   projects:
     output: true
     permalink: /project/:name
-  achievements:
-    output: true
-    permalink: /achievement/:name
 
 defaults:
   - scope:
@@ -27,13 +27,15 @@ defaults:
     values:
       layout: post
   - scope:
-      path: "_projects/*.md"
+      path: "_pages/projects/*.md"
     values:
       layout: project
+      permalink: /project/:name
   - scope:
-      path: "_achievements/*.md"
+      path: "_pages/achievements/*.md"
     values:
       layout: achievement
+      permalink: /achievement/:name
 
 plugins:
   - jekyll-sitemap
@@ -53,9 +55,6 @@ extlinks:
   attributes: { rel: nofollow noopener noreferrer, target: _blank }
   rel_include: [ "l.gourav.sh" ]
   rel_exclude: [ "gourav.sh", "github.com", "genicsblog.com" ]
-
-include:
-  - _pages
 
 exclude:
   - .sass-cache/
