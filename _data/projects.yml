@@ -8,20 +8,25 @@ jekyllex:
   excerpt: "The mobile IDE to manage jekyll powered sites from an Android device. Embeds git, jekyll & ruby natively."
   stack: ["Kotlin", "C++", "NDK"]
 
-dependents-info:
-  name: dependents.info
-  excerpt: "easily generate an image of github network dependents (repository users) to showcase in your project's readme."
-  stack: ["Go", "TypeScript"]
+code-19:
+  name: Code-19
+  excerpt: "A non-profit fund raising coding contest initiated to foster interest regarding competitive programming among young students while contributing to India's fight against COVID-19."
+  stack: ["C++", "Python"]
 
 ruby-android:
   name: Ruby for Android
   excerpt: "Bootstrapped Ruby & GitHub Pages environment for Android so that Jekyll static site generator can run natively."
   stack: ["Shell"]
 
-code-19:
-  name: Code-19
-  excerpt: "A non-profit fund raising coding contest initiated to foster interest regarding competitive programming among young students while contributing to India's fight against COVID-19."
-  stack: ["C++", "Python"]
+dependents-info:
+  name: dependents.info
+  excerpt: "easily generate an image of github network dependents (repository users) to showcase in your project's readme."
+  stack: ["Go", "TypeScript"]
+
+hlogr:
+  name: hlogr
+  excerpt: An opinionated drop-in request logger for the Hapi.js framework.
+  stack: ["TypeScript"]
 
 impilo:
   name: Impilo
@@ -127,8 +132,3 @@ portfolio:
   name: Portfolio website
   excerpt: "The code for this portfolio website. Built with Ruby, HTML, TailwindCSS and Javascript."
   stack: ["Ruby", "Javascript"]
-
-prs-demo:
-  name: PRs Demo
-  excerpt: "Demo repository for tutorial about GitHub Pull Requests on genicsblog.com."
-  stack: ["MD"]
