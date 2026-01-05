@@ -13,3 +13,5 @@ end
 gem "dotenv"
 gem "webrick"
 gem "nokogiri"
+
+gem "csv", "~> 3.3"
