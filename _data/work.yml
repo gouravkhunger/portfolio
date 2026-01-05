@@ -10,6 +10,16 @@
       to: 2022-03-08
 
 - company:
+    name: "Axial Educations"
+    url: "https://axialeducations.com"
+    logo: "/assets/images/logos/axial-logo.webp"
+    description: "Axial Educations is a leading coaching institute in Punjab, India."
+  positions:
+    - name: "Freelance Software Developer"
+      from: 2024-12-23
+      to: 2025-04-30
+
+- company:
     name: "BeyondWords"
     url: "https://beyondwords.io"
     logo: "/assets/images/logos/beyondwords.svg"
@@ -22,12 +32,12 @@
     - name: "Software Developer"
       type: "Part-time"
       from: 2022-11-01
+      to: 2025-12-30
 
 - company:
-    name: "Axial Educations"
-    url: "https://axialeducations.com"
-    logo: "/assets/images/logos/axial-logo.webp"
-    description: "Axial Educations is a leading coaching institute in Punjab, India."
+    name: "Stealth Startup"
+    description: "Building AI software for the public sector."
   positions:
-    - name: "Freelance Software Developer"
-      from: 2024-12-23
+    - name: "Software Engineer"
+      type: "Full-time"
+      from: 2025-12-06
