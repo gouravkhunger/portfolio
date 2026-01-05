@@ -10,6 +10,7 @@ group :jekyll_plugins do
   gem "jekyll-hashsert"
 end
 
+gem "csv"
 gem "dotenv"
 gem "webrick"
 gem "nokogiri"

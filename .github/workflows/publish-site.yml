@@ -18,13 +18,13 @@ jobs:
     - name: Setup ruby & install dependencies
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 3.1
+        ruby-version: 3.4.8
         bundler-cache: true
 
     - name: Setup nodejs
       uses: actions/setup-node@v3
       with:
-        node-version: '16'
+        node-version: '22'
 
     - name: Install npm dependencies
       run: npm install
