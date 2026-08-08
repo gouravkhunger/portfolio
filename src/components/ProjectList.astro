@@ -1,0 +1,27 @@
+---
+import type { Project } from "../data/projects";
+
+type Props = {
+  items: Project[];
+};
+
+const { items } = Astro.props;
+---
+
+<ul class="flex flex-col gap-6">
+  {
+    items.map((item) => (
+      <li>
+        <a
+          href={item.href}
+          class="link-quiet font-medium"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {item.name}
+        </a>
+        <p class="muted mt-1.5 text-[1.05rem] leading-snug">{item.summary}</p>
+      </li>
+    ))
+  }
+</ul>

@@ -1,0 +1,18 @@
+---
+import Arrow from "./Arrow.astro";
+
+type Props = {
+  href: string;
+  label: string;
+  class?: string;
+};
+
+const { href, label, class: className } = Astro.props;
+---
+
+<p class:list={["mb-8", className]}>
+  <a href={href} class="meta link-quiet icon-link">
+    <Arrow dir="left" />
+    {label}
+  </a>
+</p>

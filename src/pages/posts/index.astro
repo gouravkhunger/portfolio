@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PostList from "../../components/PostList.astro";
+import { listPosts } from "../../lib/posts";
+
+const posts = await listPosts();
+---
+
+<BaseLayout
+  title="Posts"
+  description="Notes and technical writing by Gourav Khunger."
+>
+  <h1 class="text-[1.75rem] font-medium tracking-[-0.02em]">Posts</h1>
+  <p class="meta mt-2">Notes and technical writing</p>
+  <div class="mt-10">
+    <PostList posts={posts} />
+  </div>
+</BaseLayout>

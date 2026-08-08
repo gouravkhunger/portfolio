@@ -1,0 +1,51 @@
+---
+import type { WorkItem } from "../lib/work";
+import { formatDateRange } from "../lib/dates";
+import Arrow from "./Arrow.astro";
+
+type Props = {
+  items: WorkItem[];
+};
+
+const { items } = Astro.props;
+---
+
+<ul class="flex flex-col gap-8">
+  {
+    items.map((item) => (
+      <li>
+        <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+          {item.href ? (
+            <a href={item.href} class="link-quiet font-medium">
+              {item.company}
+            </a>
+          ) : (
+            <span class="font-medium">{item.company}</span>
+          )}
+          {item.url && (
+            <a
+              href={item.url}
+              class="meta link-quiet icon-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Website
+              <Arrow dir="out" />
+            </a>
+          )}
+        </div>
+        <ul class="mt-1.5 flex flex-col gap-1">
+          {item.roles.map((role) => (
+            <li class="meta">
+              {role.title}
+              {role.meta ? ` · ${role.meta}` : ""}
+              {" · "}
+              {formatDateRange(role.from, role.to)}
+            </li>
+          ))}
+        </ul>
+        <p class="muted mt-2 text-[1.05rem] leading-snug">{item.summary}</p>
+      </li>
+    ))
+  }
+</ul>

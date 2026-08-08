@@ -1,0 +1,27 @@
+---
+const path = Astro.url.pathname.replace(/\/$/, "") || "/";
+const section =
+  path === "/"
+    ? { href: "/", label: "home" }
+    : path === "/posts" || path.startsWith("/posts/")
+      ? { href: "/posts", label: "posts" }
+      : path === "/work" || path.startsWith("/work/")
+        ? { href: "/work", label: "work" }
+        : null;
+---
+
+<header class="site-shell py-8">
+  <div class="meta">
+    <a href="/" class="link-quiet">~</a>
+    {
+      section && (
+        <>
+          <span>/</span>
+          <a href={section.href} class="link-quiet">
+            {section.label}
+          </a>
+        </>
+      )
+    }
+  </div>
+</header>

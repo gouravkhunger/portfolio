@@ -1,0 +1,270 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { site } from "../config/site";
+import { applyExtlinks, applyImageAttrs } from "../lib/html";
+import "../styles/global.css";
+import newsreaderWoff2 from "@fontsource-variable/newsreader/files/newsreader-latin-wght-normal.woff2?url";
+import newsreaderItalicWoff2 from "@fontsource-variable/newsreader/files/newsreader-latin-wght-italic.woff2?url";
+import plexMono400 from "@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-400-normal.woff2?url";
+import plexMono500 from "@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-500-normal.woff2?url";
+
+type Props = {
+  title?: string;
+  description?: string;
+  noIndex?: boolean;
+  image?: string;
+  imageAlt?: string;
+  type?: "website" | "article";
+  publishedTime?: Date;
+  canonicalUrl?: string;
+  tags?: string[];
+};
+
+const {
+  title = `${site.title} · ${site.role}`,
+  description = site.description,
+  noIndex = false,
+  image,
+  imageAlt,
+  type = "website",
+  publishedTime,
+  canonicalUrl,
+  tags = [],
+} = Astro.props;
+
+const path = Astro.url.pathname.replace(/\/index\.html$/, "").replace(/\.html$/, "");
+const canonical =
+  canonicalUrl ?? new URL(path === "" ? "/" : path, site.url).href;
+
+const isProd = import.meta.env.PROD;
+const pageTitle =
+  title === site.title || title.startsWith(site.title)
+    ? title
+    : `${title} · ${site.title}`;
+
+const ogImage = image
+  ? image.startsWith("http")
+    ? image
+    : new URL(image, site.url).href
+  : `${site.url}/assets/images/social-cover.png`;
+const ogImageAlt = imageAlt ?? title;
+const ogTitle = type === "article" ? title : pageTitle;
+
+let body = await Astro.slots.render("default");
+body = applyExtlinks(body);
+body = applyImageAttrs(body);
+
+const criticalCss = `
+@font-face {
+  font-family: "Newsreader Fallback";
+  src: local("Georgia"), local("Noto Serif"), local("Times New Roman");
+  size-adjust: 105%;
+  ascent-override: 92%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "IBM Plex Mono Fallback";
+  src: local("Menlo"), local("Consolas"), local("Courier New");
+  size-adjust: 98%;
+  ascent-override: 95%;
+  descent-override: 25%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Newsreader";
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: fallback;
+  src: url("${newsreaderWoff2}") format("woff2-variations");
+}
+@font-face {
+  font-family: "Newsreader";
+  font-style: italic;
+  font-weight: 200 800;
+  font-display: fallback;
+  src: url("${newsreaderItalicWoff2}") format("woff2-variations");
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: fallback;
+  src: url("${plexMono400}") format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: fallback;
+  src: url("${plexMono500}") format("woff2");
+}
+html {
+  font-size: 16px;
+  background: #f4f4f5;
+  color-scheme: light;
+}
+body {
+  margin: 0;
+  background: #f4f4f5;
+  color: #18181b;
+  font-family: "Newsreader", "Newsreader Fallback", Georgia, serif;
+  font-size: 1.125rem;
+  line-height: 1.65;
+}
+.site-shell {
+  width: min(100% - 2.5rem, 42rem);
+  margin-inline: auto;
+}
+header.site-shell {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+main.site-shell {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+.meta {
+  font-family: "IBM Plex Mono", "IBM Plex Mono Fallback", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  color: #71717a;
+}
+.not-found {
+  padding: 5rem 0;
+}
+.not-found-mark {
+  margin: 0 0 1.75rem;
+  font-family: "Newsreader", "Newsreader Fallback", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(5.5rem, 20vw, 8.5rem);
+  line-height: 0.8;
+  letter-spacing: -0.05em;
+  color: #e4e4e7;
+}
+`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="twitter:description" content={description} />
+    <meta property="og:description" content={description} />
+    <meta property="og:title" content={ogTitle} />
+    <meta name="twitter:title" content={ogTitle} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content={site.title} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content={ogImageAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content={site.twitter} />
+    <meta name="twitter:creator" content={site.twitter} />
+    <meta name="twitter:image" content={ogImage} />
+    {
+      type === "article" && publishedTime && (
+        <meta
+          property="article:published_time"
+          content={publishedTime.toISOString()}
+        />
+      )
+    }
+    {type === "article" && (
+      <meta property="article:author" content={site.url} />
+    )}
+    {tags.map((tag) => (
+      <meta property="article:tag" content={tag} />
+    ))}
+    <meta name="theme-color" content="#f4f4f5" />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" type="application/rss+xml" title={site.title} href="/rss.xml" />
+    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon" />
+    {noIndex && <meta name="robots" content="noindex" />}
+
+    {
+      type === "article" && (
+        <script
+          is:inline
+          type="application/ld+json"
+          set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: title,
+            description,
+            image: ogImage,
+            datePublished: publishedTime?.toISOString(),
+            author: {
+              "@type": "Person",
+              name: site.title,
+              url: site.url,
+            },
+            mainEntityOfPage: canonical,
+          })}
+        />
+      )
+    }
+
+    <link
+      rel="preload"
+      href={newsreaderWoff2}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href={newsreaderItalicWoff2}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href={plexMono400}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href={plexMono500}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <style is:inline set:html={criticalCss}></style>
+
+    {
+      isProd && (
+        <>
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${site.googleAnalytics}`}
+          />
+          <script is:inline define:vars={{ ga: site.googleAnalytics }}>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+              // eslint-disable-next-line prefer-rest-params
+              dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+            gtag("config", ga);
+          </script>
+        </>
+      )
+    }
+  </head>
+  <body>
+    <Header />
+    <main class="site-shell pt-4 pb-8" set:html={body} />
+    <Footer />
+  </body>
+</html>

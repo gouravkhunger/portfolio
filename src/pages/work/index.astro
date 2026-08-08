@@ -1,0 +1,15 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import WorkList from "../../components/WorkList.astro";
+import { listWork } from "../../lib/work";
+
+const items = await listWork();
+---
+
+<BaseLayout title="Work" description="Companies and roles — Gourav Khunger.">
+  <h1 class="text-[1.75rem] font-medium tracking-[-0.02em]">Work</h1>
+  <p class="meta mt-2">Roles and companies</p>
+  <div class="mt-10">
+    <WorkList items={items} />
+  </div>
+</BaseLayout>

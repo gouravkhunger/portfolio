@@ -1,0 +1,87 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BackLink from "../../components/BackLink.astro";
+import { formatDate } from "../../lib/dates";
+import { inlineMd } from "../../lib/html";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("posts");
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const { data } = entry;
+const seriesHref = data.series
+  ? `https://genicsblog.com/series/${data.series}`
+  : null;
+const seriesLabel = data.series
+  ? data.series.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())
+  : null;
+---
+
+<BaseLayout
+  title={data.title}
+  description={data.description ?? data.title}
+  image={data.image}
+  imageAlt={data.imageAlt ?? data.title}
+  type="article"
+  publishedTime={data.date}
+  canonicalUrl={data.canonical}
+  tags={data.tags}
+  noIndex={data.draft}
+>
+  <BackLink href="/posts" label="Posts" />
+
+  <h1 class="text-[1.85rem] leading-tight font-medium tracking-[-0.02em]">
+    {data.title}
+  </h1>
+  <p class="meta mt-3">{formatDate(data.date)}</p>
+
+  {
+    data.image && (
+      <img
+        class="post-thumb"
+        src={data.image}
+        alt=""
+        loading="eager"
+      />
+    )
+  }
+
+  {
+    (data.canonical || data.notice || seriesHref) && (
+      <p class="meta mt-4">
+        {data.canonical && (
+          <>
+            Originally published at{" "}
+            <a href={data.canonical} class="link-quiet">
+              {data.canonical.replace(/^https?:\/\//, "").split("/")[0]}
+            </a>
+            .
+            {(data.notice || seriesHref) && <br />}
+          </>
+        )}
+        {seriesHref && (
+          <>
+            Part of the series{" "}
+            <a href={seriesHref} class="link-quiet">
+              {seriesLabel}
+            </a>
+            .
+            {data.notice && <br />}
+          </>
+        )}
+        {data.notice && <span set:html={inlineMd(data.notice)} />}
+      </p>
+    )
+  }
+
+  <div class="prose mt-10">
+    <Content />
+  </div>
+</BaseLayout>

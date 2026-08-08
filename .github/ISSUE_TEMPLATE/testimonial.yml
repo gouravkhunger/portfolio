@@ -1,0 +1,32 @@
+name: Submit Testimonial
+description: Fill out this form to submit a testimonial on the website!
+labels: ["testimonial"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      description: Please enter your name as you would like it to appear on the website.
+    validations:
+      required: true
+  - type: input
+    id: role
+    attributes:
+      label: Role
+      description: Please enter your current role and relevant links as you would like it to appear on the website.
+    validations:
+      required: true
+  - type: textarea
+    id: testimonial
+    attributes:
+      label: Testimonial
+      description: Please enter your testimonial here. Try to keep it 3-4 sentences long.
+    validations:
+      required: true
+  - type: textarea
+    id: picture
+    attributes:
+      label: Your profile picture
+      description: Please drop your profile picture (or relevant link to a social media to get your pricture from) in rhe box below. This will be used to represent you on the website.
+    validations:
+      required: true

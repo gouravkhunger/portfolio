@@ -1,0 +1,543 @@
+---
+title: "Pagination in Android Room Database using the Paging 3 Library"
+date: 2022-04-24
+description: "The complete guide to paginating *just* a room database (without Network level pagination) with the Paging 3 library in Android using Kotlin."
+image: "/assets/images/blog/pagination-in-android-room-database-using-the-paging-3-library/thumbnail.webp"
+category: "android"
+tags:
+  - "intermediates"
+  - "app-development"
+  - "libraries"
+---
+The [Paging 3 library](https://developer.android.com/topic/libraries/architecture/paging/v3-overview), a part the new set of [Android Jetpack](https://developer.android.com/jetpack) libraries, provides a robust way of paginating large sets of data in Android whether it is loaded from a room database or from a network layer.
+
+The library provides 3 different utilities for loading paginated data:
+
+- Solely from a local Room DB.
+- Solely from a webservice.
+- From a webservice while storing it in a Room Database for offline use (combination of the above).
+
+In this tutorial, we will focus on implementing pagination only for a **local Room Databases using Paging 3**.
+
+If you are interested in just the code for the project, please check out this GitHub repository:
+
+<a href="https://github.com/gouravkhunger/room-paging3-demo" class="link-card">
+  <span class="link-card-title">gouravkhunger/paging3-room-demo</span>
+  <span class="link-card-host">github.com</span>
+</a>
+
+# Prerequisites
+
+## What is pagination?
+
+Pagination is a way of breaking down huge pieces of data into smaller chunks and serving them one at a time. This improves the user experience as the entirety of the data doesn't need to be loaded all at once. As soon as the user scrolls to the bottom of the screen, the next page of data is loaded.
+
+## What are we building?
+
+Throughout this tutorial, we will implement pagination for a large dataset of texts stored in a Room Database in an Android app.
+
+We will build a basic application which shows a list of items in a RecyclerView using Paging 3. The data is loaded with a delay of 1 second to simulate data being loaded (for demo purpose only).
+
+There will be a progress bar at the end of the RecyclerView.
+
+Here's a short demo of the app:
+
+<div class="video">
+  <iframe src="https://www.youtube.com/embed/D-vw0ITD9Ww" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+</div>
+
+## Expected knowledge
+
+This tutorial expects you to have intermediate level knowledge in Android app development. You should have a basic understanding of the concepts of **Room Databases**, **RecyclerView** and how to use them although I will explain what's going on in brief.
+
+You are not expected to have any knowledge of Paging 3!
+
+## Setup 
+
+We will be using an Empty Activity as a starter project. If you don't know how to create a new Android studio project, do read this article:
+
+<a href="https://genicsblog.com/how-to-create-your-first-android-app-using-android-studio" class="link-card">
+  <span class="link-card-title">genicsblog.com</span>
+  <span class="link-card-host">genicsblog.com</span>
+</a>
+
+The package name I have for my app is `com.example.paginationdemo`.
+
+Next, we need some dependencies in our app to use the libraries we need. Open **`app/build.gradle`** file and add these lines to the `dependencies` and `plugins` block:
+
+```groovy
+plugins {
+    // ...other plugins
+    id 'kotlin-kapt'
+}
+
+dependencies {
+    // ...other dependencies
+
+    implementation "androidx.paging:paging-runtime:3.1.1"
+
+    implementation "androidx.core:core-ktx:1.7.0"
+    implementation 'androidx.activity:activity-ktx:1.4.0'
+
+    implementation "androidx.room:room-ktx:2.4.2"
+    kapt "androidx.room:room-compiler:2.4.2"
+}
+```
+
+Also enable `viewBinding` inside `app/build.gradle` to make accessing views easier:
+
+```groovy
+android {
+    // ...other config
+
+    viewBinding {
+        enabled = true
+    }
+}
+```
+
+With all the prerequisites clear, let's jump into the tutorial now!
+
+# 1. Creating the Room Database
+
+## Needed Files
+
+The first step to begin would be to create a Room Database that will hold the data we will be using.
+
+To do this, first create a `db` package, to make things organized. Create two files in the `db` package:
+
+- **`ItemDatabase.kt`**: This will be the actual database implementation.
+- **`ItemDao.kt`**: This is the **D**ata **A**ccess **O**bject(**DAO**) that will be used to access the data in the database.
+
+Then we make the actual **`Item.kt`** data holder class inside a new package called `model`.
+
+We will implement these files in a short moment. These are the files we just added: 
+
+![Files to be added to the project](/assets/images/blog/pagination-in-android-room-database-using-the-paging-3-library/files-to-be-added-to-the-project.webp)
+
+## Class Implementations
+
+### **`Item.kt`**
+
+```kotlin
+package com.example.dbpagingdemo.model
+
+import ...
+
+@Entity(tableName = "items")
+data class Item(
+    @PrimaryKey(autoGenerate = true)
+    val id: Int = 0,
+    val name: String
+)
+```
+
+This is a pretty basic data class. There is an autogenerated primary key `id` that identifies different items in the db. The `name` field is the string data for a specific item.
+
+### **`ItemDao.kt`**
+
+```kotlin
+package com.example.dbpagingdemo.db
+
+import ...
+
+@Dao
+interface ItemDao {
+    @Query("SELECT * FROM items ORDER BY id ASC LIMIT :limit OFFSET :offset")
+    suspend fun getPagedList(limit: Int, offset: Int): List<Item>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insert(item: Item): Long
+}
+```
+
+The `ItemDao` is an abstract class whose implementation will be generated by Room.
+
+This class contains the functions needed to run queries in the database. Room provides useful annotations to ease the process of writing these functions.
+
+The `getPagedList()` function returns a list of items after filtering it with the `limit` and `offset` parameters. This returns small chunks of data that will later be loaded by the Paging 3 library to be shown in the UI.
+
+The `insert()` function inserts an `item` into the database.
+
+### **`ItemDatabase.kt`**
+
+```kotlin
+package com.example.dbpagingdemo.db
+
+import ...
+
+@Database(entities = [Item::class], version = 1, exportSchema = false)
+abstract class ItemDatabase : RoomDatabase() {
+    abstract fun itemDao(): ItemDao
+
+    companion object {
+        private var INSTANCE: ItemDatabase? = null
+
+        fun getInstance(context: Context): ItemDatabase {
+            return INSTANCE ?: synchronized(this) {
+                val instance = Room.databaseBuilder(
+                    context,
+                    ItemDatabase::class.java,
+                    "item_database"
+                ).addCallback(object : RoomDatabase.Callback() {
+                    override fun onCreate(db: SupportSQLiteDatabase) {
+                        super.onCreate(db)
+
+                        INSTANCE?.let { database ->
+                            CoroutineScope(Dispatchers.IO).launch {
+                                (0..100).forEach {
+                                    database.itemDao().insert( Item(0, "Item $it") )
+                                }
+                            }
+                        }
+                    }
+                }).build()
+
+                INSTANCE = instance
+                instance
+            }
+        }
+    }
+}
+```
+
+Here, we make the `ItemDatabase` abstract because Room will auto-generate it for us. Inside the class's `companion object` block, we define a function that returns the instance of the database.
+
+The `getInstance()` function is interesting! We put up this `INSTANCE` returning logic to avoid [race conditions](https://en.wikipedia.org/wiki/Race_condition). Basically, if two pieces of code try to access the same resource at the same time, it causes race conditions. For generalized objects it is okay, but for something like Databases- we never want to cause conflicts between data.
+
+That's the reason we either return `INSTANCE` of the Room Database if it is not null (the `?:` elvis operator), or if it is we then add the logic to build the database, assign it to the instance and then return it.
+
+We add a callback of type `RoomDatabase.Callback()` to execute some code once the database is created. We use this to pre-populate the database with some fake preloaded data.
+
+The `(0..100).forEach()` loop goes over the range and adds `Item` objects to the database, with the name `Item <number>` for each iteration. The `id` passed is `0` because this will be autogenerated by Room anyways.
+
+# 2. Setup RecyclerView
+
+## Defining Layouts
+
+For the RecyclerView, we need to update our `MainActivity` to show a RecyclerView instead of the auto-generated text view.
+
+### **`activity_main.xml`**
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+</LinearLayout>
+```
+
+This is a basic layout - we use `LinearLayout` to make things easier as we don't need a complex UI for this demo anyways.
+
+We add a full screen `RecyclerView` to the layout. The grid manager is set to `LinearLayoutManager` to stack the RecyclerView items in a linear direction (in our case, vertical).
+
+###  **`item.xml`**
+
+We need to generate a new layout that serves as a container for the RecyclerView items. Make a minimal `item.xml` layout which just shows a text view. Again, use `LinearLayout` as it doesn't need to be complex. Don't make the LinearLayout full screen as that can cause a lot of whitespace.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp" />
+
+</LinearLayout>
+```
+
+## Making a RecyclerView Adapter
+
+We need a RecyclerView adapter to show the data in the RecyclerView. Create a `MainAdapter.kt` class that inherits from `PagingDataAdapter`. It is a special adapter provided by the Paging 3 library that will help us to show the data in the RecyclerView. It also supports header and footer items in RecyclerView that we will use in a moment.
+
+Code the `MainAdapter` like this:
+
+```kotlin
+package com.example.dbpagingdemo
+
+import ...
+
+class MainAdapter : PagingDataAdapter<Item, MainAdapter.MainViewHolder>(DIFF_CALLBACK) {
+
+    companion object {
+        val DIFF_CALLBACK = object : DiffUtil.ItemCallback<Item>() {
+            override fun areItemsTheSame(oldItem: Item, newItem: Item): Boolean =
+                oldItem.id == newItem.id
+
+            override fun areContentsTheSame(oldItem: Item, newItem: Item): Boolean =
+                oldItem == newItem
+        }
+    }
+
+    inner class MainViewHolder(val binding: ItemBinding) : RecyclerView.ViewHolder(binding.root)
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
+        return MainViewHolder(
+            ItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        )
+    }
+
+    override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
+        val item = getItem(position)
+
+        holder.binding.apply {
+            textView.text = item?.name
+        }
+    }
+}
+```
+
+To the superclass `PagingDataAdapter`, we pass in the `Item` data class as that is the type of data we want to show in the RecyclerView and `MainViewHolder` as the type of view holder we want to use.
+
+The `DIFF_CALLBACK` is used by the Paging library to determine if the data in the RecyclerView has changed or not.
+
+This callback uses item comparisons to determine data changes and apply changes to RecyclerView only for the changed items. This is a very efficient way to update the RecyclerView as compared to rebuilding the RecyclerView every time the data changes.
+
+We instantiate and bind data to the view holder in the `onCreateViewHolder()` and `onBindViewHolder()` functions respectively.
+
+That's it for the RecyclerView adapter!
+
+# 3. Build the Pagination Logic
+
+## Setting up PagingSource
+
+The `PagingSource` defines the actual implementation for getting the data from the Room Database and returning loaded data pages, which would be sent to the RecyclerView adapter.
+
+Make a package `pagination` and define a `MainPagingSource.kt` class like this:
+
+### **`MainPagingSource.kt`**
+
+```kotlin
+package com.example.dbpagingdemo.pagination
+
+class MainPagingSource(
+    private val dao: ItemDao
+) : PagingSource<Int, Item>() {
+    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Item> {
+        val page = params.key ?: 0
+
+        return try {
+            val entities = dao.getPagedList(params.loadSize, page * params.loadSize)
+
+            // simulate page loading
+            if (page != 0) delay(1000)
+
+            LoadResult.Page(
+                data = entities,
+                prevKey = if (page == 0) null else page - 1,
+                nextKey = if (entities.isEmpty()) null else page + 1
+            )
+        } catch (e: Exception) {
+            LoadResult.Error(e)
+        }
+    }
+
+    override fun getRefreshKey(state: PagingState<Int, Item>): Int? {
+        return state.anchorPosition?.let { anchorPosition ->
+            val anchorPage = state.closestPageToPosition(anchorPosition)
+            anchorPage?.prevKey?.plus(1) ?: anchorPage?.nextKey?.minus(1)
+        }
+    }
+}
+```
+
+The class inherits from `PagingSource`:
+
+- We pass an `Int` as the first parameter since the pages are differentiated based on pages (1st Page, 2nd Page, and so on).
+- We pass an `Item` as the second parameter since the data we are handling here is of type `Item`.
+
+Each class that inherits from `PagingSource` needs to override `load()` and `getRefreshKey()` functions.
+
+- The `load()` function gets details about the page we need to load, loads it, and returns the page with the needed meta-data. It also handles errors that might occur.
+- The `getRefreshKey()` method of the `PagingSource` class is used to get the key of the page that will be passed into the params for `load()` function. This is calculated on subsequent refreshes/invalidation of the data after the initial load.
+
+The `load()` function calls `getPagedList()` from the dao by passing in values of `limit` and `offset` from the `params`. We will define these parameters in `MainViewModel` while accessing data.
+
+If the page load was successful, we return `LoadResult.Page()` with the data and meta information for the next and preivious pages if the db call was successful, else we return `LoadResult.Error` with the exception that occurred.
+
+This is basically it for the `PagingSource`!
+
+## Setting up LoadStateAdapter
+
+The `LoadStateAdapter` is used to show the loading state of the RecyclerView. Suppose a user scrolls to the bottom of the screen and the next pagination data isn't loaded yet. If there's no visual indication for this, it creates confusion for the user.
+
+`LoadStateAdapter` helps us to show the visual info on the loading state of the RecyclerView. In our case, we will show a progress bar while the next page is loading.
+
+To do that, create a `load_state_view.xml` layout with a progress bar like this:
+
+### `load_state_view.xml`
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
+```
+
+Next, create a `MainLoadStateAdapter.kt` class inside the `pagination` package.
+
+### **`MainLoadStateAdapter.kt`**
+
+```kotlin
+package com.example.dbpagingdemo
+
+import ...
+
+class MainLoadStateAdapter : LoadStateAdapter<MainLoadStateAdapter.LoadStateViewHolder>() {
+
+    inner class LoadStateViewHolder(val binding: LoadStateViewBinding) :
+        RecyclerView.ViewHolder(binding.root)
+
+    override fun onCreateViewHolder(parent: ViewGroup, loadState: LoadState): LoadStateViewHolder {
+        return LoadStateViewHolder(
+            LoadStateViewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        )
+    }
+
+    override fun onBindViewHolder(holder: LoadStateViewHolder, loadState: LoadState) {
+        holder.binding.apply {
+            progress.isVisible = loadState is LoadState.Loading
+        }
+    }
+}
+```
+
+We basically bind the progress bar from `load_state_view.xml` to the `LoadStateViewHolder` class. The key thing to notice here is the progress bar is visible only if `loadState` is `LoadState.Loading`.
+
+The `onBindViewHolder()` inside `MainLoadStateAdapter` is called every time the RecyclerView is invalidated, which provides the possibility to show and hide the progress bar based on the load state.
+
+# 4. Attaching Data to the UI
+
+## Setting up the ViewModel
+
+The `MainViewModel` should access the data from the `PagingSource`, and pass it to the RecyclerView adapter.
+
+Let's build the `MainViewModel` class.
+
+### **`MainViewModel.kt`**
+
+```kotlin
+package com.example.paginationdemo
+
+import ...
+
+class MainViewModel(
+    private val dao: ItemDao
+): ViewModel() {
+
+    val data = Pager(
+        PagingConfig(
+            pageSize = 20,
+            enablePlaceholders = false,
+            initialLoadSize = 20
+        ),
+    ) {
+        MainPagingSource(dao)
+    }.flow.cachedIn(viewModelScope)
+    
+}
+
+class MainViewModelFactory(
+    private val dao: ItemDao
+) : ViewModelProvider.Factory {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        if(modelClass.isAssignableFrom(MainViewModel::class.java)) {
+            @Suppress("UNCHECKED_CAST")
+            return MainViewModel(dao) as T
+        }
+        throw IllegalArgumentException("Unknown ViewModel class")
+    }
+}
+```
+
+Inside the `MainViewModel`, we hold to create a variable `data` that is a `Pager` object, to which we pass the `PagingConfig` and `PagingSource` objects. This is the place where we define our pagination configuration.
+
+We define that the `pageSize` should be `20`. This means that the Paging 3 library will load `20` values at a time from the data. The `initialLoadSize` is also set to `20` because if unset, the paging library loads `3 * pageSize` for the first load.
+
+We pass a lambda that defines a lambda and pass in our `MainPagingSource` class. Paging 3 handles calling the `load()` function for us as and when needed by the `PagingAdapter`, so we don't need to worry about the hassle of calling it manually.
+
+Then we access the `flow` property so that we can collect the new emissions of data. We also cache these in `viewModelScope` for memory optimizations.
+
+## Finishing up `MainActivity`
+
+We now need to bind everything up through the `MainActivity`. Setup the `MainActivity` as below:
+
+```kotlin
+package com.example.paginationdemo
+
+import ...
+
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var dao: ItemDao
+    private val viewModel: MainViewModel by viewModels { MainViewModelFactory(dao) }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        dao = ItemDatabase.getInstance(this).itemDao()
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        val adapter = MainAdapter()
+        binding.recyclerView.adapter = adapter.withLoadStateFooter(
+            MainLoadStateAdapter()
+        )
+
+        lifecycleScope.launch {
+            viewModel.data.collectLatest {
+                adapter.submitData(it)
+            }
+        }
+    }
+}
+```
+
+We define the `binding`, `dao` and `viewModel` variables and instantiate the needed ones in `onCreate()`.
+
+Then the magic happens! We assign the `MainAdapter` we built and also pass in the `MainLoadStateAdapter()` in the `withLoadStateFooter()` function. This appropriately handles showing the progress bar while the next page is loading, and also hides it with animation when the next page is loaded / no next page is available.
+
+We also launch a coroutine to collect the emissions of data from the `flow` property of the `viewModel` and pass it to the `adapter`. This way our adapter will be updated with the new data as and when it is emitted.
+
+It's time to run our application! You might not see data at the first run because the database itself is being created. But from the second run, the app should work as expected:
+
+![Demo of the application we will build](/assets/images/blog/pagination-in-android-room-database-using-the-paging-3-library/demo-of-the-application-we-will-build.webp){:width="40%"}
+
+# Wrapping Up
+
+This was a brief intro on how to paginate data from a Room Database using the Paging 3 library. In this tutorial, we covered the setup for situations when we just have a local data source to get the data from.
+
+The Paging 3 library supports more use cases like loading the paginated data from a network, or a combination of network and local data sources. You can learn more about the library from the [documentation](https://developer.android.com/topic/libraries/architecture/paging/v3-overview).
+
+I hope you enjoyed reading this in-depth tutorial and hope you learned something new!
+
+Happy Coding!

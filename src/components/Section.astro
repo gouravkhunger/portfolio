@@ -1,0 +1,25 @@
+---
+type Props = {
+  label: string;
+  href?: string;
+  id?: string;
+};
+
+const { label, href, id = label.toLowerCase().replace(/\s+/g, "-") } =
+  Astro.props;
+---
+
+<section id={id} class="mt-16">
+  <h2 class="label mb-6">
+    {
+      href ? (
+        <a href={href} class="link-quiet">
+          {label}
+        </a>
+      ) : (
+        label
+      )
+    }
+  </h2>
+  <slot />
+</section>

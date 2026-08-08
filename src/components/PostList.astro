@@ -1,0 +1,43 @@
+---
+import { formatDate } from "../lib/dates";
+
+type PostItem = {
+  title: string;
+  date: Date;
+  href: string;
+};
+
+type Props = {
+  posts: PostItem[];
+};
+
+const { posts } = Astro.props;
+
+const groups: { year: string; items: PostItem[] }[] = [];
+for (const post of posts) {
+  const year = String(post.date.getUTCFullYear());
+  const last = groups[groups.length - 1];
+  if (!last || last.year !== year) groups.push({ year, items: [post] });
+  else last.items.push(post);
+}
+---
+
+<div class="flex flex-col gap-8">
+  {
+    groups.map((group) => (
+      <div>
+        <h3 class="meta mb-3">{group.year}</h3>
+        <ul class="flex flex-col gap-2.5">
+          {group.items.map((post) => (
+            <li class="grid grid-cols-[5.5rem_1fr] items-baseline gap-x-3">
+              <span class="meta">{formatDate(post.date, "short")}</span>
+              <a href={post.href} class="link-quiet">
+                {post.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))
+  }
+</div>

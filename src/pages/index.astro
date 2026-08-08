@@ -1,0 +1,78 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Section from "../components/Section.astro";
+import ProjectList from "../components/ProjectList.astro";
+import PostList from "../components/PostList.astro";
+import Arrow from "../components/Arrow.astro";
+import WorkCircles from "../components/work/WorkCircles";
+import { site } from "../config/site";
+import { selectedProjects } from "../data/projects";
+import { listWork, toWorkCircleItem } from "../lib/work";
+import { listPosts } from "../lib/posts";
+
+const circleItems = (await listWork()).map(toWorkCircleItem);
+const posts = await listPosts({ limit: 5 });
+---
+
+<BaseLayout>
+  <section id="intro" class="pt-6">
+    <h1 class="text-[2.15rem] leading-tight font-medium tracking-[-0.02em]">
+      {site.title}
+    </h1>
+    <p class="meta mt-2">{site.role}</p>
+    <p class="mt-6 text-[1.125rem] leading-[1.65]">{site.bio}</p>
+    <p class="meta mt-6 flex flex-wrap gap-x-4 gap-y-2">
+      {
+        site.links.map((link) => (
+          <a href={link.href} class="link-quiet">
+            {link.label}
+          </a>
+        ))
+      }
+    </p>
+  </section>
+
+  <hr class="rule mt-14" />
+
+  <Section label="Work" href="/work">
+    <p class="mb-6">
+      I enjoy working at the intersection of engineering, product, and design.
+    </p>
+    <WorkCircles client:load items={circleItems} />
+  </Section>
+
+  <Section label="Projects">
+    <ProjectList items={selectedProjects} />
+    <p class="meta mt-6">
+      <a href="https://github.com/gouravkhunger" class="link-quiet icon-link">
+        More on GitHub
+        <Arrow dir="right" />
+      </a>
+    </p>
+  </Section>
+
+  <Section label="Posts">
+    {
+      posts.length > 0 ? (
+        <PostList posts={posts} />
+      ) : (
+        <p class="muted">Notes will land here.</p>
+      )
+    }
+    <p class="meta mt-6">
+      <a href="/posts" class="link-quiet icon-link">
+        View all
+        <Arrow dir="right" />
+      </a>
+    </p>
+  </Section>
+
+  <Section label="Contact">
+    <p class="text-[1.125rem] leading-[1.65]">{site.contact}</p>
+    <p class="meta mt-4">
+      <a href={`mailto:${site.email}`} class="link-quiet">
+        {site.email}
+      </a>
+    </p>
+  </Section>
+</BaseLayout>

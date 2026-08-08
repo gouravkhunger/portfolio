@@ -1,0 +1,67 @@
+---
+import { render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BackLink from "../../components/BackLink.astro";
+import Arrow from "../../components/Arrow.astro";
+import { formatDateRange } from "../../lib/dates";
+import { getWorkWriteups } from "../../lib/work";
+
+export async function getStaticPaths() {
+  const pages = await getWorkWriteups();
+  return pages.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const item = entry.data;
+const logo = item.logo ?? "/assets/images/logos/building.svg";
+---
+
+<BaseLayout title={item.company} description={item.summary}>
+  <BackLink href="/work" label="Work" />
+
+  <div class="work-detail-head">
+    <div class="work-detail-logo">
+      <img src={logo} alt="" width="40" height="40" />
+    </div>
+    <div class="work-detail-copy">
+      <h1>{item.company}</h1>
+      {
+        item.url && (
+          <a
+            href={item.url}
+            class="meta link-quiet icon-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {item.url.replace(/^https?:\/\//, "")}
+            <Arrow dir="out" />
+          </a>
+        )
+      }
+    </div>
+  </div>
+
+  <p class="mt-6 text-[1.125rem] leading-[1.65]">{item.summary}</p>
+
+  <ul class="mt-8 flex flex-col gap-3">
+    {
+      item.roles.map((role) => (
+        <li>
+          <p class="text-[1.05rem] font-medium">{role.title}</p>
+          <p class="meta mt-0.5">
+            {role.meta ? `${role.meta} · ` : ""}
+            {formatDateRange(role.from, role.to)}
+          </p>
+        </li>
+      ))
+    }
+  </ul>
+
+  <div class="prose mt-10">
+    <Content />
+  </div>
+</BaseLayout>

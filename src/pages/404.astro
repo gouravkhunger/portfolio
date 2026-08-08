@@ -1,0 +1,17 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Not found" description="That page does not exist." noIndex>
+  <section class="not-found">
+    <p class="not-found-mark" aria-hidden="true">404</p>
+    <p class="meta">~/lost</p>
+    <h1>This page isn't here.</h1>
+    <p class="muted">The link is broken, outdated, or never existed.</p>
+    <p class="meta not-found-links">
+      <a href="/" class="link-quiet">home</a>
+      <a href="/posts" class="link-quiet">posts</a>
+      <a href="/work" class="link-quiet">work</a>
+    </p>
+  </section>
+</BaseLayout>
